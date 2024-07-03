@@ -1,0 +1,4 @@
+[console_scripts]
+agv_controller = agv_control_pkg.agv_controller:main
+tag_detection = agv_control_pkg.tag_detection_node:main
+

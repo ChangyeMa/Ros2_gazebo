@@ -1,0 +1,8 @@
+gmake[2]: *** No rule to make target 'CMakeFiles/agv_controller.dir/build'.  Stop.
+gmake[1]: *** [CMakeFiles/Makefile2:249: CMakeFiles/agv_controller.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target agv_lift
+[100%] Built target example_velocity
+[100%] Built target agv_unload
+[100%] Built target example_position
+gmake: *** [Makefile:146: all] Error 2

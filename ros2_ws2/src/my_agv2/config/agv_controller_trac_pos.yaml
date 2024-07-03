@@ -1,0 +1,29 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    imu_sensor_broadcaster:
+      type: imu_sensor_broadcaster/IMUSensorBroadcaster
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - bot_slider_l_joint
+      - bot_slider_r_joint
+
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+imu_sensor_broadcaster:
+  ros__parameters:
+    sensor_name: cart_imu_sensor
+    frame_id: imu
