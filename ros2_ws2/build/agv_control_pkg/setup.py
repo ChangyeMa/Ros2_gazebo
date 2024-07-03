@@ -1,1 +1,0 @@
-/home/changye/ros2_ws2/src/agv_control_pkg/setup.py

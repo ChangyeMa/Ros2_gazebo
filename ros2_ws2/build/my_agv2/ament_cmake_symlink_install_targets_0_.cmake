@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/changye/ros2_ws2/build/my_agv2/example_position" "/home/changye/ros2_ws2/build/my_agv2/example_velocity" "/home/changye/ros2_ws2/build/my_agv2/agv_lift" "/home/changye/ros2_ws2/build/my_agv2/agv_unload" "TARGETS" "example_position" "example_velocity" "agv_lift" "agv_unload" "DESTINATION" "lib/my_agv2")
