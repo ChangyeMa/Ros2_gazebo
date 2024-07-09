@@ -1,0 +1,35 @@
+running develop
+Removing /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv-control-pkg.egg-link (link to .)
+running egg_info
+writing ../../build/agv_control_pkg/agv_control_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/agv_control_pkg/agv_control_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/agv_control_pkg/agv_control_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/agv_control_pkg/agv_control_pkg.egg-info/requires.txt
+writing top-level names to ../../build/agv_control_pkg/agv_control_pkg.egg-info/top_level.txt
+reading manifest file '../../build/agv_control_pkg/agv_control_pkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/agv_control_pkg/agv_control_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+copying agv_control_pkg/april_tag_detection.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+copying agv_control_pkg/agv_controller.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+copying agv_control_pkg/tag_detection_node.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+running install
+running install_lib
+creating /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/april_tag_detection.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/__init__.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/agv_controller.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/tag_detection_node.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/april_tag_detection.py to april_tag_detection.cpython-310.pyc
+byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/agv_controller.py to agv_controller.cpython-310.pyc
+byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/tag_detection_node.py to tag_detection_node.cpython-310.pyc
+running install_data
+copying resource/agv_control_pkg -> /home/changye/ros2_ws2/install/agv_control_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg
+running install_egg_info
+Copying ../../build/agv_control_pkg/agv_control_pkg.egg-info to /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing agv_controller script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+Installing tag_detection script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+writing list of installed files to '/home/changye/ros2_ws2/build/agv_control_pkg/install.log'

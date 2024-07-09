@@ -1,0 +1,22 @@
+[1.268s] Invoking command in '/home/changye/ros2_ws2/src/agv_control_pkg': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/agv_control_pkg build --build-base /home/changye/ros2_ws2/build/agv_control_pkg/build install --record /home/changye/ros2_ws2/build/agv_control_pkg/install.log --single-version-externally-managed install_data
+[1.756s] running egg_info
+[1.756s] writing ../../build/agv_control_pkg/agv_control_pkg.egg-info/PKG-INFO
+[1.756s] writing dependency_links to ../../build/agv_control_pkg/agv_control_pkg.egg-info/dependency_links.txt
+[1.756s] writing entry points to ../../build/agv_control_pkg/agv_control_pkg.egg-info/entry_points.txt
+[1.756s] writing requirements to ../../build/agv_control_pkg/agv_control_pkg.egg-info/requires.txt
+[1.756s] writing top-level names to ../../build/agv_control_pkg/agv_control_pkg.egg-info/top_level.txt
+[1.758s] reading manifest file '../../build/agv_control_pkg/agv_control_pkg.egg-info/SOURCES.txt'
+[1.759s] writing manifest file '../../build/agv_control_pkg/agv_control_pkg.egg-info/SOURCES.txt'
+[1.759s] running build
+[1.759s] running build_py
+[1.759s] running install
+[1.760s] running install_lib
+[1.762s] running install_data
+[1.763s] running install_egg_info
+[1.766s] removing '/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.766s] Copying ../../build/agv_control_pkg/agv_control_pkg.egg-info to /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg-0.0.0-py3.10.egg-info
+[1.767s] running install_scripts
+[1.801s] Installing agv_controller script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[1.801s] Installing tag_detection script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[1.802s] writing list of installed files to '/home/changye/ros2_ws2/build/agv_control_pkg/install.log'
+[1.824s] Invoked command in '/home/changye/ros2_ws2/src/agv_control_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/agv_control_pkg build --build-base /home/changye/ros2_ws2/build/agv_control_pkg/build install --record /home/changye/ros2_ws2/build/agv_control_pkg/install.log --single-version-externally-managed install_data

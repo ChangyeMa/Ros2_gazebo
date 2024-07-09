@@ -1,0 +1,18 @@
+[1.426s] Invoking command in '/home/changye/ros2_ws2/build/agv_control_pkg': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws2/build/agv_control_pkg/build --no-deps symlink_data
+[1.864s] running develop
+[2.132s] running egg_info
+[2.132s] writing agv_control_pkg.egg-info/PKG-INFO
+[2.132s] writing dependency_links to agv_control_pkg.egg-info/dependency_links.txt
+[2.132s] writing entry points to agv_control_pkg.egg-info/entry_points.txt
+[2.132s] writing requirements to agv_control_pkg.egg-info/requires.txt
+[2.132s] writing top-level names to agv_control_pkg.egg-info/top_level.txt
+[2.134s] reading manifest file 'agv_control_pkg.egg-info/SOURCES.txt'
+[2.134s] writing manifest file 'agv_control_pkg.egg-info/SOURCES.txt'
+[2.138s] running build_ext
+[2.138s] Creating /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv-control-pkg.egg-link (link to .)
+[2.139s] Installing agv_controller script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[2.139s] Installing tag_detection script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[2.139s] 
+[2.139s] Installed /home/changye/ros2_ws2/build/agv_control_pkg
+[2.139s] running symlink_data
+[2.159s] Invoked command in '/home/changye/ros2_ws2/build/agv_control_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws2/build/agv_control_pkg/build --no-deps symlink_data

@@ -1,0 +1,48 @@
+[1.815s] Invoking command in '/home/changye/ros2_ws2/build/agv_control_pkg': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/changye/ros2_ws2/build/agv_control_pkg/build
+[2.245s] running develop
+[3.534s] Removing /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv-control-pkg.egg-link (link to .)
+[3.554s] Invoked command in '/home/changye/ros2_ws2/build/agv_control_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/changye/ros2_ws2/build/agv_control_pkg/build
+[3.556s] Invoking command in '/home/changye/ros2_ws2/src/agv_control_pkg': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/agv_control_pkg build --build-base /home/changye/ros2_ws2/build/agv_control_pkg/build install --record /home/changye/ros2_ws2/build/agv_control_pkg/install.log --single-version-externally-managed install_data --force
+[3.959s] running egg_info
+[3.959s] writing ../../build/agv_control_pkg/agv_control_pkg.egg-info/PKG-INFO
+[3.960s] writing dependency_links to ../../build/agv_control_pkg/agv_control_pkg.egg-info/dependency_links.txt
+[3.960s] writing entry points to ../../build/agv_control_pkg/agv_control_pkg.egg-info/entry_points.txt
+[3.960s] writing requirements to ../../build/agv_control_pkg/agv_control_pkg.egg-info/requires.txt
+[3.960s] writing top-level names to ../../build/agv_control_pkg/agv_control_pkg.egg-info/top_level.txt
+[3.961s] reading manifest file '../../build/agv_control_pkg/agv_control_pkg.egg-info/SOURCES.txt'
+[3.970s] writing manifest file '../../build/agv_control_pkg/agv_control_pkg.egg-info/SOURCES.txt'
+[3.970s] running build
+[3.970s] running build_py
+[3.970s] copying agv_control_pkg/april_tag_detection.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+[3.970s] copying agv_control_pkg/line_detection_test.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+[3.970s] copying agv_control_pkg/agv_controller.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+[3.970s] copying agv_control_pkg/line_detection_node.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+[3.971s] copying agv_control_pkg/math_test.py -> /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg
+[3.971s] running install
+[3.971s] running install_lib
+[3.972s] creating /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/april_tag_detection.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/__init__.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/line_detection_test.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/agv_controller.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/line_detection_node.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/tag_detection_node.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.972s] copying /home/changye/ros2_ws2/build/agv_control_pkg/build/lib/agv_control_pkg/math_test.py -> /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg
+[3.974s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/april_tag_detection.py to april_tag_detection.cpython-310.pyc
+[3.975s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/__init__.py to __init__.cpython-310.pyc
+[3.975s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/line_detection_test.py to line_detection_test.cpython-310.pyc
+[3.976s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/agv_controller.py to agv_controller.cpython-310.pyc
+[3.976s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/line_detection_node.py to line_detection_node.cpython-310.pyc
+[3.977s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/tag_detection_node.py to tag_detection_node.cpython-310.pyc
+[3.977s] byte-compiling /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg/math_test.py to math_test.cpython-310.pyc
+[3.978s] running install_data
+[3.978s] copying resource/agv_control_pkg -> /home/changye/ros2_ws2/install/agv_control_pkg/share/ament_index/resource_index/packages
+[3.978s] copying package.xml -> /home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg
+[3.978s] running install_egg_info
+[3.981s] Copying ../../build/agv_control_pkg/agv_control_pkg.egg-info to /home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages/agv_control_pkg-0.0.0-py3.10.egg-info
+[4.009s] running install_scripts
+[4.038s] Installing agv_controller script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[4.038s] Installing line_detection script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[4.038s] Installing tag_detection script to /home/changye/ros2_ws2/install/agv_control_pkg/lib/agv_control_pkg
+[4.038s] writing list of installed files to '/home/changye/ros2_ws2/build/agv_control_pkg/install.log'
+[4.055s] Invoked command in '/home/changye/ros2_ws2/src/agv_control_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/agv_control_pkg build --build-base /home/changye/ros2_ws2/build/agv_control_pkg/build install --record /home/changye/ros2_ws2/build/agv_control_pkg/install.log --single-version-externally-managed install_data --force

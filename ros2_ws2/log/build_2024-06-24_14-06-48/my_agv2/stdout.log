@@ -1,0 +1,8 @@
+[35m[1mConsolidate compiler generated dependencies of target agv_unload[0m
+[35m[1mConsolidate compiler generated dependencies of target example_velocity[0m
+[35m[1mConsolidate compiler generated dependencies of target agv_lift[0m
+[35m[1mConsolidate compiler generated dependencies of target example_position[0m
+[ 75%] Built target example_position
+[ 75%] Built target agv_unload
+[ 75%] Built target agv_lift
+[100%] Built target example_velocity

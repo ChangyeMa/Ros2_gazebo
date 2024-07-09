@@ -1,0 +1,1182 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="AGV3_single">
+  <link name="world"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00012323110065279 0.0553961365561796 0.0171432137554972"
+        rpy="0 0 0" />
+      <mass
+        value="7.19116955235277" />
+      <inertia
+        ixx="0.441209434736245"
+        ixy="-1.27470215920653E-06"
+        ixz="-0.0017054451243839"
+        iyy="0.654363133888033"
+        iyz="-0.00684903683061141"
+        izz="0.249410032162092" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="DW_L">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="21.1289138446402" />
+      <inertia
+        ixx="0.0951175890712612"
+        ixy="1.19802636067586E-18"
+        ixz="5.05265182602118E-20"
+        iyy="0.0624867717452084"
+        iyz="-4.3653823928575E-08"
+        izz="0.0624865212718915" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/DW_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.564705882352941 0.215686274509804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/DW_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="world_to_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <joint
+    name="DW_L_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2315 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="DW_L" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="DW_R">
+    <inertial>
+      <origin
+        xyz="0 -1.38777878078145E-17 8.67361737988404E-19"
+        rpy="0 0 0" />
+      <mass
+        value="21.1289138446402" />
+      <inertia
+        ixx="0.0951175890712611"
+        ixy="1.21321982675913E-18"
+        ixz="4.01777133153506E-20"
+        iyy="0.0624867745789793"
+        iyz="-3.44650850180691E-08"
+        izz="0.0624865184381206" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/DW_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.564705882352941 0.215686274509804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/DW_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DW_R_joint"
+    type="continuous">
+    <origin
+      xyz="0.2315 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="DW_R" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_lf">
+    <inertial>
+      <origin
+        xyz="6.10622663543836E-15 0.0017831789674009 -3.49720252756924E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.3159846203554E-21"
+        ixz="-4.1478360047477E-21"
+        iyy="3.09736689346614E-05"
+        iyz="-2.18653127480944E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_lf_joint"
+    type="fixed">
+    <origin
+      xyz="-0.231612500000006 0.0489999999999999 -0.357399999999996"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_lf" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_lf">
+    <inertial>
+      <origin
+        xyz="2.454957077902E-07 -0.0377750444959561 -0.014330575758621"
+        rpy="0 0 0" />
+      <mass
+        value="0.0747206398188078" />
+      <inertia
+        ixx="6.84711765656461E-05"
+        ixy="-3.66816230347075E-11"
+        ixz="6.36578253280478E-12"
+        iyy="6.18341101257442E-05"
+        iyz="-1.41155279221005E-05"
+        izz="8.26659596872356E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_lf_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_lf" />
+    <child
+      link="CW_brac_lf" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_lf">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="-2.28486478848757E-19"
+        ixz="-6.0425181258677E-18"
+        iyy="0.000401507997406102"
+        iyz="-1.40478542475118E-19"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_lf_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0834999999999897 -0.0300000000000034"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_lf" />
+    <child
+      link="CW_lf" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_lr">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-16 0.00178317896740084 1.66533453693773E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.31574198493804E-21"
+        ixz="-4.1478360047477E-21"
+        iyy="3.09736689346614E-05"
+        iyz="-2.18628863939209E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_lr_joint"
+    type="fixed">
+    <origin
+      xyz="-0.2316125 0.049 0.35"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_lr" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_lr">
+    <inertial>
+      <origin
+        xyz="-2.45495707873467E-07 -0.037775044495956 0.0143305757586212"
+        rpy="0 0 0" />
+      <mass
+        value="0.0747206398188078" />
+      <inertia
+        ixx="6.84711765656461E-05"
+        ixy="3.66816231091391E-11"
+        ixz="6.36578254880268E-12"
+        iyy="6.18341101257443E-05"
+        iyz="1.41155279221006E-05"
+        izz="8.26659596872356E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_lr_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_lr" />
+    <child
+      link="CW_brac_lr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_lr">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="-1.86617504521772E-19"
+        ixz="-6.01213712701329E-18"
+        iyy="0.000401507997406102"
+        iyz="-1.45635584494444E-20"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_lr_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0835 0.03"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_lr" />
+    <child
+      link="CW_lr" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_rf">
+    <inertial>
+      <origin
+        xyz="6.21724893790088E-15 0.00178317896740087 4.55191440096314E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.26966917138925E-21"
+        ixz="-5.75677321859853E-21"
+        iyy="3.09736689346614E-05"
+        iyz="-2.12869602559104E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_rf_joint"
+    type="fixed">
+    <origin
+      xyz="0.23139 0.049 -0.3574"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_rf" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_rf">
+    <inertial>
+      <origin
+        xyz="2.45495707817955E-07 -0.0377750444959561 -0.014330575758621"
+        rpy="0 0 0" />
+      <mass
+        value="0.074720639818808" />
+      <inertia
+        ixx="6.84711765656463E-05"
+        ixy="-3.66816230516251E-11"
+        ixz="6.36578253908906E-12"
+        iyy="6.18341101257445E-05"
+        iyz="-1.41155279221006E-05"
+        izz="8.26659596872359E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_rf_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_rf" />
+    <child
+      link="CW_brac_rf" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_rf">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="-2.36065589915202E-19"
+        ixz="-6.09233619691174E-18"
+        iyy="0.000401507997406102"
+        iyz="1.31258152506491E-20"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_rf_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0835 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_rf" />
+    <child
+      link="CW_rf" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_rr">
+    <inertial>
+      <origin
+        xyz="0 0.00178317896740091 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.42557886845226E-21"
+        ixz="-6.48433516858135E-21"
+        iyy="3.09736689346613E-05"
+        iyz="-1.35709392203157E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_mount_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_rr_joint"
+    type="fixed">
+    <origin
+      xyz="0.2313875 0.0489999999999998 0.35"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_rr" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_rr">
+    <inertial>
+      <origin
+        xyz="-2.45495707817955E-07 -0.037775044495956 0.0143305757586212"
+        rpy="0 0 0" />
+      <mass
+        value="0.0747206398188077" />
+      <inertia
+        ixx="6.84711765656461E-05"
+        ixy="3.66816230841488E-11"
+        ixz="6.36578256549453E-12"
+        iyy="6.18341101257445E-05"
+        iyz="1.41155279221006E-05"
+        izz="8.26659596872357E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_brac_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_rr_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_rr" />
+    <child
+      link="CW_brac_rr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_rr">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="2.71728934889175E-37"
+        ixz="-1.61615581202966E-20"
+        iyy="0.000401507997406102"
+        iyz="-2.2463716101834E-20"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/CW_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_rr_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0834999999999903 0.0300000000000078"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_rr" />
+    <child
+      link="CW_rr" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="bot_slider_l">
+    <inertial>
+      <origin
+        xyz="3.00327728904592E-05 -0.0200191153611221 -0.00787005497692439"
+        rpy="0 0 0" />
+      <mass
+        value="0.114142228132535" />
+      <inertia
+        ixx="0.000170720888056532"
+        ixy="1.76367633637566E-10"
+        ixz="-1.84163532396751E-10"
+        iyy="0.000166924082991654"
+        iyz="-3.89844997231867E-05"
+        izz="0.000103620665310971" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/bot_slider_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/bot_slider_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bot_slider_l_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.23161 0.178 -0.31051"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bot_slider_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.07"
+      upper="0.1"    
+      effort="100000"
+      velocity="100" />
+  </joint>
+  <link
+    name="sci_l_A">
+    <inertial>
+      <origin
+        xyz="-0.0032076246578174 0.196826158991604 0.344231432576768"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682139" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="-2.88816636158835E-09"
+        ixz="2.73770869678432E-09"
+        iyy="0.00255036599319112"
+        iyz="-0.00132711116646036"
+        izz="0.00108606213536762" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/sci_l_A.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/sci_l_A.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_l_A_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bot_slider_l" />
+    <child
+      link="sci_l_A" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="sci_bot_l">
+    <inertial>
+      <origin
+        xyz="7.13318293321663E-15 -1.15685239165941E-13 -6.63774590847765E-14"
+        rpy="0 0 0" />
+      <mass
+        value="1.07090296216303" />
+      <inertia
+        ixx="0.000255203590199193"
+        ixy="-1.1442788676079E-20"
+        ixz="-1.27126507012712E-17"
+        iyy="0.000855782346172711"
+        iyz="-1.97748430428543E-20"
+        izz="0.000855782346172711" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/sci_bot_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/sci_bot_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_bot_l_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.196067915098962 0.342902861855567"
+      rpy="0 0 0" />
+    <parent
+      link="sci_l_A" />
+    <child
+      link="sci_bot_l" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="sci_l_B">
+    <inertial>
+      <origin
+        xyz="0.00320762465781896 0.000758243892645949 -0.00132857072153666"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682141" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="2.8881663345528E-09"
+        ixz="2.73770874315841E-09"
+        iyy="0.00255036599319327"
+        iyz="0.00132711116645918"
+        izz="0.00108606213536547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/sci_l_B.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/sci_l_B.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_l_B_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="sci_bot_l" />
+    <child
+      link="sci_l_B" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  
+  <!--Here this virtual joint closes the loop which is not supported in URDF-->
+  <!--so we need to have another gazebo tag-->
+  <!--
+  <joint
+    name="virtual_base_l_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.196067915098981 0.342902861855592"
+      rpy="0 0 0" />
+    <parent
+      link="sci_l_B" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  -->
+
+  <!--inside the gazebo tag we have joint defined in SDF format-->
+  <gazebo>
+    <joint name='virtual_base_l_joint' type='revolute'>
+      <pose relative_to='sci_l_B'>0 -0.196068 0.342903 0 -0 0</pose>
+      <parent>sci_l_B</parent>
+      <child>base_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <friction>0.01</friction>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+  </gazebo>
+
+
+  <link
+    name="bot_slider_r">
+    <inertial>
+      <origin
+        xyz="-0.000469967188862774 -0.0200191154274137 -0.00787005506647742"
+        rpy="0 0 0" />
+      <mass
+        value="0.114142227663803" />
+      <inertia
+        ixx="0.000170720888052051"
+        ixy="1.76401935032477E-10"
+        ixz="-1.84330105407914E-10"
+        iyy="0.000166924082943024"
+        iyz="-3.89844998497327E-05"
+        izz="0.000103620665030572" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/bot_slider_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV3_single/meshes/bot_slider_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bot_slider_r_joint"
+    type="prismatic">
+    <origin
+      xyz="0.23189 0.178 -0.26543"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bot_slider_r" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.1"
+      upper="0.1"
+      effort="100"
+      velocity="1" />
+  </joint>
+
+  <link name="imu">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0"/>
+    </inertial>
+  </link>
+  <joint name="slider_to_imu" type="fixed">
+    <origin xyz="0.0 0.0 0.0"/>
+    <parent link="bot_slider_l"/>
+    <child link="imu"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+  <gazebo reference="imu">
+    <sensor name="cart_imu_sensor" type="imu">
+      <always_on>1</always_on>
+      <update_rate>10.0</update_rate>
+    </sensor>
+  </gazebo>
+
+  <!-- ROS2 control part-->
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    <joint name="bot_slider_l_joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <joint name="bot_slider_r_joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+    <sensor name="cart_imu_sensor">
+      <state_interface name="orientation.x"/>
+      <state_interface name="orientation.y"/>
+      <state_interface name="orientation.z"/>
+      <state_interface name="orientation.w"/>
+      <state_interface name="angular_velocity.x"/>
+      <state_interface name="angular_velocity.y"/>
+      <state_interface name="angular_velocity.z"/>
+      <state_interface name="linear_acceleration.x"/>
+      <state_interface name="linear_acceleration.y"/>
+      <state_interface name="linear_acceleration.z"/>
+    </sensor>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find my_agv2)/config/agv_controller_velocity.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+
+
+</robot>

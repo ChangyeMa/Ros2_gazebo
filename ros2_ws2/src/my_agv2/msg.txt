@@ -1,0 +1,12 @@
+Control messages in terminal example:
+
+1. Velocity controller/JointGroupController:
+msg type:
+~/commands (input topic) [std_msgs::msg::Float64MultiArray]
+Where the dimension for the structure depends on interface dimension:
+
+example: This command publish a value for the velocity of a defined joint:
+
+ros2 topic pub /velocity_controller/commands std_msgs/msg/Float64MultiArray '{layout: {dim: [{label: "row", size: 1, stride: 1}], data_offset: 0}, data: [1.0]}'
+
+# if with n joints then should change the size to n, and put n elements in the data:[] array

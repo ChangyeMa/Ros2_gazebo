@@ -1,0 +1,143 @@
+[0.207s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'agv_control_pkg', '--symlink-install']
+[0.208s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['agv_control_pkg'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7093b9491ae0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7093b940f2e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7093b940f2e0>>, mixin_verb=('build',))
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.490s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.490s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/changye/ros2_ws2'
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.491s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extension 'ignore'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extension 'ignore_ament_install'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extensions ['colcon_pkg']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extension 'colcon_pkg'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extensions ['colcon_meta']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extension 'colcon_meta'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extensions ['ros']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/agv_control_pkg) by extension 'ros'
+[0.506s] DEBUG:colcon.colcon_core.package_identification:Package 'src/agv_control_pkg' with type 'ros.ament_python' and name 'agv_control_pkg'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extensions ['ignore', 'ignore_ament_install']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extension 'ignore'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extension 'ignore_ament_install'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extensions ['colcon_pkg']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extension 'colcon_pkg'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extensions ['colcon_meta']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extension 'colcon_meta'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extensions ['ros']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_agv2) by extension 'ros'
+[0.508s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_agv2' with type 'ros.ament_cmake' and name 'my_agv2'
+[0.508s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.508s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.508s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.508s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.508s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.545s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'my_agv2' in 'src/my_agv2'
+[0.545s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.545s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.560s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/changye/ROS2_learning/ros2_ws/install
+[0.573s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 345 installed packages in /home/changye/ros2_humble/install
+[0.577s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 224 installed packages in /opt/ros/humble
+[0.588s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'cmake_args' from command line to 'None'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'cmake_target' from command line to 'None'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.662s] Level 5:colcon.colcon_core.verb:set package 'agv_control_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.662s] DEBUG:colcon.colcon_core.verb:Building package 'agv_control_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/changye/ros2_ws2/build/agv_control_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/changye/ros2_ws2/install/agv_control_pkg', 'merge_install': False, 'path': '/home/changye/ros2_ws2/src/agv_control_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.662s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.664s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.664s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/changye/ros2_ws2/src/agv_control_pkg' with build type 'ament_python'
+[0.664s] Level 1:colcon.colcon_core.shell:create_environment_hook('agv_control_pkg', 'ament_prefix_path')
+[0.671s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/hook/ament_prefix_path.ps1'
+[0.672s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/hook/ament_prefix_path.dsv'
+[0.673s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/hook/ament_prefix_path.sh'
+[0.674s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.674s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.208s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/changye/ros2_ws2/src/agv_control_pkg'
+[1.208s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.208s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.933s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/changye/ros2_ws2/build/agv_control_pkg': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws2/build/agv_control_pkg/build --no-deps symlink_data
+[2.806s] Level 1:colcon.colcon_core.shell:create_environment_hook('agv_control_pkg', 'pythonpath_develop')
+[2.806s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/changye/ros2_ws2/build/agv_control_pkg/share/agv_control_pkg/hook/pythonpath_develop.ps1'
+[2.807s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/changye/ros2_ws2/build/agv_control_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws2/build/agv_control_pkg/prefix_override:/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws2/build/agv_control_pkg/build --no-deps symlink_data
+[2.807s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/changye/ros2_ws2/build/agv_control_pkg/share/agv_control_pkg/hook/pythonpath_develop.dsv'
+[2.807s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/changye/ros2_ws2/build/agv_control_pkg/share/agv_control_pkg/hook/pythonpath_develop.sh'
+[2.813s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg' for CMake module files
+[2.813s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg' for CMake config files
+[2.814s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg/lib'
+[2.814s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg/bin'
+[2.814s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg/lib/pkgconfig/agv_control_pkg.pc'
+[2.814s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg/lib/python3.10/site-packages'
+[2.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('agv_control_pkg', 'pythonpath')
+[2.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/hook/pythonpath.ps1'
+[2.814s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/hook/pythonpath.dsv'
+[2.815s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/hook/pythonpath.sh'
+[2.815s] Level 1:colcon.colcon_core.environment:checking '/home/changye/ros2_ws2/install/agv_control_pkg/bin'
+[2.815s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(agv_control_pkg)
+[2.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/package.ps1'
+[2.816s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/package.dsv'
+[2.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/package.sh'
+[2.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/package.bash'
+[2.818s] INFO:colcon.colcon_core.shell:Creating package script '/home/changye/ros2_ws2/install/agv_control_pkg/share/agv_control_pkg/package.zsh'
+[2.818s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/changye/ros2_ws2/install/agv_control_pkg/share/colcon-core/packages/agv_control_pkg)
+[2.818s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.819s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.819s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.819s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.829s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.829s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.829s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.843s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.844s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/changye/ros2_ws2/install/local_setup.ps1'
+[2.844s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/changye/ros2_ws2/install/_local_setup_util_ps1.py'
+[2.846s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/changye/ros2_ws2/install/setup.ps1'
+[2.856s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/changye/ros2_ws2/install/local_setup.sh'
+[2.856s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/changye/ros2_ws2/install/_local_setup_util_sh.py'
+[2.857s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/changye/ros2_ws2/install/setup.sh'
+[2.867s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/changye/ros2_ws2/install/local_setup.bash'
+[2.868s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/changye/ros2_ws2/install/setup.bash'
+[2.879s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/changye/ros2_ws2/install/local_setup.zsh'
+[2.879s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/changye/ros2_ws2/install/setup.zsh'
