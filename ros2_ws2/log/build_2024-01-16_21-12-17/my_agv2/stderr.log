@@ -1,7 +1,0 @@
-[01m[K/home/changye/ros2_ws2/src/my_agv2/examples/agv_lift.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
-[01m[K/home/changye/ros2_ws2/src/my_agv2/examples/agv_lift.cpp:110:4:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K/[m[K’ token
-  110 |   *[01;31m[K/[m[K
-      |    [01;31m[K^[m[K
-gmake[2]: *** [CMakeFiles/agv_lift.dir/build.make:76: CMakeFiles/agv_lift.dir/examples/agv_lift.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/agv_lift.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

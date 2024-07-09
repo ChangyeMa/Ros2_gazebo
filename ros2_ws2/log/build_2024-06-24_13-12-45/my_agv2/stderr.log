@@ -1,4 +1,0 @@
-[0mCMake Error: Cannot determine link language for target "agv_controller".[0m
-[0mCMake Error: CMake can not determine linker language for target: agv_controller[0m
-[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
-gmake: *** [Makefile:390: cmake_check_build_system] Error 1

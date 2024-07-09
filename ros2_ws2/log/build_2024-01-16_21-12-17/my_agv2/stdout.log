@@ -1,5 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target agv_lift[0m
-[ 37%] Built target example_position
-[ 50%] Built target agv_unload
-[ 75%] Built target example_velocity
-[ 87%] [32mBuilding CXX object CMakeFiles/agv_lift.dir/examples/agv_lift.cpp.o[0m
