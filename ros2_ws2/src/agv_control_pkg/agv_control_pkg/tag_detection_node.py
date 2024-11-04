@@ -33,6 +33,7 @@ class TagDetectionNode(Node): # MODIFY NAME
         self.img1_= msg
         # self.get_logger().info("image received")
 
+
     def detection_loop(self):
         # convert the image_raw msg to opencv image
         bridge = CvBridge()
@@ -71,9 +72,18 @@ class TagDetectionNode(Node): # MODIFY NAME
                 tf = detections[0].tag_family
                 id = detections[0].tag_id
                 center = detections[0].center
+                H = detections[0].homography
+
+                # the camera instrinsic matrix is predefined for camera1 in gazebo
+                K = np.array([[585.75, 0, 320.5], [0, 585.75, 240.5], [0, 0, 1]])
+
                 print(f"Tag Family of first detection: {tf}")
                 print(f"Tag ID of first detection: {id}")
                 print(f"Center of first detection: {center}")
+
+                # convert the 2D image coordinates to 3D world coordinates
+                P_center_3D_world = ImageToWorld(H, K, center)
+                print(f"3D coordinates of the center of the tag in the world frame: {P_center_3D_world}")
 
                 # draw the center and the id of the tag
                 img=cv2.circle(img, (int(center[0]), int(center[1])), 5, (0, 0, 255), -1)
@@ -112,7 +122,48 @@ class TagDetectionNode(Node): # MODIFY NAME
         detected_img= bridge.cv2_to_imgmsg(img, encoding='bgr8')
         self.tag_detection_publisher_.publish(detected_img)
 
+def ImageToWorld(H,K,center):
+        # calculate rotation and translation vectors
+        retval, rotations, translations, normals = cv2.decomposeHomographyMat(H, K)
 
+        R = rotations[0]  # Example: taking the first solution
+        t = translations[0]  # Example: taking the corresponding translation
+
+        # print the rotation and translation vectors
+        # print(f"Rotation Matrix: {R}")
+        # print(f"Translation Vector: {t}")
+
+        # calculate 3D coordinates of the point in the camera frame
+        x_center = center[0]
+        y_center = center[1]
+        P_center_2D = np.array([[x_center], [y_center],[1]])
+        # print(f"2D coordinates of the center of the tag: {P_center_2D}")
+        P_center_3D = R@P_center_2D + t
+        # print(f"3D coordinates of the center of the tag: {P_center_3D}")
+
+        # calculate transformation matrix from camera frame to world frame
+
+        # Example: Camera pose in world frame
+        R_world_to_camera = np.eye(3)  # Identity matrix if the camera is aligned with the world
+        t_world_to_camera = np.array([0, 0, 0])  # Assume the camera is at the origin in the world frame
+
+        # Compute the transformation from camera to world
+        R_camera_to_world = R_world_to_camera.T # Transpose of rotation to invert it
+        t_camera_to_world = -R_camera_to_world@t_world_to_camera # Adjusted translation
+
+        # Construct the camera-to-world extrinsic matrix
+        extrinsic_camera_to_world = np.eye(4)
+        extrinsic_camera_to_world[:3, :3] = R_camera_to_world 
+        extrinsic_camera_to_world[:3, 3] = t_camera_to_world
+        # print(f"Extrinsic matrix from camera to world: {extrinsic_camera_to_world}")
+
+        # Calculate the coordinates of the center of the tag in the world frame
+        P_center_3D_homogeneous = np.append(P_center_3D, 1)
+        P_center_3D_world = extrinsic_camera_to_world@P_center_3D_homogeneous
+
+        # print(f"3D coordinates of the center of the tag in the world frame: {P_center_3D_world}")
+        return P_center_3D_world
+    
 def main(args=None):
     rclpy.init(args=args)
     node = TagDetectionNode() # MODIFY NAME

@@ -34,7 +34,7 @@ def generate_launch_description():
         get_package_share_directory('my_agv2'))
 
     # =========== add predefined world file ===========
-    world_file_path = "world/test_1.world"
+    world_file_path = "world/test.world"
     world_path = os.path.join(pkg_path, world_file_path)
 
     gazebo = ExecuteProcess(

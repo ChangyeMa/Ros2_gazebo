@@ -19,16 +19,23 @@ class AgvControllerNode(Node): # MODIFY NAME
         self.get_logger().info("Agv controller has started.")
 
         # define control mode
-        self.sharp_turn_ = True
+        # self.sharp_turn_ = True
+        self.sharp_turn_ = False
 
         # ========= multiple points =========
         self.target_array_ = np.array([[0.0, -6.0],
                                        [0.0, -3.0],
-                                       [0.0, 0.0],
+                                       [0.0, -1.0],
+                                       [0.25, -0.25],
+                                       [1.0, 0.0],
                                        [3.0, 0.0],
-                                       [6.0, 0.0],
+                                       [5.0, 0.0],
+                                       [5.75, 0.25],
+                                       [6.0, 1.0],
                                        [6.0, 3.0],
-                                       [6.0, 6.0],
+                                       [6.0, 5.0],
+                                       [5.75, 5.75],
+                                       [5.0, 6.0],
                                        [3.0, 6.0],
                                        [0.0, 6.0],
                                        [-3.0, 6.0],
@@ -117,22 +124,35 @@ class AgvControllerNode(Node): # MODIFY NAME
         d_y=self.target_y_ -self.pose_.y
         distance=math.sqrt(d_x**2+d_y**2)
 
+        # calculate the angle to the target
+        goal_angle=math.atan2(d_y, d_x)
+        diff_angle=goal_angle-self.pose_.theta
+        if diff_angle>math.pi:
+            diff_angle -= 2*math.pi
+        elif diff_angle<-math.pi:
+            diff_angle += 2*math.pi
+
+        # caluculate the PID terms
+        P_term = self.kp_*diff_angle
+        I_term = self.ki_*self.error_sum_
+        D_term = self.kd_*(diff_angle - self.error_prev_)/self.control_frequency_
+
         # create the control message and calculate the velocities
         msg=Twist()
-        if distance>0.4:
+        if distance>0.5:
 
-            # calculate the angle to the target
-            goal_angle=math.atan2(d_y, d_x)
-            diff_angle=goal_angle-self.pose_.theta
-            if diff_angle>math.pi:
-                diff_angle -= 2*math.pi
-            elif diff_angle<-math.pi:
-                diff_angle += 2*math.pi
+            # # calculate the angle to the target
+            # goal_angle=math.atan2(d_y, d_x)
+            # diff_angle=goal_angle-self.pose_.theta
+            # if diff_angle>math.pi:
+            #     diff_angle -= 2*math.pi
+            # elif diff_angle<-math.pi:
+            #     diff_angle += 2*math.pi
 
-            # caluculate the PID terms
-            P_term = self.kp_*diff_angle
-            I_term = self.ki_*self.error_sum_
-            D_term = self.kd_*(diff_angle - self.error_prev_)/self.control_frequency_
+            # # caluculate the PID terms
+            # P_term = self.kp_*diff_angle
+            # I_term = self.ki_*self.error_sum_
+            # D_term = self.kd_*(diff_angle - self.error_prev_)/self.control_frequency_
 
             # calculate control output
             if self.sharp_turn_ & (abs(diff_angle)>0.005):
@@ -140,7 +160,7 @@ class AgvControllerNode(Node): # MODIFY NAME
                 msg.angular.z = P_term + I_term+ D_term
             else:
                 msg.linear.x= 0.3
-                # msg.linear.x=0.2*distance                 # with only P control
+                # msg.linear.x=0.2*abs(distance)                 # with only P control
                 msg.angular.z = P_term + I_term + D_term    # with PID control
 
             # store the error for the next iteration
@@ -156,15 +176,29 @@ class AgvControllerNode(Node): # MODIFY NAME
 
         else:
             # tolerance reached stopped the robot
-            msg.linear.x= 0.0
-            msg.angular.z= 0.0
+            # msg.linear.x= 0.3
+            # msg.angular.z= 0.0
 
             # once an intermediate target is reached, set the sharp_turn_ flag to True
-            self.sharp_turn_ = True
+            # self.sharp_turn_ = True
 
             # move to the next target in the array if not reaching the end
             if self.i < len(self.target_array_)-1:
+                dist_to_next = math.sqrt((self.target_array_[self.i+1][0] - self.target_array_[self.i][0])**2 +
+                                            (self.target_array_[self.i+1][1] - self.target_array_[self.i][1])**2)
+                
+                # slow down when approaching a corner and keep constant speed on straight lines
+                if dist_to_next > 1:
+                    msg.linear.x = 0.3
+                else:
+                    msg.linear.x = 0.1 
+                msg.angular.z = P_term + I_term + D_term    # with PID control
+
+                # move to the next target
                 self.i += 1
+            else:
+                msg.linear.x = 0.0
+                msg.angular.z = 0.0
 
         self.cmd_vel_publisher_.publish(msg)
 
