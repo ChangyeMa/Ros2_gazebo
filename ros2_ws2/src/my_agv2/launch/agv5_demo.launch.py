@@ -62,7 +62,7 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'cart',
                                     '-x', '0.0',
-                                    '-y', '-6.8',
+                                    '-y', '-6.9',
                                     '-z', '0.1',
                                     '-R', '1.57',
                                     '-P', '0',

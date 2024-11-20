@@ -61,7 +61,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /camera1/image_raw
+        Value: /camera_2/image_raw
       Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
@@ -75,12 +75,12 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /camera2/image_raw
+        Value: /camera_2/image_raw
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: map
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -161,5 +161,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 151
-  Y: 64
+  X: 649
+  Y: 128

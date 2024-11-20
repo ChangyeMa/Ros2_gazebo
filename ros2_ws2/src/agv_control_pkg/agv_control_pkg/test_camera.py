@@ -4,15 +4,12 @@ import apriltag
 import threading
 
 # ============== detect tag in a video stream ==============
-# cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(2)
 
 # # reduce the resolution of the video stream
 # cap.set(3, 160)
 # cap.set(4, 120)
 
-# cap2= cv2.VideoCapture(2)
-# cap2.set(3, 160)
-# cap2.set(4, 120)
 
 
 # create class 
@@ -45,10 +42,10 @@ def camPreview(previewName, camID):
     cv2.destroyWindow(previewName)
 
 # Create two threads as follows
-thread1 = camThread("Camera 1", 0)
+# thread1 = camThread("Camera 1", 0)
 thread2 = camThread("Camera 2", 2)
-thread1.start()
-# thread2.start()
+# thread1.start()
+thread2.start()
 
 
 

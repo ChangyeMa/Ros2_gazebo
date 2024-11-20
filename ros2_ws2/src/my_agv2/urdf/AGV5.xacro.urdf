@@ -2042,7 +2042,7 @@
 <!-- Plugins and controllers-->
   <!-- camera -->
   <gazebo reference="camera_1_link">
-    <sensor type="camera" name="camera1">
+    <sensor type="camera" name="camera_1">
       <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
       <visualize>true</visualize>
       <update_rate>30.0</update_rate>
@@ -2061,7 +2061,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>agv/camera1</cameraName>
+        <cameraName>/camera_1</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_1_link</frameName>
@@ -2076,7 +2076,7 @@
   </gazebo>
 
   <gazebo reference="camera_2_link">
-    <sensor type="camera" name="camera2">
+    <sensor type="camera" name="camera_2">
       <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
       <visualize>true</visualize>
       <update_rate>30.0</update_rate>
@@ -2103,7 +2103,7 @@
       <plugin name="camera_controller2" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>agv/camera2</cameraName>
+        <cameraName>/camera_2</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_2_link</frameName>

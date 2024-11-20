@@ -23,6 +23,8 @@ setup(
             'agv_controller= agv_control_pkg.agv_controller:main',
             'tag_detection= agv_control_pkg.tag_detection_node:main',
             'line_detection= agv_control_pkg.line_detection_node:main',
+            'tf_broadcaster= agv_control_pkg.tf_broadcaster_node:main',
+            'tag_detection_old= agv_control_pkg.tag_detection_node_old:main',
         ],
     },
 )
