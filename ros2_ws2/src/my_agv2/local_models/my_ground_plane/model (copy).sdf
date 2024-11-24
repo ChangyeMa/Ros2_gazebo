@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+	<model name="ground_plane">
+	    <static>true</static>
+	    <link name="link">
+		<collision name="collision">
+			<geometry>
+			    <plane>
+			    <normal>0 0 0</normal>
+			    <size>40 40</size>
+			    </plane>
+			</geometry>
+			</collision>
+		<visual name="visual">
+			<cast_shadows>false</cast_shadows>
+			<geometry>
+			    <plane>
+			    <normal>0 0 0</normal>
+			    <size>10 10</size>
+			    </plane>
+			</geometry>
+			<material>
+			    <script>
+				<uri>model://Ground/materials/scripts</uri>
+				<uri>model://Ground/materials/textures</uri>
+				<name>Ground/Diffuse</name>
+			    </script>
+			</material>
+		</visual>
+	    </link>
+	</model>
+</sdf>
