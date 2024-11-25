@@ -1,0 +1,42 @@
+[2.330s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/ros2_controllers_test_nodes': PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../../build/ros2_controllers_test_nodes build --build-base /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build install --record /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/install.log --single-version-externally-managed install_data
+[3.085s] running egg_info
+[3.086s] creating ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info
+[3.086s] writing ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/PKG-INFO
+[3.086s] writing dependency_links to ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/dependency_links.txt
+[3.086s] writing entry points to ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/entry_points.txt
+[3.086s] writing requirements to ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/requires.txt
+[3.086s] writing top-level names to ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/top_level.txt
+[3.087s] writing manifest file '../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[3.089s] reading manifest file '../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[3.090s] writing manifest file '../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info/SOURCES.txt'
+[3.090s] running build
+[3.090s] running build_py
+[3.090s] creating /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build
+[3.090s] creating /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib
+[3.090s] creating /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes
+[3.090s] copying ros2_controllers_test_nodes/__init__.py -> /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes
+[3.091s] copying ros2_controllers_test_nodes/publisher_forward_position_controller.py -> /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes
+[3.091s] copying ros2_controllers_test_nodes/publisher_joint_trajectory_controller.py -> /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes
+[3.091s] running install
+[3.091s] running install_lib
+[3.092s] creating /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes
+[3.092s] copying /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes/__init__.py -> /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes
+[3.092s] copying /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes/publisher_forward_position_controller.py -> /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes
+[3.092s] copying /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build/lib/ros2_controllers_test_nodes/publisher_joint_trajectory_controller.py -> /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes
+[3.095s] byte-compiling /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes/__init__.py to __init__.cpython-310.pyc
+[3.096s] byte-compiling /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes/publisher_forward_position_controller.py to publisher_forward_position_controller.cpython-310.pyc
+[3.096s] byte-compiling /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes/publisher_joint_trajectory_controller.py to publisher_joint_trajectory_controller.cpython-310.pyc
+[3.098s] running install_data
+[3.098s] creating /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/share/ament_index
+[3.098s] creating /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/share/ament_index/resource_index
+[3.098s] creating /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/share/ament_index/resource_index/packages
+[3.098s] copying resource/ros2_controllers_test_nodes -> /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/share/ament_index/resource_index/packages
+[3.098s] copying package.xml -> /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/share/ros2_controllers_test_nodes
+[3.099s] creating /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/share/ros2_controllers_test_nodes/configs
+[3.099s] running install_egg_info
+[3.103s] Copying ../../../../build/ros2_controllers_test_nodes/ros2_controllers_test_nodes.egg-info to /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages/ros2_controllers_test_nodes-2.30.0-py3.10.egg-info
+[3.104s] running install_scripts
+[3.157s] Installing publisher_forward_position_controller script to /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/ros2_controllers_test_nodes
+[3.158s] Installing publisher_joint_trajectory_controller script to /home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/ros2_controllers_test_nodes
+[3.158s] writing list of installed files to '/home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/install.log'
+[3.195s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/ros2_controllers_test_nodes' returned '0': PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../../../build/ros2_controllers_test_nodes build --build-base /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/build install --record /home/changye/Ros2_gazebo/ros2_ws2/build/ros2_controllers_test_nodes/install.log --single-version-externally-managed install_data

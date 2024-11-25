@@ -98,41 +98,37 @@ def generate_launch_description():
                         arguments=['-d', os.path.join(pkg_path, 'rviz', 'show_camera.rviz')],
                         output='screen')
 
-    # return LaunchDescription([
-    #     # RegisterEventHandler(
-    #     #     event_handler=OnProcessExit(
-    #     #         target_action=spawn_entity,
-    #     #         on_exit=[load_joint_state_broadcaster],
-    #     #     )
-    #     # ),
-    #     # RegisterEventHandler(
-    #     #     event_handler=OnProcessExit(
-    #     #         target_action=load_joint_state_broadcaster,
-    #     #         on_exit=[load_joint_trajectory_controller],
-    #     #     )
-    #     # ),
-    #     # RegisterEventHandler(
-    #     #     event_handler=OnProcessExit(
-    #     #         target_action=load_joint_trajectory_controller,
-    #     #         on_exit=[load_imu_sensor_broadcaster],
-    #     #     )
-    #     # ),
-    #     # RegisterEventHandler(
-    #     #     event_handler=OnProcessExit(
-    #     #         target_action=tag_detection_node,
-    #     #         on_exit=[spawn_entity],
-    #     #     )
-    #     # ),
-    #     gazebo,
-    #     node_robot_state_publisher,
-    #     spawn_entity,
-    #     tag_detection_node,
-    #     load_rviz,
-    # ])
-    ld.add_action(gazebo)
-    ld.add_action(node_robot_state_publisher)
-    ld.add_action(spawn_entity)
-    ld.add_action(tag_detection_node)
-    ld.add_action(load_rviz)
+    return LaunchDescription([
+        # RegisterEventHandler(
+        #     event_handler=OnProcessExit(
+        #         target_action=spawn_entity,
+        #         on_exit=[load_joint_state_broadcaster],
+        #     )
+        # ),
+        # RegisterEventHandler(
+        #     event_handler=OnProcessExit(
+        #         target_action=load_joint_state_broadcaster,
+        #         on_exit=[load_joint_trajectory_controller],
+        #     )
+        # ),
+        # RegisterEventHandler(
+        #     event_handler=OnProcessExit(
+        #         target_action=load_joint_trajectory_controller,
+        #         on_exit=[load_imu_sensor_broadcaster],
+        #     )
+        # ),
+
+        gazebo,
+        node_robot_state_publisher,
+        spawn_entity,
+        # tag_detection_node,
+        load_rviz,
+    ])
+
+    # ld.add_action(gazebo)
+    # ld.add_action(node_robot_state_publisher)
+    # ld.add_action(spawn_entity)
+    # ld.add_action(tag_detection_node)
+    # ld.add_action(load_rviz)
 
     return ld

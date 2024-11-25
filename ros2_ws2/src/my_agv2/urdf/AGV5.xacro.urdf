@@ -2142,7 +2142,6 @@
       <plugin>gazebo_ros2_control/GazeboSystem</plugin>
     </hardware>
 
-
     <!-- For each moving joint define a command interface and state interfaces based on the controllers-->
 
     <!-- For lifting and tilting: bot sliders l and r-->
@@ -2206,7 +2205,7 @@
   <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
       <parameters>$(find my_agv2)/config/agv5_controller.yaml</parameters>
+      <!-- <parameters>$(find my_agv2)/config/agv_controller_trac_pos.yaml</parameters> -->
     </plugin>
   </gazebo>
-
 </robot>
