@@ -1,0 +1,67 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS Third_Party_Device
+
+
+BO_ 1712 MSGID_0X6B0: 8 BMS
+ SG_ Pack_Current : 7|16@0- (0.1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ Pack_Inst_Voltage : 23|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
+ SG_ Pack_SOC : 39|8@0+ (0.5,0) [0|0] "Percent"  Third_Party_Device
+ SG_ High_Temperature : 47|16@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
+ SG_ Rolling_Counter : 63|8@0+ (1,1720) [0|0] "Num"  Third_Party_Device
+
+BO_ 1713 MSGID_0X6B1: 8 BMS
+ SG_ Pack_DCL : 7|16@0+ (1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ Pack_CCL : 23|16@0+ (1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ Low_Opencell_Voltage : 39|8@0+ (0.0001,0) [0|0] "Volts"  Third_Party_Device
+ SG_ High_Opencell_Voltage : 47|8@0+ (0.0001,0) [0|0] "Volts"  Third_Party_Device
+ SG_ J1772_Plug_State : 55|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Rolling_Counter : 63|8@0+ (1,1721) [0|0] "Num"  Third_Party_Device
+
+
+
+
+CM_ BO_ 1712 "This ID Transmits at 104 ms.";
+CM_ BO_ 1713 "This ID Transmits at 104 ms.";
+CM_ BO_ 2550589428 "This ID Transmits at 808 ms.";
+CM_ BO_ 2550588916 "This ID Transmits at 808 ms.";
+CM_ BO_ 2550589940 "This ID Transmits at 808 ms.";
+BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
+BA_DEF_DEF_  "SystemSignalLongSymbol" "";
+BA_ "SystemSignalLongSymbol" SG_ 2550589428 DTC_P0A08_Charger_Safety_Relay_F "DTC_P0A08_Charger_Safety_Relay_Fault";
+BA_ "SystemSignalLongSymbol" SG_ 2550588916 DTC_P0A08_Charger_Safety_Re_0000 "DTC_P0A08_Charger_Safety_Relay_Fault";
+BA_ "SystemSignalLongSymbol" SG_ 2550589940 DTC_P0A08_Charger_Safety_Re_0001 "DTC_P0A08_Charger_Safety_Relay_Fault";
+
