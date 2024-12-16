@@ -838,8 +838,11 @@
       link="bot_slider_l" />
     <axis
       xyz="0 0 1" />
+
+    <!-- to make the joint move: lower:=-0.07 upper:=0.04 -->
+    <!-- to make the joint static: lower:=-0.07 upper:=-0.07 -->
     <limit
-      lower="-0.07"
+      lower="0.04"
       upper="0.04"
       effort="1000000"
       velocity="10" />
@@ -1642,9 +1645,12 @@
       link="TM_slider" />
     <axis
       xyz="-1 0 0" />
+    
+    <!--Make the slider moving: lower:= 0 upper:= 0.41-->
+    <!--Make the slider static: lower: 0 upper: 0 -->
     <limit
       lower="0"
-      upper="0.41"
+      upper="0"
       effort="10"
       velocity="0.5" />
   </joint>
@@ -1700,9 +1706,12 @@
       link="TM_loader" />
     <axis
       xyz="0 0 -1" />
+
+    <!--Make the slider moving: lower:= -1.5 upper:= 0.3-->
+    <!--Make the slider static: lower: 0.0 upper: 0.0 -->
     <limit
-      lower="-1.5"
-      upper="0.3"
+      lower="0.0"
+      upper="0.0"
       effort="5"
       velocity="0.5" />
   </joint>
@@ -1758,9 +1767,12 @@
       link="bot_slider_r" />
     <axis
       xyz="0 0 -1" />
+
+    <!--Make the slider moving: lower:= -0.05 upper:= 0.088-->
+    <!--Make the slider static: lower: -0.05 upper: -0.05 -->
     <limit
       lower="-0.05"
-      upper="0.088"
+      upper="-0.05"
       effort="10000000"
       velocity="10" />
     <dynamics damping="0.01" friction="0.01"/>

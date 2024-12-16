@@ -19,27 +19,33 @@ class AgvControllerNode(Node): # MODIFY NAME
         self.get_logger().info("Agv controller has started.")
 
         # define control mode
-        # self.sharp_turn_ = True
-        self.sharp_turn_ = False
+        self.sharp_turn_ = True
+        # self.sharp_turn_ = False
 
         # ========= multiple points =========
-        self.target_array_ = np.array([[0.0, -6.0],
-                                       [0.0, -3.0],
-                                       [0.0, -1.0],
-                                       [0.25, -0.25],
-                                       [1.0, 0.0],
-                                       [3.0, 0.0],
-                                       [5.0, 0.0],
-                                       [5.75, 0.25],
-                                       [6.0, 1.0],
-                                       [6.0, 3.0],
-                                       [6.0, 5.0],
-                                       [5.75, 5.75],
-                                       [5.0, 6.0],
-                                       [3.0, 6.0],
-                                       [0.0, 6.0],
-                                       [-3.0, 6.0],
-                                       [-6.0, 6.0]])
+        # self.target_array_ = np.array([[0.0, -6.0],
+        #                                [0.0, -3.0],
+        #                                [0.0, -1.0],
+        #                                [0.25, -0.25],
+        #                                [1.0, 0.0],
+        #                                [3.0, 0.0],
+        #                                [5.0, 0.0],
+        #                                [5.75, 0.25],
+        #                                [6.0, 1.0],
+        #                                [6.0, 3.0],
+        #                                [6.0, 5.0],
+        #                                [5.75, 5.75],
+        #                                [5.0, 6.0],
+        #                                [3.0, 6.0],
+        #                                [0.0, 6.0],
+        #                                [-3.0, 6.0],
+        #                                [-6.0, 6.0]])
+
+        self.target_array_ = np.array([[0.0, -6.0, 1.57],
+                                        [0.0, -3.0, 0.0],
+                                        [3.0, -3.0, -1.57],
+                                        [3.0, -6.0, 3.14],
+                                       [0.0, -6.0, 1.57]])
         reach = False
         self.i = 0
         # self.target_x_ = self.target_array_[i][0]
@@ -58,11 +64,22 @@ class AgvControllerNode(Node): # MODIFY NAME
         # self.get_logger().info("the destination is reached.")
 
         # ========= PID controller parameters =========
-        self.kp_ = 0.3
+        # self.kp_ = 0.3
+        # self.ki_ = 0.001
+        # self.kd_ = 0.05
+
+        self.kp_ = 0.2
         self.ki_ = 0.001
-        self.kd_ = 0.05
-        self.error_sum_ = 0.0
-        self.error_prev_ = 0.0
+        self.kd_ = 0.01
+
+        self.linear_velocity_ = 0.15
+
+        # ========= PID controller variables =========
+        self.error_sum_angle = 0.0
+        self.error_prev_angle = 0.0
+
+        self.error_sum_linear = 0.0
+        self.error_prev_linear = 0.0
 
     def callback_agv_odom(self, msg):
         self.pose_.x = msg.pose.pose.position.x
@@ -77,13 +94,14 @@ class AgvControllerNode(Node): # MODIFY NAME
 
         # self.pose_.theta = math.acos(msg.pose.pose.orientation.w) * 2.0
         self.pose_.theta = y + 1.57
-        # if msg.pose.pose.orientation.z < 0:
-        #     self.pose_.theta = -self.pose_.theta
-        # else:
-        #     self.pose_.theta = self.pose_.theta
 
-        self.get_logger().info("Agv pose: x=%f, y=%f, theta=%f" % 
-                (self.pose_.x, self.pose_.y, math.degrees(self.pose_.theta)))
+        if self.pose_.theta > math.pi:
+            self.pose_.theta -= 2*math.pi
+        elif self.pose_.theta < -math.pi:
+            self.pose_.theta += 2*math.pi
+
+        # self.get_logger().info("Agv pose: x=%f, y=%f, theta=%f" % 
+        #         (self.pose_.x, self.pose_.y, self.pose_.theta))
         
     def quaternion_to_euler(self, x, y, z, w):
         ysqr = y * y
@@ -103,6 +121,12 @@ class AgvControllerNode(Node): # MODIFY NAME
 
         return X, Y, Z
 
+    def PID_controller(self, error, error_sum, error_prev, kp, ki, kd):
+        P_term = kp*error
+        I_term = ki*error_sum
+        D_term = kd*(error - error_prev)/self.control_frequency_
+        return P_term + I_term + D_term
+
     def control_loop(self):
         if self.pose_ == None:
             self.get_logger().info("Error! Pose not available.")
@@ -111,77 +135,49 @@ class AgvControllerNode(Node): # MODIFY NAME
         # publish the current target
         self.current_target_=Pose()
 
-        self.target_x_ = self.target_array_[self.i][0]
-        self.target_y_ = self.target_array_[self.i][1]
-
-        self.current_target_.x=self.target_x_
-        self.current_target_.y=self.target_y_
-        self.current_target_.theta=0.0
+        self.current_target_.x = self.target_array_[self.i][0]
+        self.current_target_.y = self.target_array_[self.i][1]
+        self.current_target_.theta = self.target_array_[self.i][2]
         self.current_target_publisher_.publish(self.current_target_)
+        self.get_logger().info("Target %d: x=%f, y=%f, theta=%f" % (self.i, self.target_array_[self.i][0], 
+                                                          self.target_array_[self.i][1], self.target_array_[self.i][2]))
+
+        # Xr-X
+        d_x=self.current_target_.x -self.pose_.x
+        d_y=self.current_target_.y -self.pose_.y
 
         # calculate the distance to the target
-        d_x=self.target_x_ -self.pose_.x
-        d_y=self.target_y_ -self.pose_.y
         distance=math.sqrt(d_x**2+d_y**2)
 
         # calculate the angle to the target
-        goal_angle=math.atan2(d_y, d_x)
-        diff_angle=goal_angle-self.pose_.theta
-        if diff_angle>math.pi:
-            diff_angle -= 2*math.pi
-        elif diff_angle<-math.pi:
-            diff_angle += 2*math.pi
+        angle_to_target=math.atan2(d_y, d_x)
 
-        # caluculate the PID terms
-        P_term = self.kp_*diff_angle
-        I_term = self.ki_*self.error_sum_
-        D_term = self.kd_*(diff_angle - self.error_prev_)/self.control_frequency_
+        error_w = angle_to_target-self.pose_.theta
+        self.get_logger().info("Angle to target: %f" % angle_to_target)
+        self.get_logger().info("Pose theta: %f" % self.pose_.theta)
+        self.get_logger().info("Error_w: %f" % error_w)
+
+        if error_w >math.pi:
+            error_w -= 2*math.pi
+        elif error_w <-math.pi:
+            error_w += 2*math.pi
 
         # create the control message and calculate the velocities
         msg=Twist()
-        if distance>0.5:
 
-            # # calculate the angle to the target
-            # goal_angle=math.atan2(d_y, d_x)
-            # diff_angle=goal_angle-self.pose_.theta
-            # if diff_angle>math.pi:
-            #     diff_angle -= 2*math.pi
-            # elif diff_angle<-math.pi:
-            #     diff_angle += 2*math.pi
-
-            # # caluculate the PID terms
-            # P_term = self.kp_*diff_angle
-            # I_term = self.ki_*self.error_sum_
-            # D_term = self.kd_*(diff_angle - self.error_prev_)/self.control_frequency_
-
-            # calculate control output
-            if self.sharp_turn_ & (abs(diff_angle)>0.005):
+        if distance > 0.3:
+            # in sharp turn mode if the angle difference is greater than 0.3 rad, do turning first without moving forward
+            if self.sharp_turn_ & (abs(error_w )>0.3):
                 msg.linear.x = 0.0
-                msg.angular.z = P_term + I_term+ D_term
             else:
-                msg.linear.x= 0.3
-                # msg.linear.x=0.2*abs(distance)                 # with only P control
-                msg.angular.z = P_term + I_term + D_term    # with PID control
+                msg.linear.x= self.linear_velocity_
+            msg.angular.z = self.PID_controller(error_w, self.error_sum_angle, self.error_prev_angle, self.kp_, self.ki_, self.kd_)    
 
-            # store the error for the next iteration
-            self.error_prev_ = diff_angle
-            self.error_sum_ += diff_angle*self.control_frequency_
-
-            # with only p control
-            # msg.angular.z=0.8*diff_angle
-
-            self.get_logger().info("Goal angle: %f, diff angle: %f" % 
-                                   (math.degrees(goal_angle), math.degrees(diff_angle)))
-            self.sharp_turn_ = False
+            # update the error for the next iteration
+            self.error_prev_angle = error_w 
+            self.error_sum_angle += error_w *self.control_frequency_
 
         else:
-            # tolerance reached stopped the robot
-            # msg.linear.x= 0.3
-            # msg.angular.z= 0.0
-
-            # once an intermediate target is reached, set the sharp_turn_ flag to True
-            # self.sharp_turn_ = True
-
             # move to the next target in the array if not reaching the end
             if self.i < len(self.target_array_)-1:
                 dist_to_next = math.sqrt((self.target_array_[self.i+1][0] - self.target_array_[self.i][0])**2 +
@@ -189,15 +185,24 @@ class AgvControllerNode(Node): # MODIFY NAME
                 
                 # slow down when approaching a corner and keep constant speed on straight lines
                 if dist_to_next > 1:
-                    msg.linear.x = 0.3
+                    msg.linear.x = self.linear_velocity_
                 else:
-                    msg.linear.x = 0.1 
-                msg.angular.z = P_term + I_term + D_term    # with PID control
+                    msg.linear.x = 0.5*self.linear_velocity_
+                msg.angular.z = self.PID_controller(error_w, self.error_sum_angle, self.error_prev_angle, self.kp_, self.ki_, self.kd_) 
 
                 # move to the next target
                 self.i += 1
             else:
-                msg.linear.x = 0.0
+                # stop the robot if reaching the last target
+                # msg.linear.x = 0.0
+                # # check orientation 
+                # error_w = self.target_array_[self.i][2] - self.pose_.theta
+                # if self.sharp_turn_ & (abs(error_w) > 0.3):
+                #     msg.angular.z = self.kp_*error_w 
+                # else:
+                #     msg.angular.z = 0.0
+                # reach = True
+                msg.linear.x = 0.0  
                 msg.angular.z = 0.0
 
         self.cmd_vel_publisher_.publish(msg)

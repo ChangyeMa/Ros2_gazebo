@@ -1,0 +1,7 @@
+failed to create symbolic link '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs/ament_cmake_python/controller_manager_msgs/controller_manager_msgs' because existing path cannot be removed: Is a directory
+gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_controller_manager_msgs.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_controller_manager_msgs] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_controller_manager_msgs.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2
+[ 12%] Built target controller_manager_msgs__rosidl_generator_c
+[ 12%] Built target controller_manager_msgs__cpp
