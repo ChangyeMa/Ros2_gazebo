@@ -11,7 +11,6 @@ from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
-
 def generate_launch_description():
     # Get the launch directory
     pkg_path = os.path.join(
@@ -83,13 +82,13 @@ def generate_launch_description():
 
     # Add the actions to the launch description
 
-    ld.add_action(aptag_detection_node)
-    ld.add_action(aptag_detection_node2)
+    # ld.add_action(aptag_detection_node)
+    # ld.add_action(aptag_detection_node2)
     ld.add_action(static_tf_broadcaster_node)
     # ld.add_action(agv_controller_node)
     ld.add_action(pose_to_marker_node)
     ld.add_action(tf_broadcaster_node)
     
-    # ld.add_action(rviz_node)
+    ld.add_action(rviz_node)
 
     return ld
