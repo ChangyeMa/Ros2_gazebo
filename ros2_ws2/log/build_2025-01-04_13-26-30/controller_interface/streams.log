@@ -1,0 +1,61 @@
+[0.020s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface -- -j12 -l12
+[0.153s] [35m[1mConsolidate compiler generated dependencies of target gmock[0m
+[0.163s] [35m[1mConsolidate compiler generated dependencies of target gmock_main[0m
+[0.164s] [ 12%] Built target gmock
+[0.173s] [ 20%] Built target gmock_main
+[0.193s] [ 25%] Built target ament_generate_version_header__controller_interface
+[0.208s] [35m[1mConsolidate compiler generated dependencies of target controller_interface[0m
+[0.212s] [35m[1mConsolidate compiler generated dependencies of target test_pose_sensor[0m
+[0.227s] [ 33%] Built target test_pose_sensor
+[0.230s] [ 50%] Built target controller_interface
+[0.276s] [35m[1mConsolidate compiler generated dependencies of target test_controller_interface[0m
+[0.291s] [ 58%] Built target test_controller_interface
+[0.293s] [35m[1mConsolidate compiler generated dependencies of target test_semantic_component_interface[0m
+[0.294s] [35m[1mConsolidate compiler generated dependencies of target test_imu_sensor[0m
+[0.295s] [35m[1mConsolidate compiler generated dependencies of target test_force_torque_sensor[0m
+[0.303s] [35m[1mConsolidate compiler generated dependencies of target test_controller_with_options[0m
+[0.305s] [35m[1mConsolidate compiler generated dependencies of target test_chainable_controller_interface[0m
+[0.307s] [ 66%] Built target test_semantic_component_interface
+[0.307s] [ 83%] Built target test_imu_sensor
+[0.307s] [ 83%] Built target test_force_torque_sensor
+[0.319s] [ 91%] Built target test_controller_with_options
+[0.320s] [100%] Built target test_chainable_controller_interface
+[0.329s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface -- -j12 -l12
+[0.346s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface
+[0.353s] -- Install configuration: ""
+[0.353s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include
+[0.353s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/semantic_components
+[0.353s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/semantic_components/range_sensor.hpp
+[0.353s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/semantic_components/pose_sensor.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/semantic_components/semantic_component_interface.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/semantic_components/imu_sensor.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/semantic_components/force_torque_sensor.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface/controller_interface.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface/controller_interface_base.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface/visibility_control.h
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface/chainable_controller_interface.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface/helpers.hpp
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib/libcontroller_interface.so
+[0.354s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/environment/library_path.sh
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/environment/library_path.dsv
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/ament_index/resource_index/package_run_dependencies/controller_interface
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/ament_index/resource_index/parent_prefix_path/controller_interface
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/environment/ament_prefix_path.sh
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/environment/ament_prefix_path.dsv
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/environment/path.sh
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/environment/path.dsv
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/local_setup.bash
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/local_setup.sh
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/local_setup.zsh
+[0.355s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/local_setup.dsv
+[0.356s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/package.dsv
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/ament_index/resource_index/packages/controller_interface
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/cmake/controller_interfaceConfig.cmake
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/cmake/controller_interfaceConfig-version.cmake
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/package.xml
+[0.356s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/include/controller_interface/controller_interface/version.h
+[0.358s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/controller_interface

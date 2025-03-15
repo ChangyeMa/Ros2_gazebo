@@ -1,0 +1,293 @@
+[0.309s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/gz_ros2_control/ign_ros2_control -DCMAKE_INSTALL_PREFIX=/home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control
+[2.688s] -- The C compiler identification is GNU 11.4.0
+[2.688s] -- The CXX compiler identification is GNU 11.4.0
+[2.688s] -- Detecting C compiler ABI info
+[2.688s] -- Detecting C compiler ABI info - done
+[2.688s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.688s] -- Detecting C compile features
+[2.688s] -- Detecting C compile features - done
+[2.688s] -- Detecting CXX compiler ABI info
+[2.689s] -- Detecting CXX compiler ABI info - done
+[2.689s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.689s] -- Detecting CXX compile features
+[2.689s] -- Detecting CXX compile features - done
+[2.689s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.689s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.693s] -- Found ament_index_cpp: 1.4.0 (/opt/ros/humble/share/ament_index_cpp/cmake)
+[2.694s] -- Found controller_manager: 2.47.0 (/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/cmake)
+[2.694s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.694s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.694s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.694s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.694s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.694s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.694s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.694s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[2.695s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.695s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[2.695s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.695s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[2.695s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[2.695s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.695s] -- Looking for pthread.h
+[2.695s] -- Looking for pthread.h - found
+[2.695s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.695s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.695s] -- Found Threads: TRUE  
+[2.696s] -- Found yaml_cpp_vendor: 8.0.2 (/opt/ros/humble/share/yaml_cpp_vendor/cmake)
+[2.696s] -- Looking for ignition-gazebo6 -- found version 6.16.0
+[2.696s] -- Searching for dependencies of ignition-gazebo6
+[2.696s] -- Looking for sdformat12 -- found version 12.8.0
+[2.696s] -- Searching for dependencies of sdformat12
+[2.696s] -- Checking for module 'tinyxml2'
+[2.697s] --   Found tinyxml2, version 9.0.0
+[2.697s] -- Looking for ignition-math6 -- found version 6.15.1
+[2.697s] -- Searching for dependencies of ignition-math6
+[2.748s] -- Looking for ignition-utils1 -- found version 1.5.1
+[2.748s] -- Searching for dependencies of ignition-utils1
+[2.790s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[2.794s] -- Searching for dependencies of ignition-plugin1
+[2.795s] -- Searching for <ignition-plugin1> component [loader]
+[2.802s] -- Looking for ignition-plugin1-loader -- found version 1.4.0
+[2.804s] -- Searching for dependencies of ignition-plugin1-loader
+[2.804s] -- Searching for <ignition-plugin1> component [register]
+[2.817s] -- Looking for ignition-plugin1-register -- found version 1.4.0
+[2.817s] -- Searching for dependencies of ignition-plugin1-register
+[2.844s] -- Looking for ignition-transport11 -- found version 11.4.1
+[2.844s] -- Searching for dependencies of ignition-transport11
+[3.125s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[3.177s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[3.196s] -- Checking for module 'libzmq >= 4'
+[3.395s] --   Found libzmq , version 4.3.4
+[3.534s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[3.552s] -- Checking for module 'uuid'
+[3.614s] --   Found uuid, version 2.37.2
+[3.793s] -- Found UUID: TRUE  
+[3.793s] -- Looking for ignition-utils1 -- found version 1.5.1
+[3.793s] -- Searching for dependencies of ignition-utils1
+[3.794s] -- Searching for <ignition-utils1> component [cli]
+[3.809s] -- Looking for ignition-utils1-cli -- found version 1.5.1
+[3.809s] -- Searching for dependencies of ignition-utils1-cli
+[3.843s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[3.843s] -- Searching for dependencies of ignition-msgs8
+[3.930s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[3.935s] -- Looking for ignition-math6 -- found version 6.15.1
+[3.998s] -- Searching for <ignition-transport11> component [log]
+[4.013s] -- Looking for ignition-transport11-log -- found version 11.4.1
+[4.013s] -- Searching for dependencies of ignition-transport11-log
+[4.023s] -- Searching for <ignition-transport11> component [parameters]
+[4.037s] -- Looking for ignition-transport11-parameters -- found version 11.4.1
+[4.037s] -- Searching for dependencies of ignition-transport11-parameters
+[4.037s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[4.076s] -- Looking for ignition-common4 -- found version 4.7.0
+[4.077s] -- Searching for dependencies of ignition-common4
+[4.079s] -- Looking for dlfcn.h - found
+[4.090s] -- Looking for libdl - found
+[4.090s] -- Found DL: TRUE  
+[4.121s] -- Searching for <ignition-common4> component [profiler]
+[4.128s] -- Looking for ignition-common4-profiler -- found version 4.7.0
+[4.132s] -- Searching for dependencies of ignition-common4-profiler
+[4.136s] -- Searching for <ignition-common4> component [events]
+[4.137s] -- Looking for ignition-common4-events -- found version 4.7.0
+[4.140s] -- Searching for dependencies of ignition-common4-events
+[4.141s] -- Looking for ignition-math6 -- found version 6.15.1
+[4.143s] -- Searching for <ignition-common4> component [av]
+[4.152s] -- Looking for ignition-common4-av -- found version 4.7.0
+[4.152s] -- Searching for dependencies of ignition-common4-av
+[4.163s] -- Checking for module 'libswscale'
+[4.254s] --   Found libswscale, version 5.9.100
+[4.423s] -- Found SWSCALE: TRUE  
+[4.437s] -- Checking for module 'libavdevice >= 56.4.100'
+[4.566s] --   Found libavdevice , version 58.13.100
+[4.735s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[4.767s] -- Checking for module 'libavformat'
+[4.826s] --   Found libavformat, version 58.76.100
+[4.982s] -- Found AVFORMAT: TRUE  
+[5.014s] -- Checking for module 'libavcodec'
+[5.078s] --   Found libavcodec, version 58.134.100
+[5.242s] -- Found AVCODEC: TRUE  
+[5.278s] -- Checking for module 'libavutil'
+[5.355s] --   Found libavutil, version 56.70.100
+[5.513s] -- Found AVUTIL: TRUE  
+[6.070s] -- Looking for ignition-fuel_tools7 -- found version 7.3.1
+[6.071s] -- Searching for dependencies of ignition-fuel_tools7
+[6.572s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[6.660s] -- Checking for module 'jsoncpp'
+[6.702s] --   Found jsoncpp, version 1.9.5
+[6.822s] -- Found JSONCPP: TRUE  
+[6.847s] -- Checking for module 'libzip'
+[6.899s] --   Found libzip, version 1.7.3
+[7.034s] -- Found ZIP: TRUE  
+[7.038s] -- Looking for ignition-common4 -- found version 4.7.0
+[7.039s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.043s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[7.080s] -- Looking for ignition-gui6 -- found version 6.8.0
+[7.081s] -- Searching for dependencies of ignition-gui6
+[7.157s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.158s] -- Looking for ignition-common4 -- found version 4.7.0
+[7.164s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[7.164s] -- Looking for ignition-transport11 -- found version 11.4.1
+[7.204s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[7.204s] -- Searching for dependencies of ignition-rendering6
+[7.205s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.205s] -- Searching for dependencies of ignition-math6
+[7.205s] -- Searching for <ignition-math6> component [eigen3]
+[7.227s] -- Looking for ignition-math6-eigen3 -- found version 6.15.1
+[7.227s] -- Searching for dependencies of ignition-math6-eigen3
+[7.264s] -- Looking for ignition-common4 -- found version 4.7.0
+[7.264s] -- Searching for dependencies of ignition-common4
+[7.265s] -- Looking for dlfcn.h - found
+[7.265s] -- Looking for libdl - found
+[7.304s] -- Searching for <ignition-common4> component [graphics]
+[7.322s] -- Looking for ignition-common4-graphics -- found version 4.7.0
+[7.324s] -- Searching for dependencies of ignition-common4-graphics
+[7.329s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.330s] -- Looking for ignition-utils1 -- found version 1.5.1
+[7.331s] -- Searching for <ignition-common4> component [events]
+[7.338s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[7.338s] -- Searching for dependencies of ignition-plugin1
+[7.339s] -- Searching for <ignition-plugin1> component [all]
+[7.355s] -- Looking for all libraries of ignition-plugin1 -- found version 1.4.0
+[7.356s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[7.366s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[7.685s] -- Looking for ignition-physics5 -- found version 5.3.2
+[7.685s] -- Searching for dependencies of ignition-physics5
+[7.686s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.686s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[7.686s] -- Looking for ignition-utils1 -- found version 1.5.1
+[7.698s] -- Searching for <ignition-physics5> component [heightmap]
+[7.711s] -- Looking for ignition-physics5-heightmap -- found version 5.3.2
+[7.712s] -- Searching for dependencies of ignition-physics5-heightmap
+[7.712s] -- Looking for ignition-common4 -- found version 4.7.0
+[7.717s] -- Searching for <ignition-physics5> component [mesh]
+[7.724s] -- Looking for ignition-physics5-mesh -- found version 5.3.2
+[7.724s] -- Searching for dependencies of ignition-physics5-mesh
+[7.725s] -- Looking for ignition-common4 -- found version 4.7.0
+[7.726s] -- Searching for <ignition-physics5> component [sdf]
+[7.733s] -- Looking for ignition-physics5-sdf -- found version 5.3.2
+[7.734s] -- Searching for dependencies of ignition-physics5-sdf
+[7.734s] -- Looking for sdformat12 -- found version 12.8.0
+[7.770s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[7.770s] -- Searching for dependencies of ignition-sensors6
+[7.805s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[7.810s] -- Looking for ignition-math6 -- found version 6.15.1
+[7.811s] -- Looking for ignition-common4 -- found version 4.7.0
+[7.812s] -- Looking for ignition-transport11 -- found version 11.4.1
+[7.812s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[7.817s] -- Looking for ignition-msgs8 -- found version 8.7.0
+[7.820s] -- Looking for sdformat12 -- found version 12.8.0
+[7.822s] -- Searching for <ignition-sensors6> component [air_pressure]
+[7.847s] -- Looking for ignition-sensors6-air_pressure -- found version 6.8.1
+[7.847s] -- Searching for dependencies of ignition-sensors6-air_pressure
+[7.854s] -- Searching for <ignition-sensors6> component [altimeter]
+[7.862s] -- Looking for ignition-sensors6-altimeter -- found version 6.8.1
+[7.862s] -- Searching for dependencies of ignition-sensors6-altimeter
+[7.863s] -- Searching for <ignition-sensors6> component [imu]
+[7.879s] -- Looking for ignition-sensors6-imu -- found version 6.8.1
+[7.880s] -- Searching for dependencies of ignition-sensors6-imu
+[7.883s] -- Searching for <ignition-sensors6> component [force_torque]
+[7.897s] -- Looking for ignition-sensors6-force_torque -- found version 6.8.1
+[7.898s] -- Searching for dependencies of ignition-sensors6-force_torque
+[7.905s] -- Searching for <ignition-sensors6> component [logical_camera]
+[7.913s] -- Looking for ignition-sensors6-logical_camera -- found version 6.8.1
+[7.918s] -- Searching for dependencies of ignition-sensors6-logical_camera
+[7.921s] -- Searching for <ignition-sensors6> component [magnetometer]
+[7.936s] -- Looking for ignition-sensors6-magnetometer -- found version 6.8.1
+[7.937s] -- Searching for dependencies of ignition-sensors6-magnetometer
+[7.946s] -- Searching for <ignition-sensors6> component [navsat]
+[7.967s] -- Looking for ignition-sensors6-navsat -- found version 6.8.1
+[7.967s] -- Searching for dependencies of ignition-sensors6-navsat
+[7.972s] -- Searching for <ignition-sensors6> component [rendering]
+[7.977s] -- Looking for ignition-sensors6-rendering -- found version 6.8.1
+[7.978s] -- Searching for dependencies of ignition-sensors6-rendering
+[7.985s] -- Searching for <ignition-sensors6> component [lidar]
+[7.991s] -- Looking for ignition-sensors6-lidar -- found version 6.8.1
+[7.991s] -- Searching for dependencies of ignition-sensors6-lidar
+[7.992s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[7.995s] -- Searching for <ignition-sensors6> component [gpu_lidar]
+[8.002s] -- Looking for ignition-sensors6-gpu_lidar -- found version 6.8.1
+[8.002s] -- Searching for dependencies of ignition-sensors6-gpu_lidar
+[8.002s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[8.006s] -- Searching for <ignition-sensors6> component [camera]
+[8.018s] -- Looking for ignition-sensors6-camera -- found version 6.8.1
+[8.023s] -- Searching for dependencies of ignition-sensors6-camera
+[8.023s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[8.026s] -- Searching for <ignition-sensors6> component [boundingbox_camera]
+[8.032s] -- Looking for ignition-sensors6-boundingbox_camera -- found version 6.8.1
+[8.032s] -- Searching for dependencies of ignition-sensors6-boundingbox_camera
+[8.036s] -- Searching for <ignition-sensors6> component [segmentation_camera]
+[8.040s] -- Looking for ignition-sensors6-segmentation_camera -- found version 6.8.1
+[8.045s] -- Searching for dependencies of ignition-sensors6-segmentation_camera
+[8.049s] -- Searching for <ignition-sensors6> component [depth_camera]
+[8.062s] -- Looking for ignition-sensors6-depth_camera -- found version 6.8.1
+[8.063s] -- Searching for dependencies of ignition-sensors6-depth_camera
+[8.066s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[8.067s] -- Searching for <ignition-sensors6> component [rgbd_camera]
+[8.074s] -- Looking for ignition-sensors6-rgbd_camera -- found version 6.8.1
+[8.079s] -- Searching for dependencies of ignition-sensors6-rgbd_camera
+[8.079s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[8.087s] -- Searching for <ignition-sensors6> component [thermal_camera]
+[8.094s] -- Looking for ignition-sensors6-thermal_camera -- found version 6.8.1
+[8.096s] -- Searching for dependencies of ignition-sensors6-thermal_camera
+[8.096s] -- Looking for ignition-sensors6 -- found version 6.8.1
+[8.103s] -- Looking for ignition-rendering6 -- found version 6.6.3
+[8.103s] -- Looking for ignition-math6 -- found version 6.15.1
+[8.121s] -- Looking for ignition-utils1 -- found version 1.5.1
+[8.183s] -- Compiling against Ignition Fortress
+[8.186s] -- Looking for ignition-plugin1 -- found version 1.4.0
+[8.286s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[8.737s] -- Added test 'copyright' to check source files copyright and LICENSE
+[8.741s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[8.744s] -- Configured cppcheck include dirs: /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/gz_ros2_control/ign_ros2_control/include
+[8.744s] -- Configured cppcheck exclude dirs and/or files: 
+[8.746s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[8.746s] -- Configured cpplint exclude dirs and/or files: 
+[8.753s] -- Added test 'lint_cmake' to check CMake code style
+[8.753s] -- Added test 'uncrustify' to check C / C++ code style
+[8.754s] -- Configured uncrustify additional arguments: 
+[8.761s] -- Added test 'xmllint' to check XML markup files
+[8.768s] -- Configuring done
+[9.162s] -- Generating done
+[9.234s] -- Build files have been written to: /home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control
+[9.332s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/gz_ros2_control/ign_ros2_control -DCMAKE_INSTALL_PREFIX=/home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control
+[9.333s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control -- -j12 -l12
+[55.908s] [ 25%] [32mBuilding CXX object CMakeFiles/ign_ros2_control-system.dir/src/ign_ros2_control_plugin.cpp.o[0m
+[55.908s] [ 50%] [32mBuilding CXX object CMakeFiles/ign_hardware_plugins.dir/src/ign_system.cpp.o[0m
+[55.908s] [ 75%] [32m[1mLinking CXX shared library libign_hardware_plugins.so[0m
+[55.909s] [100%] [32m[1mLinking CXX shared library libign_ros2_control-system.so[0m
+[55.909s] [100%] Built target ign_hardware_plugins
+[55.909s] [100%] Built target ign_ros2_control-system
+[55.912s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control -- -j12 -l12
+[55.912s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control
+[55.917s] -- Install configuration: ""
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/lib/libign_hardware_plugins.so
+[55.917s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/lib/libign_hardware_plugins.so" to ""
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/include
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/include/ign_ros2_control
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/include/ign_ros2_control/ign_system_interface.hpp
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/include/ign_ros2_control/ign_ros2_control_plugin.hpp
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/include/ign_ros2_control/ign_system.hpp
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/environment/library_path.sh
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/environment/library_path.dsv
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/lib/libign_ros2_control-system.so
+[55.917s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/lib/libign_ros2_control-system.so" to ""
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/ign_hardware_plugins.xml
+[55.917s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ament_index/resource_index/package_run_dependencies/ign_ros2_control
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ament_index/resource_index/parent_prefix_path/ign_ros2_control
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/environment/ament_prefix_path.sh
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/environment/ament_prefix_path.dsv
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/environment/path.sh
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/environment/path.dsv
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/local_setup.bash
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/local_setup.sh
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/local_setup.zsh
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/local_setup.dsv
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/package.dsv
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ament_index/resource_index/packages/ign_ros2_control
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ament_index/resource_index/ign_ros2_control__pluginlib__plugin/ign_ros2_control
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/cmake/ament_cmake_export_include_directories-extras.cmake
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/cmake/ament_cmake_export_libraries-extras.cmake
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/cmake/ign_ros2_controlConfig.cmake
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/cmake/ign_ros2_controlConfig-version.cmake
+[55.918s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/ign_ros2_control/share/ign_ros2_control/package.xml
+[55.922s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/ign_ros2_control

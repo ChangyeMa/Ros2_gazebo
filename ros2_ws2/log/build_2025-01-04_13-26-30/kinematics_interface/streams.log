@@ -1,0 +1,33 @@
+[0.449s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface -- -j12 -l12
+[0.814s] [35m[1mConsolidate compiler generated dependencies of target kinematics_interface[0m
+[0.827s] [100%] Built target kinematics_interface
+[1.057s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface -- -j12 -l12
+[1.064s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface
+[1.122s] -- Install configuration: ""
+[1.122s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/include/kinematics_interface
+[1.154s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/include/kinematics_interface/kinematics_interface
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/include/kinematics_interface/kinematics_interface/kinematics_interface.hpp
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/include/kinematics_interface/kinematics_interface/visibility_control.h
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/lib/libkinematics_interface.so
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/environment/library_path.sh
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/environment/library_path.dsv
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/ament_index/resource_index/package_run_dependencies/kinematics_interface
+[1.155s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/ament_index/resource_index/parent_prefix_path/kinematics_interface
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/environment/ament_prefix_path.sh
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/environment/ament_prefix_path.dsv
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/environment/path.sh
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/environment/path.dsv
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/local_setup.bash
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/local_setup.sh
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/local_setup.zsh
+[1.156s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/local_setup.dsv
+[1.156s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/package.dsv
+[1.168s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/ament_index/resource_index/packages/kinematics_interface
+[1.178s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/cmake/export_kinematics_interfaceExport.cmake
+[1.179s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/cmake/export_kinematics_interfaceExport-noconfig.cmake
+[1.179s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/cmake/ament_cmake_export_targets-extras.cmake
+[1.179s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.179s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/cmake/kinematics_interfaceConfig.cmake
+[1.179s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/cmake/kinematics_interfaceConfig-version.cmake
+[1.179s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/kinematics_interface/share/kinematics_interface/package.xml
+[1.184s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/kinematics_interface

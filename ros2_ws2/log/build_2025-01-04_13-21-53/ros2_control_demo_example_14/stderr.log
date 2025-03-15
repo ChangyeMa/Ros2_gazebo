@@ -1,0 +1,5 @@
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control_demos/example_14/hardware/include/ros2_control_demo_example_14/rrbot_sensor_for_position_feedback.hpp:37[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control_demos/example_14/hardware/rrbot_sensor_for_position_feedback.cpp:19[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K

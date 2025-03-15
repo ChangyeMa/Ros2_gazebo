@@ -34,7 +34,8 @@ def generate_launch_description():
         get_package_share_directory('my_agv2'))
 
     # =========== add predefined world file ===========
-    world_file_path = "world/test_1.world"
+    # world_file_path = "world/test_1.world"
+    world_file_path = "world/catalyst_env.world"
     world_path = os.path.join(pkg_path, world_file_path)
 
     gazebo = ExecuteProcess(
@@ -61,8 +62,8 @@ def generate_launch_description():
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'cart',
-                                    '-x', '0.0',
-                                    '-y', '-6.9',
+                                    '-x', '2.0',
+                                    '-y', '-10',
                                     '-z', '0.1',
                                     '-R', '1.57',
                                     '-P', '0',
@@ -98,6 +99,15 @@ def generate_launch_description():
                         arguments=['-d', os.path.join(pkg_path, 'rviz', 'show_camera.rviz')],
                         output='screen')
 
+    # add tf static transform publisher from lidar to base_link
+    lidar_static_tf_node=Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="lidar_static_tf",
+        output="screen",
+        arguments=["0.0", "0.0","0.6", "3.14","3.14","0.0","base_link","lidar_link"],
+    )
+
     return LaunchDescription([
         # RegisterEventHandler(
         #     event_handler=OnProcessExit(
@@ -122,6 +132,7 @@ def generate_launch_description():
         node_robot_state_publisher,
         spawn_entity,
         # tag_detection_node,
+        lidar_static_tf_node,
         load_rviz,
     ])
 

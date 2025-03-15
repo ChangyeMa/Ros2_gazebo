@@ -1,0 +1,123 @@
+[0.016s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control-humble/transmission_interface -DCMAKE_INSTALL_PREFIX=/home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface
+[0.075s] -- The C compiler identification is GNU 11.4.0
+[0.141s] -- The CXX compiler identification is GNU 11.4.0
+[0.150s] -- Detecting C compiler ABI info
+[0.232s] -- Detecting C compiler ABI info - done
+[0.242s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.242s] -- Detecting C compile features
+[0.243s] -- Detecting C compile features - done
+[0.246s] -- Detecting CXX compiler ABI info
+[0.325s] -- Detecting CXX compiler ABI info - done
+[0.336s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.337s] -- Detecting CXX compile features
+[0.337s] -- Detecting CXX compile features - done
+[0.340s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.531s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.633s] -- Found hardware_interface: 2.47.0 (/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/share/hardware_interface/cmake)
+[0.677s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.680s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.687s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.697s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.709s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.880s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.882s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.903s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.941s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.944s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.966s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.971s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.981s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.995s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.005s] -- Looking for pthread.h
+[1.065s] -- Looking for pthread.h - found
+[1.065s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.139s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.140s] -- Found Threads: TRUE  
+[1.189s] -- Found ament_cmake_gmock: 1.3.11 (/opt/ros/humble/share/ament_cmake_gmock/cmake)
+[1.190s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[1.194s] -- Found ament_cmake_gtest: 1.3.11 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[1.194s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.294s] -- Configuring done
+[1.486s] -- Generating done
+[1.520s] -- Build files have been written to: /home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface
+[1.541s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control-humble/transmission_interface -DCMAKE_INSTALL_PREFIX=/home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface
+[1.542s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface -- -j12 -l12
+[1.627s] [  4%] [34m[1mGenerating transmission_interface/version.h[0m
+[1.636s] [  8%] [32mBuilding CXX object gmock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o[0m
+[1.643s] [ 12%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/opt/ros/humble/src/gtest_vendor/src/gtest-all.cc.o[0m
+[1.646s] [ 16%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/src/gmock-all.cc.o[0m
+[1.666s] [ 16%] Built target ament_generate_version_header__transmission_interface
+[1.711s] [ 20%] [32mBuilding CXX object CMakeFiles/transmission_interface.dir/src/simple_transmission_loader.cpp.o[0m
+[1.722s] [ 25%] [32mBuilding CXX object CMakeFiles/transmission_interface.dir/src/four_bar_linkage_transmission_loader.cpp.o[0m
+[1.722s] [ 29%] [32mBuilding CXX object CMakeFiles/transmission_interface.dir/src/differential_transmission_loader.cpp.o[0m
+[4.479s] [ 33%] [32m[1mLinking CXX static library libgmock_main.a[0m
+[4.584s] [ 33%] Built target gmock_main
+[7.450s] [ 37%] [32m[1mLinking CXX static library libgmock.a[0m
+[7.531s] [ 37%] Built target gmock
+[7.559s] [ 41%] [32mBuilding CXX object CMakeFiles/test_differential_transmission.dir/test/differential_transmission_test.cpp.o[0m
+[7.561s] [ 45%] [32mBuilding CXX object CMakeFiles/test_four_bar_linkage_transmission.dir/test/four_bar_linkage_transmission_test.cpp.o[0m
+[7.570s] [ 50%] [32mBuilding CXX object CMakeFiles/test_simple_transmission.dir/test/simple_transmission_test.cpp.o[0m
+[7.576s] [ 54%] [32mBuilding CXX object CMakeFiles/test_utils.dir/test/utils_test.cpp.o[0m
+[7.581s] [ 58%] [32mBuilding CXX object CMakeFiles/test_four_bar_linkage_transmission_loader.dir/test/four_bar_linkage_transmission_loader_test.cpp.o[0m
+[7.584s] [ 62%] [32mBuilding CXX object CMakeFiles/test_differential_transmission_loader.dir/test/differential_transmission_loader_test.cpp.o[0m
+[7.585s] [ 66%] [32mBuilding CXX object CMakeFiles/test_simple_transmission_loader.dir/test/simple_transmission_loader_test.cpp.o[0m
+[8.577s] [ 70%] [32m[1mLinking CXX shared library libtransmission_interface.so[0m
+[9.124s] [ 70%] Built target transmission_interface
+[11.287s] [ 75%] [32m[1mLinking CXX executable test_utils[0m
+[11.853s] [ 79%] [32m[1mLinking CXX executable test_differential_transmission[0m
+[12.140s] [ 79%] Built target test_utils
+[12.273s] [ 83%] [32m[1mLinking CXX executable test_simple_transmission[0m
+[12.419s] [ 87%] [32m[1mLinking CXX executable test_four_bar_linkage_transmission[0m
+[12.561s] [ 87%] Built target test_differential_transmission
+[12.772s] [ 87%] Built target test_simple_transmission
+[12.931s] [ 87%] Built target test_four_bar_linkage_transmission
+[14.654s] [ 91%] [32m[1mLinking CXX executable test_differential_transmission_loader[0m
+[15.062s] [ 95%] [32m[1mLinking CXX executable test_simple_transmission_loader[0m
+[15.084s] [ 95%] Built target test_differential_transmission_loader
+[15.360s] [100%] [32m[1mLinking CXX executable test_four_bar_linkage_transmission_loader[0m
+[15.401s] [100%] Built target test_simple_transmission_loader
+[15.688s] [100%] Built target test_four_bar_linkage_transmission_loader
+[15.696s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface -- -j12 -l12
+[15.698s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface
+[15.703s] -- Install configuration: ""
+[15.703s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include
+[15.703s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface
+[15.703s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/accessor.hpp
+[15.703s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/handle.hpp
+[15.703s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/simple_transmission.hpp
+[15.703s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/differential_transmission_loader.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/four_bar_linkage_transmission_loader.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/transmission_loader.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/transmission.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/four_bar_linkage_transmission.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/exception.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/visibility_control.h
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/transmission_interface_exception.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/simple_transmission_loader.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/differential_transmission.hpp
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/ros2_control_plugins.xml
+[15.704s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/lib/libtransmission_interface.so
+[15.705s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/lib/libtransmission_interface.so" to ""
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/environment/library_path.sh
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/environment/library_path.dsv
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/ament_index/resource_index/package_run_dependencies/transmission_interface
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/ament_index/resource_index/parent_prefix_path/transmission_interface
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/environment/ament_prefix_path.sh
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/environment/ament_prefix_path.dsv
+[15.705s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/environment/path.sh
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/environment/path.dsv
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/local_setup.bash
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/local_setup.sh
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/local_setup.zsh
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/local_setup.dsv
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/package.dsv
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/ament_index/resource_index/packages/transmission_interface
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/ament_index/resource_index/transmission_interface__pluginlib__plugin/transmission_interface
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[15.706s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[15.707s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/cmake/transmission_interfaceConfig.cmake
+[15.707s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/cmake/transmission_interfaceConfig-version.cmake
+[15.707s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/share/transmission_interface/package.xml
+[15.707s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/transmission_interface/include/transmission_interface/transmission_interface/version.h
+[15.709s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/transmission_interface

@@ -1,0 +1,42 @@
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_odometry.hpp:24[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/src/steering_odometry.cpp:22[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_odometry.hpp:25[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/src/steering_odometry.cpp:22[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_publisher.h:22:103:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_controllers_library.hpp:30[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/src/steering_controllers_library.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_controllers_library.hpp:31[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/src/steering_controllers_library.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_publisher.h:22:103:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_controllers_library.hpp:30[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/test/test_steering_controllers_library.hpp:34[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/test/test_steering_controllers_library.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_controllers_library.hpp:31[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/test/test_steering_controllers_library.hpp:34[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/test/test_steering_controllers_library.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_publisher.h:22:103:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_odometry.hpp:24[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/test/test_steering_odometry.cpp:17[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/include/steering_controllers_library/steering_odometry.hpp:25[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/steering_controllers_library/test/test_steering_odometry.cpp:17[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_publisher.h:22:103:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                       [01;36m[K^[m[K

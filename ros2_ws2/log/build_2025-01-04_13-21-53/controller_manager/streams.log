@@ -1,0 +1,209 @@
+[0.012s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control-humble/controller_manager -DCMAKE_INSTALL_PREFIX=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager
+[0.056s] -- The C compiler identification is GNU 11.4.0
+[0.102s] -- The CXX compiler identification is GNU 11.4.0
+[0.108s] -- Detecting C compiler ABI info
+[0.166s] -- Detecting C compiler ABI info - done
+[0.172s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.172s] -- Detecting C compile features
+[0.173s] -- Detecting C compile features - done
+[0.175s] -- Detecting CXX compiler ABI info
+[0.236s] -- Detecting CXX compiler ABI info - done
+[0.249s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.249s] -- Detecting CXX compile features
+[0.250s] -- Detecting CXX compile features - done
+[0.252s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.384s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.457s] -- Found ament_index_cpp: 1.4.0 (/opt/ros/humble/share/ament_index_cpp/cmake)
+[0.458s] -- Found controller_interface: 2.47.0 (/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/share/controller_interface/cmake)
+[0.491s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.495s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.502s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.513s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.528s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.702s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.704s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.732s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.769s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.771s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.782s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.785s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.792s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.799s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.806s] -- Looking for pthread.h
+[0.877s] -- Looking for pthread.h - found
+[0.877s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.949s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.950s] -- Found Threads: TRUE  
+[0.994s] -- Found controller_manager_msgs: 2.47.0 (/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/share/controller_manager_msgs/cmake)
+[1.007s] -- Found realtime_tools: 2.10.0 (/opt/ros/humble/share/realtime_tools/cmake)
+[1.041s] -- Found ament_cmake_gmock: 1.3.11 (/opt/ros/humble/share/ament_cmake_gmock/cmake)
+[1.042s] -- Found ros2_control_test_assets: 2.47.0 (/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets/share/ros2_control_test_assets/cmake)
+[1.045s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[1.048s] -- Found ament_cmake_gtest: 1.3.11 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[1.049s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.059s] -- Found ament_cmake_pytest: 1.3.11 (/opt/ros/humble/share/ament_cmake_pytest/cmake)
+[1.574s] -- Configuring done
+[1.785s] -- Generating done
+[1.821s] -- Build files have been written to: /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager
+[1.831s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control-humble/controller_manager -DCMAKE_INSTALL_PREFIX=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager
+[1.832s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager -- -j12 -l12
+[1.870s] [  5%] [32mBuilding CXX object gmock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o[0m
+[1.870s] [  5%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/opt/ros/humble/src/gtest_vendor/src/gtest-all.cc.o[0m
+[1.870s] [  7%] [32mBuilding CXX object gmock/CMakeFiles/gmock.dir/src/gmock-all.cc.o[0m
+[1.872s] [ 10%] [34m[1mGenerating controller_manager/version.h[0m
+[1.878s] [ 10%] Built target ament_cmake_python_copy_controller_manager
+[1.879s] [ 10%] Built target ament_cmake_python_copy_controller_manager_setup
+[1.892s] [ 10%] Built target ament_generate_version_header__controller_manager
+[1.917s] [ 13%] [32mBuilding CXX object CMakeFiles/controller_manager.dir/src/controller_manager.cpp.o[0m
+[2.115s] running egg_info
+[2.116s] creating controller_manager.egg-info
+[2.116s] writing controller_manager.egg-info/PKG-INFO
+[2.116s] writing dependency_links to controller_manager.egg-info/dependency_links.txt
+[2.116s] writing entry points to controller_manager.egg-info/entry_points.txt
+[2.116s] writing top-level names to controller_manager.egg-info/top_level.txt
+[2.117s] writing manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.118s] reading manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.119s] writing manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.142s] [ 13%] Built target ament_cmake_python_build_controller_manager_egg
+[2.229s] running install_scripts
+[2.248s] running egg_info
+[2.249s] writing controller_manager.egg-info/PKG-INFO
+[2.249s] writing dependency_links to controller_manager.egg-info/dependency_links.txt
+[2.249s] writing entry points to controller_manager.egg-info/entry_points.txt
+[2.250s] writing top-level names to controller_manager.egg-info/top_level.txt
+[2.252s] reading manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.252s] writing manifest file 'controller_manager.egg-info/SOURCES.txt'
+[2.253s] Installing hardware_spawner script to scripts
+[2.253s] Installing spawner script to scripts
+[2.254s] Installing unspawner script to scripts
+[2.284s] [ 13%] Built target ament_cmake_python_build_controller_manager_scripts
+[2.889s] [ 15%] [32m[1mLinking CXX static library libgmock_main.a[0m
+[2.940s] [ 15%] Built target gmock_main
+[4.553s] [ 18%] [32m[1mLinking CXX static library libgmock.a[0m
+[4.625s] [ 18%] Built target gmock
+[18.062s] [ 21%] [32m[1mLinking CXX shared library libcontroller_manager.so[0m
+[18.999s] [ 21%] Built target controller_manager
+[19.019s] [ 26%] [32mBuilding CXX object CMakeFiles/test_hardware_spawner.dir/test/test_hardware_spawner.cpp.o[0m
+[19.019s] [ 26%] [32mBuilding CXX object CMakeFiles/test_chainable_controller.dir/test/test_chainable_controller/test_chainable_controller.cpp.o[0m
+[19.019s] [ 31%] [32mBuilding CXX object CMakeFiles/test_controller.dir/test/test_controller/test_controller.cpp.o[0m
+[19.019s] [ 31%] [32mBuilding CXX object CMakeFiles/ros2_control_node.dir/src/ros2_control_node.cpp.o[0m
+[19.020s] [ 34%] [32mBuilding CXX object CMakeFiles/test_controller_failed_init.dir/test/test_controller_failed_init/test_controller_failed_init.cpp.o[0m
+[19.021s] [ 36%] [32mBuilding CXX object CMakeFiles/test_controller_with_interfaces.dir/test/test_controller_with_interfaces/test_controller_with_interfaces.cpp.o[0m
+[19.021s] [ 39%] [32mBuilding CXX object CMakeFiles/test_controller_manager_urdf_passing.dir/test/test_controller_manager_urdf_passing.cpp.o[0m
+[22.606s] [ 42%] [32m[1mLinking CXX shared library libtest_controller_failed_init.so[0m
+[22.740s] [ 44%] [32m[1mLinking CXX shared library libtest_controller_with_interfaces.so[0m
+[22.741s] [ 44%] Built target test_controller_failed_init
+[22.874s] [ 44%] Built target test_controller_with_interfaces
+[22.891s] [ 47%] [32mBuilding CXX object CMakeFiles/test_release_interfaces.dir/test/test_release_interfaces.cpp.o[0m
+[23.432s] [ 50%] [32m[1mLinking CXX shared library libtest_controller.so[0m
+[23.702s] [ 50%] Built target test_controller
+[23.727s] [ 52%] [32mBuilding CXX object CMakeFiles/test_spawner_unspawner.dir/test/test_spawner_unspawner.cpp.o[0m
+[23.727s] [ 60%] [32mBuilding CXX object CMakeFiles/test_load_controller.dir/test/test_load_controller.cpp.o[0m
+[23.727s] [ 60%] [32mBuilding CXX object CMakeFiles/test_controller_manager_with_namespace.cpp.dir/test/test_controller_manager_with_namespace.cpp.o[0m
+[23.728s] [ 60%] [32mBuilding CXX object CMakeFiles/test_hardware_management_srvs.dir/test/test_hardware_management_srvs.cpp.o[0m
+[23.728s] [ 63%] [32mBuilding CXX object CMakeFiles/test_controller_manager.dir/test/test_controller_manager.cpp.o[0m
+[24.320s] [ 65%] [32m[1mLinking CXX executable test_controller_manager_urdf_passing[0m
+[25.389s] [ 68%] [32m[1mLinking CXX executable ros2_control_node[0m
+[25.825s] [ 68%] Built target test_controller_manager_urdf_passing
+[26.967s] [ 68%] Built target ros2_control_node
+[29.461s] [ 71%] [32m[1mLinking CXX executable test_hardware_spawner[0m
+[30.421s] [ 73%] [32m[1mLinking CXX executable test_controller_manager_with_namespace.cpp[0m
+[30.938s] [ 76%] [32m[1mLinking CXX shared library libtest_chainable_controller.so[0m
+[30.941s] [ 78%] [32m[1mLinking CXX executable test_release_interfaces[0m
+[31.244s] [ 78%] Built target test_hardware_spawner
+[32.145s] [ 81%] [32m[1mLinking CXX executable test_hardware_management_srvs[0m
+[32.252s] [ 81%] Built target test_chainable_controller
+[32.279s] [ 86%] [32mBuilding CXX object CMakeFiles/test_controller_manager_srvs.dir/test/test_controller_manager_srvs.cpp.o[0m
+[32.279s] [ 86%] [32mBuilding CXX object CMakeFiles/test_controllers_chaining_with_controller_manager.dir/test/test_controllers_chaining_with_controller_manager.cpp.o[0m
+[32.391s] [ 86%] Built target test_controller_manager_with_namespace.cpp
+[32.619s] [ 89%] [32m[1mLinking CXX executable test_load_controller[0m
+[33.038s] [ 89%] Built target test_release_interfaces
+[33.220s] [ 92%] [32m[1mLinking CXX executable test_controller_manager[0m
+[34.205s] [ 92%] Built target test_hardware_management_srvs
+[34.527s] [ 92%] Built target test_load_controller
+[34.583s] [ 94%] [32m[1mLinking CXX executable test_spawner_unspawner[0m
+[34.894s] [ 94%] Built target test_controller_manager
+[35.513s] [ 94%] Built target test_spawner_unspawner
+[39.306s] [ 97%] [32m[1mLinking CXX executable test_controllers_chaining_with_controller_manager[0m
+[40.220s] [ 97%] Built target test_controllers_chaining_with_controller_manager
+[42.977s] [100%] [32m[1mLinking CXX executable test_controller_manager_srvs[0m
+[43.970s] [100%] Built target test_controller_manager_srvs
+[43.978s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager -- -j12 -l12
+[43.980s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager
+[43.985s] -- Install configuration: ""
+[43.985s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libcontroller_manager.so
+[43.995s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libcontroller_manager.so" to ""
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/controller_manager/ros2_control_node
+[43.995s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/controller_manager/ros2_control_node" to ""
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/include
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/include/controller_manager
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/include/controller_manager/controller_spec.hpp
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/include/controller_manager/visibility_control.h
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/include/controller_manager/controller_manager.hpp
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/test/test_controller/test_controller.xml
+[43.995s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_controller.so
+[43.996s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_controller.so" to ""
+[43.996s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/test/test_controller_failed_init/test_controller_failed_init.xml
+[43.996s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_controller_failed_init.so
+[43.996s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_controller_failed_init.so" to ""
+[43.996s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/test/test_chainable_controller/test_chainable_controller.xml
+[43.996s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_chainable_controller.so
+[44.000s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_chainable_controller.so" to ""
+[44.000s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/test/test_controller_with_interfaces/test_controller_with_interfaces.xml
+[44.000s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_controller_with_interfaces.so
+[44.000s] -- Set runtime path of "/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/libtest_controller_with_interfaces.so" to ""
+[44.000s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/test/test_controller_spawner_with_type.yaml
+[44.000s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/test/test_controller_spawner_with_basic_controllers.yaml
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/test/test_controller_overriding_parameters.yaml
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/test/test_controller_spawner_wildcard_entries.yaml
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/test/test_controller_spawner_with_interfaces.yaml
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/test/test_ros2_control_node.yaml
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/pythonpath.sh
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/pythonpath.dsv
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager-2.47.0-py3.10.egg-info
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager-2.47.0-py3.10.egg-info/PKG-INFO
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager-2.47.0-py3.10.egg-info/SOURCES.txt
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager-2.47.0-py3.10.egg-info/dependency_links.txt
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager-2.47.0-py3.10.egg-info/top_level.txt
+[44.001s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager-2.47.0-py3.10.egg-info/entry_points.txt
+[44.002s] -- Up-to-date: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/controller_manager/
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/controller_manager//unspawner
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/controller_manager//spawner
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/lib/controller_manager//hardware_spawner
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/unspawner.py
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/__init__.py
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/controller_manager_services.py
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/launch_utils.py
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/spawner.py
+[44.002s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/hardware_spawner.py
+[44.033s] Listing '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager'...
+[44.033s] Compiling '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/__init__.py'...
+[44.033s] Compiling '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/controller_manager_services.py'...
+[44.033s] Compiling '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/hardware_spawner.py'...
+[44.033s] Compiling '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/launch_utils.py'...
+[44.033s] Compiling '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/spawner.py'...
+[44.033s] Compiling '/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/local/lib/python3.10/dist-packages/controller_manager/unspawner.py'...
+[44.036s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/library_path.sh
+[44.036s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/library_path.dsv
+[44.036s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/ament_index/resource_index/package_run_dependencies/controller_manager
+[44.036s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/ament_index/resource_index/parent_prefix_path/controller_manager
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/ament_prefix_path.sh
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/ament_prefix_path.dsv
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/path.sh
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/environment/path.dsv
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/local_setup.bash
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/local_setup.sh
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/local_setup.zsh
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/local_setup.dsv
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/package.dsv
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/ament_index/resource_index/packages/controller_manager
+[44.037s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/ament_index/resource_index/controller_interface__pluginlib__plugin/controller_manager
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/cmake/ament_cmake_export_libraries-extras.cmake
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/cmake/ament_cmake_export_include_directories-extras.cmake
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/cmake/ament_cmake_export_dependencies-extras.cmake
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/cmake/controller_managerConfig.cmake
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/cmake/controller_managerConfig-version.cmake
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/share/controller_manager/package.xml
+[44.038s] -- Installing: /home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager/include/controller_manager/controller_manager/version.h
+[44.040s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager' returned '0': AMENT_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_control_test_assets:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface_testing/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/hardware_interface/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/lib:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/changye/Ros2_gazebo/ros2_ws2/install/controller_manager_msgs/local/lib/python3.10/dist-packages:/home/changye/Ros2_gazebo/ros2_ws2/install/control_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager

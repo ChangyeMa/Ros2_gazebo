@@ -1,4 +1,0 @@
-[01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control/controller_manager/src/controller_manager.cpp:[m[K In lambda function:
-[01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_control/controller_manager/src/controller_manager.cpp:2358:7:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
- 2358 |       [01;35m[K}[m[K;
-      |       [01;35m[K^[m[K

@@ -1,4 +1,0 @@
-[01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/realtime_tools/test/realtime_server_goal_handle_tests.cpp:[m[K In function ‘[01m[Kstd::shared_ptr<rclcpp_action::ClientGoalHandle<test_msgs::action::Fibonacci> > send_goal(rclcpp::Node::SharedPtr, std::shared_ptr<rclcpp_action::Client<test_msgs::action::Fibonacci> >, const string&, ActionClientCallbacks&)[m[K’:
-[01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/realtime_tools/test/realtime_server_goal_handle_tests.cpp:127:23:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kserver_name[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
-  127 |   [01;35m[Kconst std::string & server_name[m[K, ActionClientCallbacks & client_callbacks)
-      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K

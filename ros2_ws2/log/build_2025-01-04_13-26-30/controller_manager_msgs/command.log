@@ -1,0 +1,4 @@
+Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs -- -j12 -l12
+Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs -- -j12 -l12
+Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs
+Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/controller_manager_msgs

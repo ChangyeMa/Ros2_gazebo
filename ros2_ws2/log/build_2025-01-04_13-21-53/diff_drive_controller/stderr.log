@@ -1,0 +1,30 @@
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/include/diff_drive_controller/diff_drive_controller.hpp:40[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/src/diff_drive_controller.cpp:25[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_box.h:22:97:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_box.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_box.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/include/diff_drive_controller/diff_drive_controller.hpp:41[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/src/diff_drive_controller.cpp:25[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/include/diff_drive_controller/diff_drive_controller.hpp:42[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/src/diff_drive_controller.cpp:25[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_publisher.h:22:103:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                       [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/include/diff_drive_controller/diff_drive_controller.hpp:40[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/test/test_diff_drive_controller.cpp:24[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_box.h:22:97:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_box.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_box.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                 [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/include/diff_drive_controller/diff_drive_controller.hpp:41[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/test/test_diff_drive_controller.cpp:24[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/include/diff_drive_controller/diff_drive_controller.hpp:42[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/diff_drive_controller/test/test_diff_drive_controller.cpp:24[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_publisher.h:22:103:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_publisher.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                       [01;36m[K^[m[K

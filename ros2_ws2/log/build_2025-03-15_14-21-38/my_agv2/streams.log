@@ -1,0 +1,55 @@
+[0.291s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_joint_trajectory_controller:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2controlcli:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes:/home/changye/Ros2_gazebo/ros2_ws2/install/agv_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2 -- -j12 -l12
+[0.354s] [ 50%] Built target example_velocity
+[0.354s] [ 50%] Built target agv_unload
+[0.354s] [100%] Built target agv_lift
+[0.354s] [100%] Built target example_position
+[0.366s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_joint_trajectory_controller:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2controlcli:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes:/home/changye/Ros2_gazebo/ros2_ws2/install/agv_control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2 -- -j12 -l12
+[0.376s] Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_joint_trajectory_controller:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2controlcli:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes:/home/changye/Ros2_gazebo/ros2_ws2/install/agv_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2
+[0.384s] -- Install configuration: ""
+[0.384s] -- Execute custom install script
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/launch/agv5_demo.launch.py
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/launch/agv5_demo_with_JC.launch.py
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/launch/agv_trac_pos.launch.py
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/launch/agv_velocity.launch.py
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/launch/agv_world.launch.py
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/config/agv5_controller.yaml
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/config/agv_controller_trac_pos.yaml
+[0.385s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/config/agv_controller_velocity.yaml
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/config/controller_configuration.yaml
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV3_single.csv
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV3_single.xacro.urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV3_single_trac_pos.xacro.urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV3_single_vel.xacro.urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV5.xacro (copy).urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV5.xacro.urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV6.xacro (copy).urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/AGV6.xacro.urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/urdf/shelf_final.xacro.urdf
+[0.386s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/examples/agv_lift.cpp
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/examples/agv_unload.cpp
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/examples/example_position.cpp
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/examples/example_velocity.cpp
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/world/test (copy).world
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/world/test.world
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/world/test_1.world
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/rviz/show_camera.rviz
+[0.387s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/lib/my_agv2/example_position
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/lib/my_agv2/example_velocity
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/lib/my_agv2/agv_lift
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/lib/my_agv2/agv_unload
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/ament_index/resource_index/package_run_dependencies/my_agv2
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/ament_index/resource_index/parent_prefix_path/my_agv2
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/environment/ament_prefix_path.sh
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/environment/ament_prefix_path.dsv
+[0.388s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/environment/path.sh
+[0.389s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/environment/path.dsv
+[0.389s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/local_setup.bash
+[0.389s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/local_setup.sh
+[0.389s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/local_setup.zsh
+[0.389s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/local_setup.dsv
+[0.389s] -- Symlinking: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/package.dsv
+[0.399s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/ament_index/resource_index/packages/my_agv2
+[0.399s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/cmake/my_agv2Config.cmake
+[0.399s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/cmake/my_agv2Config-version.cmake
+[0.399s] -- Up-to-date symlink: /home/changye/Ros2_gazebo/ros2_ws2/install/my_agv2/share/my_agv2/package.xml
+[0.400s] Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_joint_trajectory_controller:/home/changye/Ros2_gazebo/ros2_ws2/install/rqt_controller_manager:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2controlcli:/home/changye/Ros2_gazebo/ros2_ws2/install/ros2_controllers_test_nodes:/home/changye/Ros2_gazebo/ros2_ws2/install/agv_control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/my_agv2

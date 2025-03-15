@@ -2050,6 +2050,57 @@
       effort="100"
       velocity="0.1"/>
   </joint>
+
+  <!-- Add link for 3D lidar sensor in the middle of the top module -->
+  <link name="lidar_link">
+    <inertial>
+      <mass value="0.0001" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+    </inertial>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.564705882352941 0.215686274509804 0.5" />
+      </material>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--Add joint for 3D lidar sensor-->
+  <joint
+    name="lidar_joint"
+    type="revolute">
+    <origin
+      xyz="0.0 0.6 0.0"
+      rpy="1.57 0.0 0.0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0.0"
+      upper="0.0"
+      effort="100"
+      velocity="0.1"/>
+  </joint>
+
   
 <!-- Plugins and controllers-->
   <!-- camera -->
@@ -2126,6 +2177,60 @@
         <distortionT1>0.0</distortionT1>
         <distortionT2>0.0</distortionT2>
       </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- 3D lidar sensor-->  
+  <gazebo reference="lidar_link">
+    <material>Gazebo/Red</material>
+
+    <sensor type="ray" name="velodyne2-HDL32E">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+
+      <ray>
+            <scan>
+                <horizontal>
+                    <samples>360</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-3.142</min_angle>
+                    <max_angle>3.142</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>32</samples>
+                    <resolution>1</resolution>
+                    <min_angle> 0 </min_angle>
+                    <max_angle> 1.57</max_angle>
+                </vertical>
+            </scan>
+
+            <range>
+                <min>0.15</min>
+                <max>30.0</max>
+                <resolution>0.01</resolution>
+            </range>
+
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.0</stddev>
+            </noise>
+      </ray>
+
+      <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <namespace>/ray</namespace>
+          <remapping>~/out:=lidar_points</remapping>
+        </ros>
+        <!-- Output as a PointCloud2, see above for other types -->
+        <output_type>sensor_msgs/PointCloud2</output_type>
+        <!-- Clip intensity values so all are above 100, optional -->
+        <min_intensity>100.0</min_intensity>
+        <!-- Frame id for header of output, defaults to sensor's parent link name -->
+        <frame_name>lidar_link</frame_name>
+      </plugin>
+
     </sensor>
   </gazebo>
 

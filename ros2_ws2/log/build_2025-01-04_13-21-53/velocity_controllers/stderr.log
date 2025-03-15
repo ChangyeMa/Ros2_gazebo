@@ -1,0 +1,15 @@
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/install/forward_command_controller/include/forward_command_controller/forward_command_controller/forward_controllers_base.hpp:27[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/install/forward_command_controller/include/forward_command_controller/forward_command_controller/forward_command_controller.hpp:22[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/velocity_controllers/include/velocity_controllers/joint_group_velocity_controller.hpp:20[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/velocity_controllers/src/joint_group_velocity_controller.cpp:21[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/install/forward_command_controller/include/forward_command_controller/forward_command_controller/forward_controllers_base.hpp:27[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/install/forward_command_controller/include/forward_command_controller/forward_command_controller/forward_command_controller.hpp:22[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/velocity_controllers/include/velocity_controllers/joint_group_velocity_controller.hpp:20[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/velocity_controllers/test/test_joint_group_velocity_controller.hpp:26[m[K,
+                 from [01m[K/home/changye/Ros2_gazebo/ros2_ws2/src/ros-controls/ros2_controllers/velocity_controllers/test/test_joint_group_velocity_controller.cpp:28[m[K:
+[01m[K/opt/ros/humble/include/realtime_tools/realtime_tools/realtime_buffer.h:22:100:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header.[m[K’
+   22 |   "This header include is deprecated. Please update your code to use 'realtime_buffer.hpp' header."[01;36m[K)[m[K  //NOLINT
+      |                                                                                                    [01;36m[K^[m[K
