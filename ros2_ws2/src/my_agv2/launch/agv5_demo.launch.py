@@ -62,7 +62,7 @@ def generate_launch_description():
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'cart',
-                                    '-x', '2.0',
+                                    '-x', '0.0',
                                     '-y', '-10',
                                     '-z', '0.1',
                                     '-R', '1.57',
@@ -108,6 +108,16 @@ def generate_launch_description():
         arguments=["0.0", "0.0","0.6", "3.14","3.14","0.0","base_link","lidar_link"],
     )
 
+    # add tf static transform publisher from imu_link to base_link
+    imu_static_tf_node=Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="imu_static_tf",
+        output="screen",
+        arguments=["0.0", "0.0","0.0", "0.0","0.0","0.0","base_link","imu_link"],
+    )
+
+
     return LaunchDescription([
         # RegisterEventHandler(
         #     event_handler=OnProcessExit(
@@ -133,6 +143,7 @@ def generate_launch_description():
         spawn_entity,
         # tag_detection_node,
         lidar_static_tf_node,
+        imu_static_tf_node,
         load_rviz,
     ])
 

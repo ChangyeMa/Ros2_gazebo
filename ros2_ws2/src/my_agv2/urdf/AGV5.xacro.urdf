@@ -2101,6 +2101,54 @@
       velocity="0.1"/>
   </joint>
 
+<!-- Add link and joint for imu sensor at the center of the baselink-->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.0001" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.01"  iyz="0.0"  izz="0.01" />
+    </inertial>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.564705882352941 0.215686274509804 0.5" />
+      </material>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="imu_joint"
+    type="revolute">
+    <origin
+      xyz="0.0 0.0 0.0"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0.0"
+      upper="0.0"
+      effort="100"
+      velocity="0.1"/>
+  </joint>
   
 <!-- Plugins and controllers-->
   <!-- camera -->
@@ -2186,8 +2234,8 @@
 
     <sensor type="ray" name="velodyne2-HDL32E">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
-      <update_rate>10</update_rate>
+      <visualize>false</visualize>
+      <update_rate>50</update_rate>
 
       <ray>
             <scan>
@@ -2231,6 +2279,40 @@
         <frame_name>lidar_link</frame_name>
       </plugin>
 
+    </sensor>
+  </gazebo>
+
+  <!-- IMU sensor-->
+  <gazebo reference="imu_link">
+    <sensor type="imu" name="imu_sensor">
+      <always_on>true</always_on>
+      <update_rate>50.0</update_rate>
+      <imu>
+        <noise>
+          <type>gaussian</type>
+          <rate>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </rate>
+          <accel>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </accel>
+        </noise>
+      </imu>
+      <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>50.0</updateRate>
+        <!-- <robotNamespace>/imu</robotNamespace>
+        <topicName>imu_data</topicName> -->
+        <frameId>imu_link</frameId>
+        <!-- remap the output topic name -->
+        <ros>
+          <namespace>/imu</namespace>
+          <remapping>~/out:=data</remapping>
+        </ros>
+
+      </plugin>
     </sensor>
   </gazebo>
 

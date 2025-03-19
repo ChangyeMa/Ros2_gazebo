@@ -23,28 +23,12 @@ class AgvControllerNode(Node): # MODIFY NAME
         # self.sharp_turn_ = False
 
         # ========= multiple points =========
-        # self.target_array_ = np.array([[0.0, -6.0],
-        #                                [0.0, -3.0],
-        #                                [0.0, -1.0],
-        #                                [0.25, -0.25],
-        #                                [1.0, 0.0],
-        #                                [3.0, 0.0],
-        #                                [5.0, 0.0],
-        #                                [5.75, 0.25],
-        #                                [6.0, 1.0],
-        #                                [6.0, 3.0],
-        #                                [6.0, 5.0],
-        #                                [5.75, 5.75],
-        #                                [5.0, 6.0],
-        #                                [3.0, 6.0],
-        #                                [0.0, 6.0],
-        #                                [-3.0, 6.0],
-        #                                [-6.0, 6.0]])
-
         self.target_array_ = np.array([[0.0, -6.0, 1.57],
-                                        [0.0, -3.0, 0.0],
-                                        [3.0, -3.0, -1.57],
-                                        [3.0, -6.0, 3.14],
+                                        [0.0, 0.0, 0.0],
+                                        [0.0, 10.0, -1.57],
+                                        [3.0, 10.0, -1.57],
+                                        [3.0, 6.0, 3.14],
+                                        [0.0, 6.0, 3.14],
                                        [0.0, -6.0, 1.57]])
         reach = False
         self.i = 0
@@ -52,7 +36,7 @@ class AgvControllerNode(Node): # MODIFY NAME
         # self.target_y_ = self.target_array_[i][1]
         # self.get_logger().info("Target %d: x=%f, y=%f" % (i, self.target_array_[i][0], self.target_array_[i][1]))
         self.pose_ = Pose()
-        self.control_frequency_ = 0.5
+        self.control_frequency_ = 0.1
         self.control_loop_timer_ = self.create_timer(self.control_frequency_, self.control_loop)
         self.get_logger().info("the destination is reached.")
 
