@@ -1,4 +1,0 @@
-Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits -- -j12 -l12
-Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits -- -j12 -l12
-Invoking command in '/home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits
-Invoked command in '/home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/changye/Ros2_gazebo/ros2_ws2/build/joint_limits

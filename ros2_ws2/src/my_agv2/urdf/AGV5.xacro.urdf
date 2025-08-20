@@ -1994,7 +1994,7 @@
     type="revolute">
     <origin
       xyz="0.0 0.2 -0.44"
-      rpy="0.0 2.17 1.57" />
+      rpy="0.0 1.57 1.57" />
     <parent
       link="base_link" />
     <child
@@ -2032,12 +2032,14 @@
     </collision>
   </link>
 
+
+  <!-- default value is 3.14 -2.17 1.57 for looking downwards -->
   <joint
     name="camera_2_joint"
     type="revolute">
     <origin
       xyz="0.0 0.2 0.44"
-      rpy="3.14 -2.17 1.57" />  
+      rpy="0.0 -1.57 -1.57" />   
     <parent
       link="base_link" />
     <child
@@ -2149,6 +2151,21 @@
       effort="100"
       velocity="0.1"/>
   </joint>
+
+<!-- Add base_footprint link and joints with the baselink such that we can adjust the orientation of the robot to move along x-axis instead of y-axis -->
+<link name="base_footprint">
+  <inertial>
+    <mass value="0.0001" />
+    <origin xyz="0 0 0" /> 
+    <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+  </inertial>
+</link>
+
+<joint name="base_footprint_joint" type="fixed">
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+  <origin xyz="0 0 0" rpy="0 -1.57 0"/>
+</joint>
   
 <!-- Plugins and controllers-->
   <!-- camera -->
@@ -2328,7 +2345,7 @@
       <max_wheel_torque>5</max_wheel_torque>
       <odometry_topic>odom</odometry_topic>
       <odometry_frame>odom</odometry_frame>
-      <robot_base_frame>base_footprint</robot_base_frame>
+      <robot_base_frame>base_link</robot_base_frame>
       <publish_odom>1</publish_odom>
       <publish_odom_tf>1</publish_odom_tf>
       <publish_wheel_tf>1</publish_wheel_tf>
@@ -2401,10 +2418,10 @@
   </ros2_control>
 
 <!-- Gazebo_ros2_control plugin: here need to specify the path for the configuration file-->
-  <gazebo>
+  <!-- <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
       <parameters>$(find my_agv2)/config/agv5_controller.yaml</parameters>
-      <!-- <parameters>$(find my_agv2)/config/agv_controller_trac_pos.yaml</parameters> -->
     </plugin>
-  </gazebo>
+  </gazebo> -->
+
 </robot>

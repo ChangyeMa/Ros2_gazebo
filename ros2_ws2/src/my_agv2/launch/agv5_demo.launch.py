@@ -16,12 +16,10 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 
-
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-
 from launch_ros.actions import Node
 
 import xacro
@@ -35,7 +33,7 @@ def generate_launch_description():
 
     # =========== add predefined world file ===========
     # world_file_path = "world/test_1.world"
-    world_file_path = "world/catalyst_env.world"
+    world_file_path = "world/catalyst_env_v2.world"
     world_path = os.path.join(pkg_path, world_file_path)
 
     gazebo = ExecuteProcess(
@@ -62,29 +60,13 @@ def generate_launch_description():
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'cart',
-                                    '-x', '0.0',
+                                    '-x', '5.0',
                                     '-y', '-10',
                                     '-z', '0.1',
                                     '-R', '1.57',
                                     '-P', '0',
                                     '-Y', '0.0'],
                         output='screen')
-
-    # load_joint_state_broadcaster = ExecuteProcess(
-    #     cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-    #          'joint_state_broadcaster'],
-    #     output='screen'
-    # )
-
-    # load_joint_trajectory_controller = ExecuteProcess(
-    #     cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'velocity_controller'],
-    #     output='screen'
-    # )
-
-    # load_imu_sensor_broadcaster = ExecuteProcess(
-    #     cmd=['ros2', 'control', 'load_controller', 'imu_sensor_broadcaster'],
-    #     output='screen'
-    # )
 
     # =========== add predefined tag detection node ===========
     tag_detection_node = Node(

@@ -1,3 +1,11 @@
 {
-    "cmake.sourceDirectory": "/home/changye/ros2_ws2/src/my_agv2"
+    "cmake.sourceDirectory": "/home/changye/ros2_ws2/src/my_agv2",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
 }
