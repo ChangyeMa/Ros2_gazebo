@@ -33,7 +33,7 @@ def generate_launch_description():
 
     # =========== add predefined world file ===========
     # world_file_path = "world/test_1.world"
-    world_file_path = "world/catalyst_env_v2.world"
+    world_file_path = "world/catalyst_env_v3.world"
     world_path = os.path.join(pkg_path, world_file_path)
 
     gazebo = ExecuteProcess(
@@ -60,21 +60,13 @@ def generate_launch_description():
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'cart',
-                                    '-x', '5.0',
-                                    '-y', '-10',
+                                    '-x', '12.0',
+                                    '-y', '-7.0',
                                     '-z', '0.1',
                                     '-R', '1.57',
-                                    '-P', '0',
+                                    '-P', '0.0',
                                     '-Y', '0.0'],
                         output='screen')
-
-    # =========== add predefined tag detection node ===========
-    tag_detection_node = Node(
-        package='agv_control_pkg',
-        executable='tag_detection',
-        name='tag_detection',
-        output='screen'
-    )
 
     # =========== Load Rviz2 to visualize the camera ===========
     load_rviz = Node(package='rviz2', executable='rviz2',
@@ -87,7 +79,7 @@ def generate_launch_description():
         executable="static_transform_publisher",
         name="lidar_static_tf",
         output="screen",
-        arguments=["0.0", "0.0","0.6", "3.14","3.14","0.0","base_link","lidar_link"],
+        arguments=["0.0", "0.6","0", "0","-1.57","1.57","base_link","lidar_link"],
     )
 
     # add tf static transform publisher from imu_link to base_link
@@ -98,41 +90,22 @@ def generate_launch_description():
         output="screen",
         arguments=["0.0", "0.0","0.0", "0.0","0.0","0.0","base_link","imu_link"],
     )
-
+    
+    # add tf static transform publisher from base_link to camera_1_link
+    camera_1_static_tf_node=Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="camera_1_static_tf",
+        output="screen",
+        arguments=["0.44", "0.2","0", "-1.57","-1.57","-1.57","base_link","camera_1_link"],
+    )
 
     return LaunchDescription([
-        # RegisterEventHandler(
-        #     event_handler=OnProcessExit(
-        #         target_action=spawn_entity,
-        #         on_exit=[load_joint_state_broadcaster],
-        #     )
-        # ),
-        # RegisterEventHandler(
-        #     event_handler=OnProcessExit(
-        #         target_action=load_joint_state_broadcaster,
-        #         on_exit=[load_joint_trajectory_controller],
-        #     )
-        # ),
-        # RegisterEventHandler(
-        #     event_handler=OnProcessExit(
-        #         target_action=load_joint_trajectory_controller,
-        #         on_exit=[load_imu_sensor_broadcaster],
-        #     )
-        # ),
-
         gazebo,
         node_robot_state_publisher,
         spawn_entity,
-        # tag_detection_node,
         lidar_static_tf_node,
         imu_static_tf_node,
+        camera_1_static_tf_node,
         load_rviz,
     ])
-
-    # ld.add_action(gazebo)
-    # ld.add_action(node_robot_state_publisher)
-    # ld.add_action(spawn_entity)
-    # ld.add_action(tag_detection_node)
-    # ld.add_action(load_rviz)
-
-    return ld
