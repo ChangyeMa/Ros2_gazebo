@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="shelf_final">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0119059827194796 3.35179528611131 -1.06181481298098"
+        rpy="0 0 0" />
+      <mass
+        value="6729.44352960135" />
+      <inertia
+        ixx="5970.03602580849"
+        ixy="-0.725021529693257"
+        ixz="-0.00107838118443646"
+        iyy="238074.036617636"
+        iyz="-0.0649511588177753"
+        izz="243675.416396949" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="R02_2">
+    <inertial>
+      <origin
+        xyz="-0.011906 3.3595 1.0615"
+        rpy="0 0 0" />
+      <mass
+        value="6729.4" />
+      <inertia
+        ixx="5970"
+        ixy="-0.72502"
+        ixz="-0.0010784"
+        iyy="238070"
+        iyz="-0.064951"
+        izz="243680" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/R02_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/R02_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R02_2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R02_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ss_1">
+    <inertial>
+      <origin
+        xyz="20.165 5.2204 -0.013527"
+        rpy="0 0 0" />
+      <mass
+        value="220.69" />
+      <inertia
+        ixx="1836.8"
+        ixy="-104.65"
+        ixz="-0.18124"
+        iyy="111.81"
+        iyz="-1.5466"
+        izz="1803.4" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/ss_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/ss_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ss_1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ss_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="ss_2">
+    <inertial>
+      <origin
+        xyz="-20.191 5.2204 -0.018473"
+        rpy="0 0 0" />
+      <mass
+        value="220.69" />
+      <inertia
+        ixx="1836.8"
+        ixy="104.65"
+        ixz="-0.18124"
+        iyy="111.81"
+        iyz="1.5466"
+        izz="1803.4" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/ss_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/ss_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ss_2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ss_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bank1">
+    <inertial>
+      <origin
+        xyz="20.5029186382663 7.08377601568918 0.243954327971633"
+        rpy="0 0 0" />
+      <mass
+        value="44.87345203056" />
+      <inertia
+        ixx="1.08893243512574"
+        ixy="-0.0227395394462278"
+        ixz="-0.0565765813381709"
+        iyy="1.40190372782443"
+        iyz="-0.0109642007441319"
+        izz="0.775873482043776" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bank1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bank1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bank2">
+    <inertial>
+      <origin
+        xyz="20.503 7.0838 -0.28853"
+        rpy="0 0 0" />
+      <mass
+        value="44.873" />
+      <inertia
+        ixx="1.0889"
+        ixy="-0.02274"
+        ixz="-0.056577"
+        iyy="1.4019"
+        iyz="-0.010964"
+        izz="0.77587" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bank_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bank2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bank3">
+    <inertial>
+      <origin
+        xyz="-20.5290086382659 7.08377601568972 -0.275954327972648"
+        rpy="0 0 0" />
+      <mass
+        value="44.8734520305594" />
+      <inertia
+        ixx="1.08893243512573"
+        ixy="0.0227395394462287"
+        ixz="-0.056576581338173"
+        iyy="1.4019037278244"
+        iyz="0.0109642007441325"
+        izz="0.775873482043757" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bank3_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bank3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bank4">
+    <inertial>
+      <origin
+        xyz="-20.5290086382659 7.08377601568973 0.256525672027353"
+        rpy="0 0 0" />
+      <mass
+        value="44.8734520305594" />
+      <inertia
+        ixx="1.08893243512573"
+        ixy="0.0227395394462286"
+        ixz="-0.0565765813381727"
+        iyy="1.4019037278244"
+        iyz="0.0109642007441326"
+        izz="0.775873482043756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/bank4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bank4_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bank4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="traction1">
+    <inertial>
+      <origin
+        xyz="-20.5970606037827 8.40240452182772 -0.0674392917392126"
+        rpy="0 0 0" />
+      <mass
+        value="658.695236191601" />
+      <inertia
+        ixx="79.9062278397817"
+        ixy="-0.832582400576053"
+        ixz="1.34637813596932"
+        iyy="115.026088164627"
+        iyz="-5.84155683296361"
+        izz="78.3289504857747" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/traction1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.341176470588235 0.145098039215686 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/traction1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="traction1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="traction1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="traction2">
+    <inertial>
+      <origin
+        xyz="20.571 8.4024 -0.17071"
+        rpy="0 0 0" />
+      <mass
+        value="658.7" />
+      <inertia
+        ixx="79.906"
+        ixy="0.83258"
+        ixz="1.3464"
+        iyy="115.03"
+        iyz="5.8416"
+        izz="78.329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/traction2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.34118 0.1451 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/traction2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="traction2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="traction2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="part7_1">
+    <inertial>
+      <origin
+        xyz="20.592 8.9348 -0.016"
+        rpy="0 0 0" />
+      <mass
+        value="74.785" />
+      <inertia
+        ixx="6.1888"
+        ixy="-0.11501"
+        ixz="7.8108E-15"
+        iyy="6.8074"
+        iyz="2.529E-16"
+        izz="2.7198" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/part7_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 1 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/part7_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="part7_1_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="part7_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="part7_2">
+    <inertial>
+      <origin
+        xyz="-20.618 8.9348 -0.016"
+        rpy="0 0 0" />
+      <mass
+        value="74.785" />
+      <inertia
+        ixx="6.1888"
+        ixy="0.11501"
+        ixz="-1.0148E-15"
+        iyy="6.8074"
+        iyz="-4.2415E-17"
+        izz="2.7198" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/part7_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 1 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/part7_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="part7_2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="part7_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="roof_rack">
+    <inertial>
+      <origin
+        xyz="-19.879 9.3681 -0.016"
+        rpy="0 0 0" />
+      <mass
+        value="14.87" />
+      <inertia
+        ixx="1.8876"
+        ixy="4.4209E-15"
+        ixz="2.5317E-15"
+        iyy="1.9364"
+        iyz="-1.3457E-15"
+        izz="0.06982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/roof_rack.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.65098 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/roof_rack.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roof_rack_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="roof_rack" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="roof_rack2">
+    <inertial>
+      <origin
+        xyz="-0.023372 9.2264 -0.036671"
+        rpy="0 0 0" />
+      <mass
+        value="207.81" />
+      <inertia
+        ixx="9.8571"
+        ixy="-0.079615"
+        ixz="-1.1544E-10"
+        iyy="29953"
+        iyz="6.616E-13"
+        izz="29945" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/roof_rack2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.50196 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/roof_rack2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roof_rack2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="roof_rack2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="trolley">
+    <inertial>
+      <origin
+        xyz="0 0.20546 -2.2204E-16"
+        rpy="0 0 0" />
+      <mass
+        value="223.98" />
+      <inertia
+        ixx="24.976"
+        ixy="1.9995E-16"
+        ixz="-4.452E-15"
+        iyy="83.309"
+        iyz="-4.7011E-16"
+        izz="64.945" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/trolley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/trolley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="trolley_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.013045 8.8907 -0.036671"
+      rpy="0 0 0" />
+    <parent
+      link="roof_rack2" />
+    <child
+      link="trolley" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="carriage">
+    <inertial>
+      <origin
+        xyz="0.041968 0.30521 0.00022218"
+        rpy="0 0 0" />
+      <mass
+        value="444.85" />
+      <inertia
+        ixx="59.409"
+        ixy="3.9487E-14"
+        ixz="1.8761E-14"
+        iyy="141.75"
+        iyz="2.0147E-14"
+        izz="134.72" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/carriage.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shelf_final/meshes/carriage.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="carriage_joint"
+    type="prismatic">
+    <origin
+      xyz="0 -4.5358 0"
+      rpy="0 0 0" />
+    <parent
+      link="trolley" />
+    <child
+      link="carriage" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

@@ -1,0 +1,14 @@
+    material MyGroundPlane/Image
+    {
+      technique
+      {
+        pass
+        {
+
+          texture_unit
+          {
+            texture warehouse_ground2.png
+          }
+        }
+      }
+    }

@@ -1,0 +1,2086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="AGV5">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000123231100652682 0.0553961365561796 0.0171432137554972"
+        rpy="0 0 0" />
+      <mass
+        value="7.19116955235277" />
+      <inertia
+        ixx="0.441209434736245"
+        ixy="-1.27470215920327E-06"
+        ixz="-0.00170544512438388"
+        iyy="0.654363133888033"
+        iyz="-0.00684903683061138"
+        izz="0.249410032162092" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="DW_L">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="21.1289138446402" />
+      <inertia
+        ixx="0.0951175890712612"
+        ixy="1.19812781954787E-18"
+        ixz="5.0120682772178E-20"
+        iyy="0.0624867717452084"
+        iyz="-4.3653823928575E-08"
+        izz="0.0624865212718915" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/DW_L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.564705882352941 0.215686274509804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/DW_L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DW_L_joint"
+    type="continuous">
+    <origin
+      xyz="-0.2315 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="DW_L" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="DW_R">
+    <inertial>
+      <origin
+        xyz="0 -1.38777878078145E-17 8.67361737988404E-19"
+        rpy="0 0 0" />
+      <mass
+        value="21.1289138446402" />
+      <inertia
+        ixx="0.0951175890712611"
+        ixy="1.21263643824508E-18"
+        ixz="4.24098084995367E-20"
+        iyy="0.0624867745789793"
+        iyz="-3.446508501807E-08"
+        izz="0.0624865184381206" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/DW_R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.564705882352941 0.215686274509804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/DW_R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DW_R_joint"
+    type="continuous">
+    <origin
+      xyz="0.2315 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="DW_R" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_lf">
+    <inertial>
+      <origin
+        xyz="6.16173778666962E-15 0.00178317896740091 -3.38618022510673E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.3974218031582E-21"
+        ixz="-4.45802873445509E-21"
+        iyy="3.09736689346614E-05"
+        iyz="-2.07701230018806E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_lf_joint"
+    type="fixed">
+    <origin
+      xyz="-0.23161 0.049 -0.3574"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_lf" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_lf">
+    <inertial>
+      <origin
+        xyz="2.454957077902E-07 -0.0377750444959561 -0.014330575758621"
+        rpy="0 0 0" />
+      <mass
+        value="0.0747206398188079" />
+      <inertia
+        ixx="6.84711765656461E-05"
+        ixy="-3.66816230369229E-11"
+        ixz="6.3657825332561E-12"
+        iyy="6.18341101257442E-05"
+        iyz="-1.41155279221005E-05"
+        izz="8.26659596872355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_lf_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_lf" />
+    <child
+      link="CW_brac_lf" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_lf">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="-2.28486478848757E-19"
+        ixz="-6.0425181258677E-18"
+        iyy="0.000401507997406102"
+        iyz="-1.40478542475118E-19"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_lf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_lf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_lf_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0834999999999897 -0.0300000000000034"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_lf" />
+    <child
+      link="CW_lf" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_lr">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-16 0.00178317896740084 1.66533453693773E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.39936288649707E-21"
+        ixz="-4.45802873445509E-21"
+        iyy="3.09736689346614E-05"
+        iyz="-2.07604175851863E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_lr_joint"
+    type="fixed">
+    <origin
+      xyz="-0.23161 0.049 0.35"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_lr" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_lr">
+    <inertial>
+      <origin
+        xyz="-2.45495707845711E-07 -0.0377750444959561 0.0143305757586212"
+        rpy="0 0 0" />
+      <mass
+        value="0.0747206398188078" />
+      <inertia
+        ixx="6.84711765656461E-05"
+        ixy="3.66816231084091E-11"
+        ixz="6.36578254791024E-12"
+        iyy="6.18341101257443E-05"
+        iyz="1.41155279221006E-05"
+        izz="8.26659596872356E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_lr_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_lr" />
+    <child
+      link="CW_brac_lr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_lr">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671334"
+        ixy="-1.86617504521772E-19"
+        ixz="-6.01213712701329E-18"
+        iyy="0.000401507997406102"
+        iyz="-1.45635584494444E-20"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_lr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_lr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_lr_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0835 0.03"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_lr" />
+    <child
+      link="CW_lr" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_rf">
+    <inertial>
+      <origin
+        xyz="6.21724893790088E-15 0.00178317896740087 4.55191440096314E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.35533482264003E-21"
+        ixz="-6.06456858039793E-21"
+        iyy="3.09736689346614E-05"
+        iyz="-2.01393122214529E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_rf_joint"
+    type="fixed">
+    <origin
+      xyz="0.231387499999994 0.0489999999999998 -0.357400000000003"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_rf" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_rf">
+    <inertial>
+      <origin
+        xyz="2.45495707817955E-07 -0.0377750444959561 -0.0143305757586211"
+        rpy="0 0 0" />
+      <mass
+        value="0.074720639818808" />
+      <inertia
+        ixx="6.84711765656463E-05"
+        ixy="-3.66816230539197E-11"
+        ixz="6.36578253950287E-12"
+        iyy="6.18341101257445E-05"
+        iyz="-1.41155279221006E-05"
+        izz="8.26659596872359E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_rf_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_rf" />
+    <child
+      link="CW_brac_rf" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_rf">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="-2.36065589915202E-19"
+        ixz="-6.09233619691174E-18"
+        iyy="0.000401507997406102"
+        iyz="1.31258152506491E-20"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_rf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_rf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_rf_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0835 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_rf" />
+    <child
+      link="CW_rf" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="CW_mount_rr">
+    <inertial>
+      <origin
+        xyz="0 0.0017831789674009 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0356883693504993" />
+      <inertia
+        ixx="2.08430225591623E-05"
+        ixy="4.51326632456734E-21"
+        ixz="-6.79452789828874E-21"
+        iyy="3.09736689346613E-05"
+        iyz="-1.29626656866719E-21"
+        izz="1.05474364348081E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_mount_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_mount_rr_joint"
+    type="fixed">
+    <origin
+      xyz="0.2313875 0.0489999999999998 0.35"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="CW_mount_rr" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="CW_brac_rr">
+    <inertial>
+      <origin
+        xyz="-2.45495707817955E-07 -0.037775044495956 0.0143305757586212"
+        rpy="0 0 0" />
+      <mass
+        value="0.0747206398188077" />
+      <inertia
+        ixx="6.84711765656461E-05"
+        ixy="3.66816230848952E-11"
+        ixz="6.3657825662941E-12"
+        iyy="6.18341101257445E-05"
+        iyz="1.41155279221006E-05"
+        izz="8.26659596872356E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_brac_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_brac_rr_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="CW_mount_rr" />
+    <child
+      link="CW_brac_rr" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="CW_rr">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 5.55111512312578E-17 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.359205022961183" />
+      <inertia
+        ixx="0.000758344332671333"
+        ixy="3.37550549678313E-37"
+        ixz="-1.61615581202966E-20"
+        iyy="0.000401507997406102"
+        iyz="-2.2463716101834E-20"
+        izz="0.000401507997406102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_rr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.968627450980392 0.843137254901961 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/CW_rr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CW_rr_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0835 0.03"
+      rpy="0 0 0" />
+    <parent
+      link="CW_brac_rr" />
+    <child
+      link="CW_rr" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="bot_slider_l">
+    <inertial>
+      <origin
+        xyz="3.00331338071169E-05 -0.0200191160179827 -0.00787005521461176"
+        rpy="0 0 0" />
+      <mass
+        value="0.114142224900164" />
+      <inertia
+        ixx="0.000170720888025557"
+        ixy="1.7611889690302E-10"
+        ixz="-1.84223493745308E-10"
+        iyy="0.000166924081432132"
+        iyz="-3.89844997742799E-05"
+        izz="0.000103620663551183" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/bot_slider_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/bot_slider_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bot_slider_l_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.23161 0.178 -0.31051"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bot_slider_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="sci_l_A">
+    <inertial>
+      <origin
+        xyz="-0.00320762465782468 0.196826158991707 0.344231432576927"
+        rpy="0 0 0" />
+      <mass
+        value="0.67470637668214" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="-2.88816636162645E-09"
+        ixz="2.73770869656722E-09"
+        iyy="0.00255036599319112"
+        iyz="-0.00132711116646036"
+        izz="0.00108606213536762" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_l_A.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_l_A.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_l_A_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bot_slider_l" />
+    <child
+      link="sci_l_A" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="sci_bot_l">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.07090296216303" />
+      <inertia
+        ixx="0.000255203590199193"
+        ixy="2.85159816962671E-21"
+        ixz="-1.27150965089064E-17"
+        iyy="0.000855782346172711"
+        iyz="-1.97748430428543E-20"
+        izz="0.000855782346172711" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_bot_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_bot_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_bot_l_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.19607 0.3429"
+      rpy="0 0 0" />
+    <parent
+      link="sci_l_A" />
+    <child
+      link="sci_bot_l" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="sci_l_B">
+    <inertial>
+      <origin
+        xyz="0.00320762465782637 0.000758243892774069 -0.00132857072156361"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682144" />
+      <inertia
+        ixx="0.00331980133082935"
+        ixy="2.88816633410552E-09"
+        ixz="2.73770874279488E-09"
+        iyy="0.00255036599319328"
+        iyz="0.00132711116645918"
+        izz="0.00108606213536547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_l_B.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_l_B.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_l_B_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="sci_bot_l" />
+    <child
+      link="sci_l_B" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="virtual_base_l">
+    <inertial>
+      <origin
+        xyz="0.231489268899384 -0.122603863443801 -0.358156786244502"
+        rpy="0 0 0" />
+      <mass
+        value="7.19116955235277" />
+      <inertia
+        ixx="0.441209434736245"
+        ixy="-1.27470215921179E-06"
+        ixz="-0.0017054451243839"
+        iyy="0.654363133888033"
+        iyz="-0.0068490368306114"
+        izz="0.249410032162092" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_base_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_base_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="virtual_base_l_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.19607 0.3429"
+      rpy="0 0 0" />
+    <parent
+      link="sci_l_B" />
+    <child
+      link="virtual_base_l" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="top_fixed_l_A">
+    <inertial>
+      <origin
+        xyz="2.99157242311665E-08 0.0292682220386327 -9.63513840934738E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.175464674455898" />
+      <inertia
+        ixx="0.000145636754929182"
+        ixy="-1.17278497748042E-10"
+        ixz="-3.14519748528053E-11"
+        iyy="0.000117199630744032"
+        iyz="3.32238392493428E-11"
+        izz="0.000198823734012958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_fixed_l_A.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_fixed_l_A.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_fixed_l_A_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.39214 0.68581"
+      rpy="0 0 0" />
+    <parent
+      link="sci_l_A" />
+    <child
+      link="top_fixed_l_A" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="top_fixed_l_B">
+    <inertial>
+      <origin
+        xyz="9.63514465435189E-09 0.0292682220386328 2.99157242311665E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.175464674455898" />
+      <inertia
+        ixx="0.000198823734012959"
+        ixy="-3.32238563992473E-11"
+        ixz="3.14519735895838E-11"
+        iyy="0.000117199630744032"
+        iyz="-1.17278497795776E-10"
+        izz="0.000145636754929182" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_fixed_l_B.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_fixed_l_B.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_fixed_l_B_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="top_fixed_l_A" />
+    <child
+      link="top_fixed_l_B" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="TM_base">
+    <inertial>
+      <origin
+        xyz="0.291868121787565 0.0175685442194217 -0.370862486468341"
+        rpy="0 0 0" />
+      <mass
+        value="8.41981200967231" />
+      <inertia
+        ixx="0.523004037616243"
+        ixy="1.43308185341481E-06"
+        ixz="-7.44855697569044E-07"
+        iyy="0.791444525751469"
+        iyz="3.47328698782028E-07"
+        izz="0.282393332443752" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/TM_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/TM_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TM_base_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="top_fixed_l_B" />
+    <child
+      link="TM_base" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="top_slider_l">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 1.11022302462516E-16 8.32667268468867E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.534640164778728" />
+      <inertia
+        ixx="0.0126331366475046"
+        ixy="6.30108967515339E-21"
+        ixz="-3.84976619999634E-18"
+        iyy="0.0126331366475046"
+        iyz="5.31885076395977E-19"
+        izz="4.24137711150283E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_slider_l_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.577999999999982"
+      rpy="0 0 0" />
+    <parent
+      link="TM_base" />
+    <child
+      link="top_slider_l" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="top_slider_l_B">
+    <inertial>
+      <origin
+        xyz="-9.74220704108575E-15 -0.0333359298509797 -1.82631687550838E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.272837758042886" />
+      <inertia
+        ixx="0.000197252502105011"
+        ixy="2.78034321495643E-18"
+        ixz="-4.02851062493188E-14"
+        iyy="0.000224313595989508"
+        iyz="1.01202669543092E-19"
+        izz="0.000136574041354006" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_l_B.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_l_B.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_slider_l_B_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 -0.10781"
+      rpy="0 0 0" />
+    <parent
+      link="top_slider_l" />
+    <child
+      link="top_slider_l_B" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="top_slider_l_A">
+    <inertial>
+      <origin
+        xyz="2.99157247030113E-08 -0.0407317779613674 -9.6351394085481E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.175464674455898" />
+      <inertia
+        ixx="0.000145636754929182"
+        ixy="-1.1727849771324E-10"
+        ixz="-3.14519736405281E-11"
+        iyy="0.000117199630744032"
+        iyz="3.3223839435118E-11"
+        izz="0.000198823734012958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_l_A.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_l_A.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_slider_l_A_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="top_slider_l_B" />
+    <child
+      link="top_slider_l_A" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="virtual_sci_l_1">
+    <inertial>
+      <origin
+        xyz="0.00320762465783173 -0.195309671206187 0.341574291134003"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682144" />
+      <inertia
+        ixx="0.00331980133082935"
+        ixy="2.88816633412254E-09"
+        ixz="2.7377087427978E-09"
+        iyy="0.00255036599319328"
+        iyz="0.00132711116645918"
+        izz="0.00108606213536547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_sci_l_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_sci_l_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="virtual_sci_l_1_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0700000000000002 0"
+      rpy="0 0 0" />
+    <parent
+      link="top_slider_l_A" />
+    <child
+      link="virtual_sci_l_1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="top_slider_r">
+    <inertial>
+      <origin
+        xyz="0 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.534640164778729" />
+      <inertia
+        ixx="0.0126331366475046"
+        ixy="-4.34262928418594E-22"
+        ixz="1.30300498501999E-17"
+        iyy="0.0126331366475046"
+        iyz="4.77828739196637E-18"
+        izz="4.24137711150283E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_slider_r_joint"
+    type="continuous">
+    <origin
+      xyz="0.463 0 -0.52799999999998"
+      rpy="0 0 0" />
+    <parent
+      link="TM_base" />
+    <child
+      link="top_slider_r" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="top_slider_mount_r">
+    <inertial>
+      <origin
+        xyz="-2.7396973578675E-12 -0.0333359298553181 5.89983617516054E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.272837757765887" />
+      <inertia
+        ixx="0.000131331237884416"
+        ixy="3.40936007870163E-15"
+        ixz="-4.30216705296536E-15"
+        iyy="0.000224313595891299"
+        iyz="-1.203900357827E-15"
+        izz="0.000202495305461991" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_mount_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_slider_mount_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_slider_mount_r_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 -0.112726520792827"
+      rpy="0 0 0" />
+    <parent
+      link="top_slider_r" />
+    <child
+      link="top_slider_mount_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="virtual_sci_r_1">
+    <inertial>
+      <origin
+        xyz="0.00320762465781682 -0.23017405648839 0.319121869746046"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682142" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="2.58399542329444E-09"
+        ixz="3.02647015172433E-09"
+        iyy="0.00225635359158757"
+        iyz="0.00145096666045886"
+        izz="0.00138007453697118" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_sci_r_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_sci_r_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="virtual_sci_r_1_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="top_slider_mount_r" />
+    <child
+      link="virtual_sci_r_1" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="top_fixed_mount_r">
+    <inertial>
+      <origin
+        xyz="2.99157165706276E-08 -0.0407317779613672 -9.63513324681031E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.175464674455898" />
+      <inertia
+        ixx="0.000145636754929182"
+        ixy="-1.17278497768215E-10"
+        ixz="-3.14519748318913E-11"
+        iyy="0.000117199630744032"
+        iyz="3.32238393066166E-11"
+        izz="0.000198823734012958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_fixed_mount_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/top_fixed_mount_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_fixed_mount_r_joint"
+    type="continuous">
+    <origin
+      xyz="0.463 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="TM_base" />
+    <child
+      link="top_fixed_mount_r" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="virtual_sci_r_2">
+    <inertial>
+      <origin
+        xyz="-0.00320762465781377 -0.230174056488389 -0.319121869746046"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682141" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="-2.58399542296469E-09"
+        ixz="3.0264701512919E-09"
+        iyy="0.00225635359158757"
+        iyz="-0.00145096666045886"
+        izz="0.00138007453697118" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_sci_r_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_sci_r_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="virtual_sci_r_2_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.07 0"
+      rpy="0 0 0" />
+    <parent
+      link="top_fixed_mount_r" />
+    <child
+      link="virtual_sci_r_2" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="TM_slider">
+    <inertial>
+      <origin
+        xyz="0.000173317590101973 0.0199075028300977 -0.552499630265378"
+        rpy="0 0 0" />
+      <mass
+        value="0.646005822040662" />
+      <inertia
+        ixx="0.000659085084783204"
+        ixy="1.1246349199865E-13"
+        ixz="-2.50867966934773E-08"
+        iyy="0.00167105422229503"
+        iyz="2.25523086591289E-13"
+        izz="0.00169043516543173" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/TM_slider.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/TM_slider.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TM_slider_joint"
+    type="prismatic">
+    <origin
+      xyz="0.4276385946878 -0.0111946648133857 0.17749925673864"
+      rpy="0 0 0" />
+    <parent
+      link="TM_base" />
+    <child
+      link="TM_slider" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="TM_loader">
+    <inertial>
+      <origin
+        xyz="0.101112580085313 0.142463680805933 -0.634749469623688"
+        rpy="0 0 0" />
+      <mass
+        value="0.166983722284313" />
+      <inertia
+        ixx="0.0104190151629583"
+        ixy="-0.000240777133238466"
+        ixz="2.95805325850344E-16"
+        iyy="0.0102506594261202"
+        iyz="9.37534149416462E-17"
+        izz="0.00053078239783851" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/TM_loader.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/TM_loader.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TM_loader_joint"
+    type="continuous">
+    <origin
+      xyz="0.0450000025984831 -0.0218053351877043 0.0822500000038597"
+      rpy="0 0 0" />
+    <parent
+      link="TM_slider" />
+    <child
+      link="TM_loader" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="bot_slider_r">
+    <inertial>
+      <origin
+        xyz="3.00328111297876E-05 -0.0200191154274137 -0.00787005506647737"
+        rpy="0 0 0" />
+      <mass
+        value="0.114142227663803" />
+      <inertia
+        ixx="0.000170720888052051"
+        ixy="1.76401935027941E-10"
+        ixz="-1.84330105407002E-10"
+        iyy="0.000166924082943024"
+        iyz="-3.89844998497327E-05"
+        izz="0.000103620665030572" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/bot_slider_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/bot_slider_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bot_slider_r_joint"
+    type="prismatic">
+    <origin
+      xyz="0.231387499999993 0.178 -0.26542652079282"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bot_slider_r" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="sci_r_A">
+    <inertial>
+      <origin
+        xyz="-0.00320762465783136 0.231961773709526 0.321604651046783"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682141" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="-2.5839954229761E-09"
+        ixz="3.02647015131054E-09"
+        iyy="0.00225635359158757"
+        iyz="-0.00145096666045886"
+        izz="0.00138007453697117" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_r_A.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_r_A.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_r_A_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bot_slider_r" />
+    <child
+      link="sci_r_A" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="sci_bolt_r">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 -6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="1.07090296216303" />
+      <inertia
+        ixx="0.000255203590199193"
+        ixy="-8.87798172141881E-21"
+        ixz="-1.27281922730636E-17"
+        iyy="0.000855782346172711"
+        iyz="-2.7994518867547E-20"
+        izz="0.000855782346172711" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_bolt_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_bolt_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_bolt_r_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.231067915098958 0.320363260396414"
+      rpy="0 0 0" />
+    <parent
+      link="sci_r_A" />
+    <child
+      link="sci_bolt_r" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="sci_r_B">
+    <inertial>
+      <origin
+        xyz="0.00320762465782304 0.000893858610568454 -0.00124139065036818"
+        rpy="0 0 0" />
+      <mass
+        value="0.674706376682142" />
+      <inertia
+        ixx="0.00331980133082934"
+        ixy="2.5839954232844E-09"
+        ixz="3.02647015173946E-09"
+        iyy="0.00225635359158757"
+        iyz="0.00145096666045886"
+        izz="0.00138007453697118" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_r_B.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/sci_r_B.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sci_r_B_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="sci_bolt_r" />
+    <child
+      link="sci_r_B" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="virtual_base_r">
+    <inertial>
+      <origin
+        xyz="-0.231510731100625 -0.122603863443467 -0.358156786244586"
+        rpy="0 0 0" />
+      <mass
+        value="7.19116955235277" />
+      <inertia
+        ixx="0.441209434736245"
+        ixy="-1.27470215919414E-06"
+        ixz="-0.00170544512438389"
+        iyy="0.654363133888033"
+        iyz="-0.0068490368306114"
+        izz="0.249410032162092" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_base_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://AGV5/meshes/virtual_base_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="virtual_base_r_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.231067915099311 0.320363260396489"
+      rpy="0 0 0" />
+    <parent
+      link="sci_r_B" />
+    <child
+      link="virtual_base_r" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+</robot>
