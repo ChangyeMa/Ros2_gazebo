@@ -17,29 +17,57 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler, DeclareLaunchArgument
+from launch.conditions import IfCondition, UnlessCondition
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 import xacro
 
 
 def generate_launch_description():
-    ld = LaunchDescription()
+    # ld = LaunchDescription()
 
     pkg_path = os.path.join(
         get_package_share_directory('my_agv2'))
+    
+    # Declare launch arguments
+    headless_arg = DeclareLaunchArgument(
+        'headless',
+        default_value='false',
+        description='Whether to run Gazebo in headless mode (server only)'
+    )
 
+    rviz_arg = DeclareLaunchArgument(
+        'rviz',
+        default_value='true',
+        description='Whether to launch RViz2'
+    )
+
+    headless = LaunchConfiguration('headless')
+    rviz = LaunchConfiguration('rviz')
     # =========== add predefined world file ===========
     # world_file_path = "world/test_1.world"
     world_file_path = "world/catalyst_env_v3.world"
     world_path = os.path.join(pkg_path, world_file_path)
 
-    gazebo = ExecuteProcess(
-            cmd=['gazebo', '--verbose', world_path,
-                 '-s', 'libgazebo_ros_factory.so'],
-            output='screen')
+    # Gazebo server only (headless mode)
+    gazebo_server = ExecuteProcess(
+        cmd=['gzserver', '--verbose', world_path,
+             '-s', 'libgazebo_ros_factory.so'],
+        output='screen',
+        condition=IfCondition(headless)
+    )
+
+    # Gazebo with GUI (normal mode)
+    gazebo_gui = ExecuteProcess(
+        cmd=['gazebo', '--verbose', world_path,
+             '-s', 'libgazebo_ros_factory.so'],
+        output='screen',
+        condition=UnlessCondition(headless)
+    )
 
     # =========== add predefined robot description ===========
     xacro_file = os.path.join(pkg_path,
@@ -71,7 +99,8 @@ def generate_launch_description():
     # =========== Load Rviz2 to visualize the camera ===========
     load_rviz = Node(package='rviz2', executable='rviz2',
                         arguments=['-d', os.path.join(pkg_path, 'rviz', 'show_camera.rviz')],
-                        output='screen')
+                        output='screen', 
+                        condition=IfCondition(rviz))
 
     # add tf static transform publisher from lidar to base_link
     lidar_static_tf_node=Node(
@@ -101,7 +130,10 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        gazebo,
+        headless_arg,
+        rviz_arg,
+        gazebo_server,
+        gazebo_gui,
         node_robot_state_publisher,
         spawn_entity,
         lidar_static_tf_node,
