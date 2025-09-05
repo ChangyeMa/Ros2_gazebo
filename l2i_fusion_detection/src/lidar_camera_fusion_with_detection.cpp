@@ -59,6 +59,9 @@ private:
         declare_parameter<bool>("enable_ground_filtering", true);
         declare_parameter<float>("ground_height_threshold", 0.6);  // Points below this Z value will be removed
 
+        // image flip parameters
+        declare_parameter<std::string>("flip_image", "none"); // options: none, horizontal, vertical, both
+
 
         get_parameter("lidar_frame", lidar_frame_);
         get_parameter("camera_frame", camera_frame_);
@@ -66,6 +69,7 @@ private:
         get_parameter("max_range", max_range_);
         get_parameter("enable_ground_filtering", enable_ground_filtering_);
         get_parameter("ground_height_threshold", ground_height_threshold_);
+        get_parameter("flip_image", flip_image_);
 
         RCLCPP_INFO(
             get_logger(),
@@ -82,12 +86,12 @@ private:
     // Initialize subscribers and publishers
     void initialize_subscribers_and_publishers()
     {
-        // Subscribers for point cloud, image, and detections
-        point_cloud_sub_.subscribe(this, "/scan/points");
-        image_sub_.subscribe(this, "/observer/gimbal_camera");
-        detection_sub_.subscribe(this, "/rgb/tracking");
+        // Subscribers for point cloud, image, and detections in standard naming
+        point_cloud_sub_.subscribe(this, "/lidar_points");
+        image_sub_.subscribe(this, "/camera/image_raw");
+        detection_sub_.subscribe(this, "/yolo/tracking");
         camera_info_sub_ = create_subscription<sensor_msgs::msg::CameraInfo>(
-            "/observer/gimbal_camera_info", 10, std::bind(&LidarCameraFusionNode::camera_info_callback, this, std::placeholders::_1));
+            "/camera/camera_info", 10, std::bind(&LidarCameraFusionNode::camera_info_callback, this, std::placeholders::_1));
 
         // Synchronizer to align point cloud, image, and detection messages
         using SyncPolicy = message_filters::sync_policies::ApproximateTime<
@@ -183,7 +187,7 @@ private:
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
         pcl::fromROSMsg(*point_cloud_msg, *cloud);  // Convert ROS message to PCL point cloud
 
-        // Crop point cloud to a defined range
+        // Crop point cloud to a defined range (this is for 360 degree lidar and here it is cropped to a cube)
         pcl::CropBox<pcl::PointXYZ> box_filter;
         box_filter.setInputCloud(cloud);
         box_filter.setMin(Eigen::Vector4f(-max_range_, -max_range_, -max_range_, 1.0f));
@@ -193,7 +197,6 @@ private:
         // Apply height-based ground filtering
         cloud = filterGroundPoints(cloud);
 
-        // Transform point cloud into camera frame
          if (cloud->empty()) {
             RCLCPP_WARN(get_logger(), "Point cloud is empty after filtering, skipping transform.");
             return cloud;
@@ -205,19 +208,19 @@ private:
         if (tf_buffer_.canTransform(camera_frame_, cloud->header.frame_id, cloud_time, tf2::durationFromSec(1.0))) {
             geometry_msgs::msg::TransformStamped transform = tf_buffer_.lookupTransform(camera_frame_, cloud->header.frame_id, cloud_time, tf2::durationFromSec(1.0));
 
-            // added for debug
-            RCLCPP_INFO(get_logger(), "Transform from %s to %s:", 
-                    cloud->header.frame_id.c_str(), camera_frame_.c_str());
-            RCLCPP_INFO(get_logger(), "Translation: (%.3f, %.3f, %.3f)", 
-                    transform.transform.translation.x, 
-                    transform.transform.translation.y, 
-                    transform.transform.translation.z);
-            RCLCPP_INFO(get_logger(), "Rotation (quaternion): (%.3f, %.3f, %.3f, %.3f)", 
-                    transform.transform.rotation.x, 
-                    transform.transform.rotation.y, 
-                    transform.transform.rotation.z, 
-                    transform.transform.rotation.w);
-            RCLCPP_INFO(get_logger(), "Original cloud frame_id: %s", cloud->header.frame_id.c_str());
+            // debug messages for checking the transform
+            // RCLCPP_INFO(get_logger(), "Transform from %s to %s:", 
+            //         cloud->header.frame_id.c_str(), camera_frame_.c_str());
+            // RCLCPP_INFO(get_logger(), "Translation: (%.3f, %.3f, %.3f)", 
+            //         transform.transform.translation.x, 
+            //         transform.transform.translation.y, 
+            //         transform.transform.translation.z);
+            // RCLCPP_INFO(get_logger(), "Rotation (quaternion): (%.3f, %.3f, %.3f, %.3f)", 
+            //         transform.transform.rotation.x, 
+            //         transform.transform.rotation.y, 
+            //         transform.transform.rotation.z, 
+            //         transform.transform.rotation.w);
+            // RCLCPP_INFO(get_logger(), "Original cloud frame_id: %s", cloud->header.frame_id.c_str());
 
             Eigen::Affine3d eigen_transform = tf2::transformToEigen(transform); // Eigen::Affine3d - which is a 4x4 transformation matrix
             pcl::PointCloud<pcl::PointXYZ>::Ptr transformed_cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -306,24 +309,31 @@ private:
                 if (point.z < 10 && point.z > 0) {  // Consider points within a reasonable depth range that is in the front (for now just one camera)
                     cv::Point3d pt_cv(point.x, point.y, point.z);
                     cv::Point2d uv = camera_model_.project3dToPixel(pt_cv);
-
-                    // uv.y = image_height_ - uv.y; // Adjust for image coordinate system
-                    // uv.x = image_width_ - uv.x;
+                    
+                    // Handle image flipping if specified
+                    if (flip_image_ == "horizontal" || flip_image_ == "both") {
+                        uv.x = image_width_ - uv.x;
+                    }
+                    if (flip_image_ == "vertical" || flip_image_ == "both") {
+                        uv.y = image_height_ - uv.y;
+                    }
+                    // If the image is flipped both horizontally and vertically, both adjustments are applied
+                    // If no flipping is specified, uv remains unchanged    
 
                     // Add this debug logging for first few points
-                    static int debug_count = 0;
-                    if (debug_count < 10) {
-                        RCLCPP_INFO(get_logger(), "Point %d: 3D(%.2f,%.2f,%.2f) -> 2D(%.1f,%.1f)", 
-                                    debug_count++, point.x, point.y, point.z, uv.x, uv.y);
+                    // static int debug_count = 0;
+                    // if (debug_count < 10) {
+                    //     RCLCPP_INFO(get_logger(), "Point %d: 3D(%.2f,%.2f,%.2f) -> 2D(%.1f,%.1f)", 
+                    //                 debug_count++, point.x, point.y, point.z, uv.x, uv.y);
                         
-                        for (const auto& bbox : bounding_boxes) {
-                            bool x_in = (uv.x >= bbox.x_min && uv.x <= bbox.x_max);
-                            bool y_in = (uv.y >= bbox.y_min && uv.y <= bbox.y_max);
-                            RCLCPP_INFO(get_logger(), "  vs BBox %d: X %s(%.1f in [%.1f,%.1f]), Y %s(%.1f in [%.1f,%.1f])",
-                                    bbox.id, x_in?"✓":"✗", uv.x, bbox.x_min, bbox.x_max,
-                                    y_in?"✓":"✗", uv.y, bbox.y_min, bbox.y_max);
-                        }
-                    }
+                    //     for (const auto& bbox : bounding_boxes) {
+                    //         bool x_in = (uv.x >= bbox.x_min && uv.x <= bbox.x_max);
+                    //         bool y_in = (uv.y >= bbox.y_min && uv.y <= bbox.y_max);
+                    //         RCLCPP_INFO(get_logger(), "  vs BBox %d: X %s(%.1f in [%.1f,%.1f]), Y %s(%.1f in [%.1f,%.1f])",
+                    //                 bbox.id, x_in?"✓":"✗", uv.x, bbox.x_min, bbox.x_max,
+                    //                 y_in?"✓":"✗", uv.y, bbox.y_min, bbox.y_max);
+                    //     }
+                    // }
 
                     for (auto& bbox : bounding_boxes) {
                         if (uv.x >= bbox.x_min && uv.x <= bbox.x_max &&
@@ -463,6 +473,7 @@ private:
     int image_width_, image_height_;
     bool enable_ground_filtering_;
     float ground_height_threshold_;
+    std::string flip_image_;
 
     // Subscribers for point cloud, image, and detections
     message_filters::Subscriber<sensor_msgs::msg::PointCloud2> point_cloud_sub_;

@@ -28,7 +28,6 @@ import xacro
 
 
 def generate_launch_description():
-    # ld = LaunchDescription()
 
     pkg_path = os.path.join(
         get_package_share_directory('my_agv2'))
@@ -43,14 +42,14 @@ def generate_launch_description():
     rviz_arg = DeclareLaunchArgument(
         'rviz',
         default_value='true',
-        description='Whether to launch RViz2'
+        description='Whether to launch Rviz2'
     )
 
     headless = LaunchConfiguration('headless')
     rviz = LaunchConfiguration('rviz')
-    # =========== add predefined world file ===========
-    # world_file_path = "world/test_1.world"
-    world_file_path = "world/catalyst_env_v3.world"
+    
+    # =========== Add world model ===========
+    world_file_path = "world/catalyst_env_v3.world"     # adjust the world file name here
     world_path = os.path.join(pkg_path, world_file_path)
 
     # Gazebo server only (headless mode)
@@ -69,7 +68,7 @@ def generate_launch_description():
         condition=UnlessCondition(headless)
     )
 
-    # =========== add predefined robot description ===========
+    # =========== Add robot model ===========
     xacro_file = os.path.join(pkg_path,
                               'urdf',
                               'AGV5.xacro.urdf')
