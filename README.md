@@ -4,10 +4,14 @@ This repo aims to develop a simulation environment for warehouse AGV/AMR for stu
 
 ## Getting Started
 
-### Dependencies
-Ubuntu 22.04 Jammy,
-ROS2 Humble,
-Gazebo Classic (EOL as 2025.1)
+### Environment and dependencies
+- Ubuntu 22.04 Jammy,
+- ROS2 Humble,
+- Gazebo Classic (EOL as 2025.1)
+
+```
+pip install ultralytics
+```
 
 ### Installing Gazebo classic
 Official website for installation: [Tutorial](https://classic.gazebosim.org/tutorials?tut=install_ubuntu) <br />
@@ -42,6 +46,11 @@ colcon build --symlink-install
 ```
 ros2 launch my_agv2 agv5_demo.launch.py
 ```
+## TODO
+- [ ] Add local model path to source
+- [ ] Switch to Issac for vision based training
+- [ ] 
+- [ ] 
 
 ## Help
 Changye Ma (c7ma@uwaterloo.ca)

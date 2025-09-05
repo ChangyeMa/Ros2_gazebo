@@ -52,7 +52,7 @@ private:
     {
         declare_parameter<std::string>("lidar_frame", "lidar_link");
         declare_parameter<std::string>("camera_frame", "camera_1_link");
-        declare_parameter<float>("min_range", 0.2);
+        declare_parameter<float>("min_range", 0.05);
         declare_parameter<float>("max_range", 30.0);
 
          // Ground filtering parameter
@@ -186,7 +186,7 @@ private:
         // Crop point cloud to a defined range
         pcl::CropBox<pcl::PointXYZ> box_filter;
         box_filter.setInputCloud(cloud);
-        box_filter.setMin(Eigen::Vector4f(min_range_, -max_range_, -max_range_, 1.0f));
+        box_filter.setMin(Eigen::Vector4f(-max_range_, -max_range_, -max_range_, 1.0f));
         box_filter.setMax(Eigen::Vector4f(max_range_, max_range_, max_range_, 1.0f));
         box_filter.filter(*cloud);
 
@@ -204,6 +204,21 @@ private:
 
         if (tf_buffer_.canTransform(camera_frame_, cloud->header.frame_id, cloud_time, tf2::durationFromSec(1.0))) {
             geometry_msgs::msg::TransformStamped transform = tf_buffer_.lookupTransform(camera_frame_, cloud->header.frame_id, cloud_time, tf2::durationFromSec(1.0));
+
+            // added for debug
+            RCLCPP_INFO(get_logger(), "Transform from %s to %s:", 
+                    cloud->header.frame_id.c_str(), camera_frame_.c_str());
+            RCLCPP_INFO(get_logger(), "Translation: (%.3f, %.3f, %.3f)", 
+                    transform.transform.translation.x, 
+                    transform.transform.translation.y, 
+                    transform.transform.translation.z);
+            RCLCPP_INFO(get_logger(), "Rotation (quaternion): (%.3f, %.3f, %.3f, %.3f)", 
+                    transform.transform.rotation.x, 
+                    transform.transform.rotation.y, 
+                    transform.transform.rotation.z, 
+                    transform.transform.rotation.w);
+            RCLCPP_INFO(get_logger(), "Original cloud frame_id: %s", cloud->header.frame_id.c_str());
+
             Eigen::Affine3d eigen_transform = tf2::transformToEigen(transform); // Eigen::Affine3d - which is a 4x4 transformation matrix
             pcl::PointCloud<pcl::PointXYZ>::Ptr transformed_cloud(new pcl::PointCloud<pcl::PointXYZ>);
             pcl::transformPointCloud(*cloud, *transformed_cloud, eigen_transform);
@@ -261,92 +276,7 @@ private:
         return bounding_boxes;
     }
 
-    // // Project 3D points to 2D image space and associate with bounding boxes (multi-threaded)
-    // std::vector<cv::Point2d> projectPointsAndAssociateWithBoundingBoxes(
-    //     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_camera_frame,
-    //     std::vector<BoundingBox>& bounding_boxes)
-    // {
-    //     std::vector<cv::Point2d> projected_points;
-
-    //     RCLCPP_INFO(get_logger(), "=== PROJECTION DEBUG START ===");
-
-    //     if (!cloud_camera_frame){
-    //         RCLCPP_WARN(get_logger(), "The cloud is invalid in projectPointsAndAssociateWithBoundingBoxes. Skipping the projection.");
-    //         return projected_points;
-    //     }
-
-    //     if (!camera_model_.initialized()) {
-    //         RCLCPP_ERROR(get_logger(), "ERROR: Camera model is NOT initialized!");
-    //         return projected_points;
-    //     }
-
-    //     RCLCPP_INFO(get_logger(), "Camera model is initialized");
-    //     RCLCPP_INFO(get_logger(), "Image dimensions: %dx%d", image_width_, image_height_);
-    //     RCLCPP_INFO(get_logger(), "Bounding boxes: %zu", bounding_boxes.size());
-
-    //     // Lambda function to process points in parallel
-    //     auto process_points = [&](size_t start, size_t end) {
-    //         for (size_t i = start; i < end; ++i) {
-    //             const auto& point = cloud_camera_frame->points[i];
-    //             if (point.z > 0) {
-    //                 cv::Point3d pt_cv(point.x, point.y, point.z);
-    //                 cv::Point2d uv = camera_model_.project3dToPixel(pt_cv);
-    //                 // uv.y = image_height_ - uv.y; // Adjust for image coordinate system
-    //                 // uv.x = image_width_ - uv.x;
-
-    //                 // Add this debug logging for first few points
-    //                 static int debug_count = 0;
-    //                 if (debug_count < 10) {
-    //                     RCLCPP_INFO(get_logger(), "Point %d: 3D(%.2f,%.2f,%.2f) -> 2D(%.1f,%.1f)", 
-    //                                 debug_count++, point.x, point.y, point.z, uv.x, uv.y);
-                        
-    //                     for (const auto& bbox : bounding_boxes) {
-    //                         bool x_in = (uv.x >= bbox.x_min && uv.x <= bbox.x_max);
-    //                         bool y_in = (uv.y >= bbox.y_min && uv.y <= bbox.y_max);
-    //                         RCLCPP_INFO(get_logger(), "  vs BBox %d: X %s(%.1f in [%.1f,%.1f]), Y %s(%.1f in [%.1f,%.1f])",
-    //                                 bbox.id, x_in?"✓":"✗", uv.x, bbox.x_min, bbox.x_max,
-    //                                 y_in?"✓":"✗", uv.y, bbox.y_min, bbox.y_max);
-    //                     }
-    //                 }
-
-    //                 for (auto& bbox : bounding_boxes) {
-    //                     if (uv.x >= bbox.x_min && uv.x <= bbox.x_max &&
-    //                         uv.y >= bbox.y_min && uv.y <= bbox.y_max) {
-    //                         // Point lies within the bounding box
-    //                         std::lock_guard<std::mutex> lock(mtx);  // Ensure thread-safe updates
-    //                         projected_points.push_back(uv);  // Add projected point to results
-    //                         bbox.sum_x += point.x;  // Accumulate point coordinates (in meters)
-    //                         bbox.sum_y += point.y;
-    //                         bbox.sum_z += point.z;
-    //                         bbox.count++;  // Increment point count
-    //                         bbox.object_cloud->points.push_back(point);  // Add point to object cloud
-    //                         // break;  // Early exit: skip remaining bounding boxes for this point
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     };
-
-    //     // Split the work across multiple threads
-    //     const size_t num_threads = std::thread::hardware_concurrency();
-    //     const size_t points_per_thread = cloud_camera_frame->points.size() / num_threads;
-    //     std::vector<std::thread> threads;
-
-    //     for (size_t t = 0; t < num_threads; ++t) {
-    //         size_t start = t * points_per_thread;
-    //         size_t end = (t == num_threads - 1) ? cloud_camera_frame->points.size() : start + points_per_thread;
-    //         threads.emplace_back(process_points, start, end);
-    //     }
-
-    //     // Wait for all threads to finish
-    //     for (auto& thread : threads) {
-    //         thread.join();
-    //     }
-
-    //     return projected_points;
-    // }
-
-    // SINGLE-THREADED PROJECT POINTS AND ASSOCIATE WITH BOUNDING BOXES
+    // Project 3D points to 2D image space and associate with bounding boxes (multi-threaded)
     std::vector<cv::Point2d> projectPointsAndAssociateWithBoundingBoxes(
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_camera_frame,
         std::vector<BoundingBox>& bounding_boxes)
@@ -368,110 +298,66 @@ private:
         RCLCPP_INFO(get_logger(), "Camera model is initialized");
         RCLCPP_INFO(get_logger(), "Image dimensions: %dx%d", image_width_, image_height_);
         RCLCPP_INFO(get_logger(), "Bounding boxes: %zu", bounding_boxes.size());
-        RCLCPP_INFO(get_logger(), "Cloud has %zu points", cloud_camera_frame->points.size());
 
-        // Print bounding box details
-        for (const auto& bbox : bounding_boxes) {
-            RCLCPP_INFO(get_logger(), "BBox %d: [%.1f,%.1f,%.1f,%.1f]", 
-                        bbox.id, bbox.x_min, bbox.y_min, bbox.x_max, bbox.y_max);
-        }
+        // Lambda function to process points in parallel
+        auto process_points = [&](size_t start, size_t end) {
+            for (size_t i = start; i < end; ++i) {
+                const auto& point = cloud_camera_frame->points[i];
+                if (point.z < 10 && point.z > 0) {  // Consider points within a reasonable depth range that is in the front (for now just one camera)
+                    cv::Point3d pt_cv(point.x, point.y, point.z);
+                    cv::Point2d uv = camera_model_.project3dToPixel(pt_cv);
 
-        // SINGLE-THREADED PROCESSING - NO THREADING
-        size_t points_processed = 0;
-        size_t points_with_positive_z = 0;
-        size_t points_in_image_bounds = 0;
-        size_t total_points_in_bboxes = 0;
+                    // uv.y = image_height_ - uv.y; // Adjust for image coordinate system
+                    // uv.x = image_width_ - uv.x;
 
-        // Process each point sequentially
-        for (size_t i = 0; i < cloud_camera_frame->points.size(); ++i) {
-            const auto& point = cloud_camera_frame->points[i];
-            points_processed++;
+                    // Add this debug logging for first few points
+                    static int debug_count = 0;
+                    if (debug_count < 10) {
+                        RCLCPP_INFO(get_logger(), "Point %d: 3D(%.2f,%.2f,%.2f) -> 2D(%.1f,%.1f)", 
+                                    debug_count++, point.x, point.y, point.z, uv.x, uv.y);
+                        
+                        for (const auto& bbox : bounding_boxes) {
+                            bool x_in = (uv.x >= bbox.x_min && uv.x <= bbox.x_max);
+                            bool y_in = (uv.y >= bbox.y_min && uv.y <= bbox.y_max);
+                            RCLCPP_INFO(get_logger(), "  vs BBox %d: X %s(%.1f in [%.1f,%.1f]), Y %s(%.1f in [%.1f,%.1f])",
+                                    bbox.id, x_in?"✓":"✗", uv.x, bbox.x_min, bbox.x_max,
+                                    y_in?"✓":"✗", uv.y, bbox.y_min, bbox.y_max);
+                        }
+                    }
 
-            // Debug first 5 points in detail
-            if (i < 5) {
-                RCLCPP_INFO(get_logger(), "Point %zu: 3D(%.3f,%.3f,%.3f)", i, point.x, point.y, point.z);
-            }
-
-            if (point.z > 0) {
-                points_with_positive_z++;
-
-                cv::Point3d pt_cv(point.x, point.y, point.z);
-                cv::Point2d uv = camera_model_.project3dToPixel(pt_cv);
-
-                // Debug first 5 projections
-                if (points_with_positive_z <= 5) {
-                    RCLCPP_INFO(get_logger(), "  -> Projection %zu: 2D(%.1f,%.1f)", 
-                                points_with_positive_z, uv.x, uv.y);
-                }
-
-                // Check if point is within image bounds
-                if (uv.x >= 0 && uv.x < image_width_ && uv.y >= 0 && uv.y < image_height_) {
-                    points_in_image_bounds++;
-                    projected_points.push_back(uv);
-
-                    // Check which bounding box contains this point
-                    bool found_in_bbox = false;
                     for (auto& bbox : bounding_boxes) {
                         if (uv.x >= bbox.x_min && uv.x <= bbox.x_max &&
                             uv.y >= bbox.y_min && uv.y <= bbox.y_max) {
-                            
                             // Point lies within the bounding box
-                            bbox.sum_x += point.x;
+                            std::lock_guard<std::mutex> lock(mtx);  // Ensure thread-safe updates
+                            projected_points.push_back(uv);  // Add projected point to results
+                            bbox.sum_x += point.x;  // Accumulate point coordinates (in meters)
                             bbox.sum_y += point.y;
                             bbox.sum_z += point.z;
-                            bbox.count++;
-                            bbox.object_cloud->points.push_back(point);
-                            total_points_in_bboxes++;
-                            found_in_bbox = true;
-
-                            // Debug first match for each bounding box
-                            if (bbox.count == 1) {
-                                RCLCPP_INFO(get_logger(), "FIRST MATCH! Point 2D(%.1f,%.1f) in BBox %d", 
-                                            uv.x, uv.y, bbox.id);
-                            }
-
-                            break; // Early exit: skip remaining bounding boxes for this point
+                            bbox.count++;  // Increment point count
+                            bbox.object_cloud->points.push_back(point);  // Add point to object cloud
+                            break;  // Early exit: skip remaining bounding boxes for this point
                         }
                     }
-
-                    // Show detailed info for first few points that don't match any bbox
-                    if (!found_in_bbox && total_points_in_bboxes == 0 && points_in_image_bounds <= 10) {
-                        RCLCPP_INFO(get_logger(), "Point 2D(%.1f,%.1f) NOT in any bounding box:", uv.x, uv.y);
-                        for (const auto& bbox : bounding_boxes) {
-                            bool x_match = (uv.x >= bbox.x_min && uv.x <= bbox.x_max);
-                            bool y_match = (uv.y >= bbox.y_min && uv.y <= bbox.y_max);
-                            RCLCPP_INFO(get_logger(), "  BBox %d: [%.1f,%.1f,%.1f,%.1f] X:%s(%.1f) Y:%s(%.1f)", 
-                                        bbox.id, bbox.x_min, bbox.y_min, bbox.x_max, bbox.y_max,
-                                        x_match ? "✓" : "✗", uv.x,
-                                        y_match ? "✓" : "✗", uv.y);
-                        }
-                    }
-
-                } else if (points_with_positive_z <= 5) {
-                    RCLCPP_INFO(get_logger(), "  -> Point %zu OUTSIDE image bounds: 2D(%.1f,%.1f)", 
-                                points_with_positive_z, uv.x, uv.y);
                 }
             }
+        };
+
+        // Split the work across multiple threads
+        const size_t num_threads = std::thread::hardware_concurrency();
+        const size_t points_per_thread = cloud_camera_frame->points.size() / num_threads;
+        std::vector<std::thread> threads;
+
+        for (size_t t = 0; t < num_threads; ++t) {
+            size_t start = t * points_per_thread;
+            size_t end = (t == num_threads - 1) ? cloud_camera_frame->points.size() : start + points_per_thread;
+            threads.emplace_back(process_points, start, end);
         }
 
-        RCLCPP_INFO(get_logger(), "=== PROJECTION SUMMARY ===");
-        RCLCPP_INFO(get_logger(), "Points processed: %zu", points_processed);
-        RCLCPP_INFO(get_logger(), "Points with z>0: %zu", points_with_positive_z);
-        RCLCPP_INFO(get_logger(), "Points in image bounds: %zu", points_in_image_bounds);
-        RCLCPP_INFO(get_logger(), "Points in bounding boxes: %zu", total_points_in_bboxes);
-        RCLCPP_INFO(get_logger(), "Total projected points: %zu", projected_points.size());
-
-        // Final summary for each bounding box
-        for (const auto& bbox : bounding_boxes) {
-            if (bbox.count > 0) {
-                RCLCPP_INFO(get_logger(), "✓ BBox %d: %d points, avg=(%.2f,%.2f,%.2f)", 
-                            bbox.id, bbox.count, bbox.sum_x/bbox.count, bbox.sum_y/bbox.count, bbox.sum_z/bbox.count);
-            } else {
-                RCLCPP_WARN(get_logger(), "✗ BBox %d: 0 points", bbox.id);
-            }
+        // Wait for all threads to finish
+        for (auto& thread : threads) {
+            thread.join();
         }
-
-        RCLCPP_INFO(get_logger(), "=== PROJECTION DEBUG END ===");
 
         return projected_points;
     }

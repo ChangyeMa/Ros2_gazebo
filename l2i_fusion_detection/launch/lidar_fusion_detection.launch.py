@@ -32,26 +32,36 @@ def generate_launch_description():
 
     )
 
+    tracking_topic = '/yolo/tracking' # for standard yolo model
+    
+    # using gazebo simulation topics
     image_topic = '/camera_1/image_raw'
     lidar_topic = '/ray/lidar_points'
-    tracking_topic = '/yolo/tracking' # for standard yolo model
     camera_info_topic = '/camera_1/camera_info'
     camera_frame = 'camera_1_link'
     lidar_frame = 'lidar_link'
-
-
+    ground_height_threshold = 0.66
+    
+    # # use recorded rosbag topics
+    # image_topic = '/image_raw'
+    # lidar_topic = '/rslidar_points'
+    # camera_info_topic = '/camera_info'
+    # camera_frame = 'camera_link'
+    # lidar_frame = 'lidar_link'
+    # ground_height_threshold = 0.05
+    
     # Lidar-Camera Fusion Node
     lidar_camera_fusion_node = Node(
         package='l2i_fusion_detection',
         executable='lidar_camera_fusion_with_detection',
         name='lidar_camera_fusion_node',
         parameters=[
-            {'min_range': 0.05, 'max_range': 30.0,
+            {'min_range': 0.5, 'max_range': 30.0,
              'lidar_frame': lidar_frame,
              'camera_frame': camera_frame,
              'use_sim_time': True,
              'enable_ground_filtering': True,
-             'ground_height_threshold': 0.65
+             'ground_height_threshold': ground_height_threshold
              }
         ],
         remappings=[
