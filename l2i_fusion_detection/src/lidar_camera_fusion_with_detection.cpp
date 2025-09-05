@@ -62,6 +62,19 @@ private:
         // image flip parameters
         declare_parameter<std::string>("flip_image", "none"); // options: none, horizontal, vertical, both
 
+        // Statistical outlier removal parameters
+        declare_parameter<int>("statistical_outlier_k_neighbors", 15);
+        declare_parameter<float>("statistical_outlier_std_multiplier", 2.0);
+        
+        // DBSCAN clustering parameters
+        declare_parameter<float>("dbscan_eps", 0.25);  // 25cm neighborhood
+        declare_parameter<int>("dbscan_min_points", 5);
+    
+        // Get parameters
+        get_parameter("statistical_outlier_k_neighbors", statistical_outlier_k_neighbors_);
+        get_parameter("statistical_outlier_std_multiplier", statistical_outlier_std_multiplier_);
+        get_parameter("dbscan_eps", dbscan_eps_);
+        get_parameter("dbscan_min_points", dbscan_min_points_);
 
         get_parameter("lidar_frame", lidar_frame_);
         get_parameter("camera_frame", camera_frame_);
@@ -150,6 +163,14 @@ private:
         publishResults(image_msg, projected_points, bounding_boxes, pose_array);
     }
 
+    // ============================ Preprocessing ============================
+    '''
+    The lidar point preprocessing includes several steps:
+    1. Cropping the point cloud to a defined range. (e.g. min and max range, and angles if needed)
+    2. Applying height-based ground filtering.)
+    3. Transforming the point cloud to the camera frame. (find valid projection on image plane)
+    4. Process the camera detections and extract bounding boxes.
+    '''
 
     // Simple height-based ground filtering function
     pcl::PointCloud<pcl::PointXYZ>::Ptr filterGroundPoints(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud)
@@ -279,13 +300,222 @@ private:
         return bounding_boxes;
     }
 
+
+    // =========================== Projection and filtering ============================
+    '''
+    1. With valid projection points and bounding boxes, associate points to bounding boxes.
+    2. Filter out outliers and identify the correct object points.
+    3. Project the filtered points onto the image plane. (visualization)
+    4. Identify object poses and pre-defined goal points in the lidar frame.
+    5. Convert robot pose, goal points into a local frame for navigation.
+    '''
+
+    // 1. Depth filter to remove occluded points behind the closest surface per pixel
+    cv::Mat computeMinDepthMap(
+        const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud,
+        const image_geometry::PinholeCameraModel& camera_model,
+        int image_width, int image_height)
+    {
+        cv::Mat depth_map(image_height, image_width, CV_32FC1, cv::Scalar(std::numeric_limits<float>::infinity()));
+
+        for (const auto& pt : cloud->points) {
+            if (pt.z <= 0) continue;  // only front camera is available at the moment
+
+            cv::Point3d cv_pt(pt.x, pt.y, pt.z);
+            cv::Point2d uv = camera_model.project3dToPixel(cv_pt);
+
+            // Handle image flipping if specified
+            if (flip_image_ == "horizontal" || flip_image_ == "both") {
+                uv.x = image_width_ - uv.x;
+            }
+            if (flip_image_ == "vertical" || flip_image_ == "both") {
+                uv.y = image_height_ - uv.y;
+            }
+
+            int u = static_cast<int>(std::round(uv.x));
+            int v = static_cast<int>(std::round(uv.y));
+            if (u >= 0 && u < image_width && v >= 0 && v < image_height) {
+                float& current = depth_map.at<float>(v, u);
+                if (pt.z < current) {
+                    current = pt.z;  // keep the nearest depth
+                }
+            }
+        }
+
+        // Optionally smooth to reduce noise
+        cv::medianBlur(depth_map, depth_map, 3);
+
+        return depth_map;
+    }
+
+    // 2. Statistical outlier removal for points within bounding boxes
+    std::vector<pcl::PointXYZ> removeStatisticalOutliers(
+        const std::vector<pcl::PointXYZ>& points,
+        int k_neighbors = 20,
+        float std_dev_multiplier = 2.0)
+    {
+        if (points.size() < k_neighbors) return points;
+
+        std::vector<float> distances;
+        distances.reserve(points.size());
+
+        // Calculate mean distance to k nearest neighbors for each point
+        for (size_t i = 0; i < points.size(); ++i) {
+            std::vector<float> neighbor_distances;
+            
+            for (size_t j = 0; j < points.size(); ++j) {
+                if (i != j) {
+                    float dx = points[i].x - points[j].x;
+                    float dy = points[i].y - points[j].y;
+                    float dz = points[i].z - points[j].z;
+                    // Euclidean distance
+                    neighbor_distances.push_back(std::sqrt(dx*dx + dy*dy + dz*dz));
+                }
+            }
+            
+            std::sort(neighbor_distances.begin(), neighbor_distances.end());
+            
+            // Calculate mean distance to k nearest neighbors
+            float mean_distance = 0.0f;
+            int neighbors_to_use = std::min(k_neighbors, static_cast<int>(neighbor_distances.size()));
+            for (int k = 0; k < neighbors_to_use; ++k) {
+                mean_distance += neighbor_distances[k];
+            }
+            mean_distance /= neighbors_to_use;
+            distances.push_back(mean_distance);
+        }
+
+        // Calculate statistics
+        float mean_dist = std::accumulate(distances.begin(), distances.end(), 0.0f) / distances.size();
+        float variance = 0.0f;
+        for (float d : distances) {
+            variance += (d - mean_dist) * (d - mean_dist);
+        }
+        variance /= distances.size();
+        float std_dev = std::sqrt(variance);
+
+        // Filter outliers
+        std::vector<pcl::PointXYZ> filtered_points;
+        float threshold = mean_dist + std_dev_multiplier * std_dev;
+        
+        for (size_t i = 0; i < points.size(); ++i) {
+            if (distances[i] <= threshold) {
+                filtered_points.push_back(points[i]);
+            }
+        }
+        return filtered_points;
+    }
+
+    // 3. DBSCAN clustering to identify coherent point groups
+    struct DBSCANCluster {
+        std::vector<pcl::PointXYZ> points;
+        pcl::PointXYZ centroid;
+        int point_count;
+    };
+
+    std::vector<DBSCANCluster> performDBSCAN(
+        const std::vector<pcl::PointXYZ>& points,
+        float eps = 0.3f,  // 30cm neighborhood
+        int min_points = 5)
+    {
+        std::vector<int> cluster_labels(points.size(), -1);  // -1 means noise
+        std::vector<bool> visited(points.size(), false);
+        int cluster_id = 0;
+
+        auto get_neighbors = [&](int point_idx) -> std::vector<int> {
+            std::vector<int> neighbors;
+            const auto& p = points[point_idx];
+            
+            for (size_t i = 0; i < points.size(); ++i) {
+                if (i == point_idx) continue;
+                
+                float dx = p.x - points[i].x;
+                float dy = p.y - points[i].y;
+                float dz = p.z - points[i].z;
+                float distance = std::sqrt(dx*dx + dy*dy + dz*dz);
+                
+                if (distance <= eps) {
+                    neighbors.push_back(i);
+                }
+            }
+            return neighbors;
+        };
+
+        for (size_t i = 0; i < points.size(); ++i) {
+            if (visited[i]) continue;
+            
+            visited[i] = true;
+            std::vector<int> neighbors = get_neighbors(i);
+            
+            if (neighbors.size() < min_points) {
+                cluster_labels[i] = -1;  // Mark as noise
+            } else {
+                // Start new cluster
+                cluster_labels[i] = cluster_id;
+                
+                // Expand cluster
+                std::queue<int> seed_set;
+                for (int neighbor : neighbors) {
+                    seed_set.push(neighbor);
+                }
+                
+                while (!seed_set.empty()) {
+                    int current = seed_set.front();
+                    seed_set.pop();
+                    
+                    if (!visited[current]) {
+                        visited[current] = true;
+                        std::vector<int> current_neighbors = get_neighbors(current);
+                        
+                        if (current_neighbors.size() >= min_points) {
+                            for (int neighbor : current_neighbors) {
+                                seed_set.push(neighbor);
+                            }
+                        }
+                    }
+                    
+                    if (cluster_labels[current] == -1) {
+                        cluster_labels[current] = cluster_id;
+                    }
+                }
+                cluster_id++;
+            }
+        }
+
+        // Convert to clusters
+        std::vector<DBSCANCluster> clusters(cluster_id);
+        for (size_t i = 0; i < points.size(); ++i) {
+            if (cluster_labels[i] >= 0) {
+                clusters[cluster_labels[i]].points.push_back(points[i]);
+            }
+        }
+
+        // Calculate centroids
+        for (auto& cluster : clusters) {
+            if (!cluster.points.empty()) {
+                float sum_x = 0, sum_y = 0, sum_z = 0;
+                for (const auto& pt : cluster.points) {
+                    sum_x += pt.x;
+                    sum_y += pt.y;
+                    sum_z += pt.z;
+                }
+                cluster.centroid.x = sum_x / cluster.points.size();
+                cluster.centroid.y = sum_y / cluster.points.size();
+                cluster.centroid.z = sum_z / cluster.points.size();
+                cluster.point_count = cluster.points.size();
+            }
+        }
+
+        return clusters;
+    }
+
+
     // Project 3D points to 2D image space and associate with bounding boxes (multi-threaded)
     std::vector<cv::Point2d> projectPointsAndAssociateWithBoundingBoxes(
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_camera_frame,
         std::vector<BoundingBox>& bounding_boxes)
     {
         std::vector<cv::Point2d> projected_points;
-
         RCLCPP_INFO(get_logger(), "=== PROJECTION DEBUG START ===");
 
         if (!cloud_camera_frame){
@@ -301,6 +531,11 @@ private:
         RCLCPP_INFO(get_logger(), "Camera model is initialized");
         RCLCPP_INFO(get_logger(), "Image dimensions: %dx%d", image_width_, image_height_);
         RCLCPP_INFO(get_logger(), "Bounding boxes: %zu", bounding_boxes.size());
+
+        // Compute minimum depth map for occlusion handling
+        // Build a per-pixel min-depth map
+        cv::Mat depth_map = computeMinDepthMap(cloud_camera_frame, camera_model_, image_width_, image_height_);
+        float depth_tolerance = 0.1;  // meters, tune as needed
 
         // Lambda function to process points in parallel
         auto process_points = [&](size_t start, size_t end) {
@@ -339,16 +574,83 @@ private:
                         if (uv.x >= bbox.x_min && uv.x <= bbox.x_max &&
                             uv.y >= bbox.y_min && uv.y <= bbox.y_max) {
                             // Point lies within the bounding box
-                            std::lock_guard<std::mutex> lock(mtx);  // Ensure thread-safe updates
-                            projected_points.push_back(uv);  // Add projected point to results
-                            bbox.sum_x += point.x;  // Accumulate point coordinates (in meters)
-                            bbox.sum_y += point.y;
-                            bbox.sum_z += point.z;
-                            bbox.count++;  // Increment point count
-                            bbox.object_cloud->points.push_back(point);  // Add point to object cloud
+                            // define pixel coordinates
+                            int u = static_cast<int>(std::round(uv.x));
+                            int v = static_cast<int>(std::round(uv.y));
+
+                            // 1. Check depth against min depth map for occlusion handling (But this can't handle sparse structures)
+                            float min_depth = depth_map.at<float>(v, u);
+                            if (point.z <= min_depth + depth_tolerance) {
+                                // Point is valid (not behind another object)
+                                std::lock_guard<std::mutex> lock(mtx);
+                                projected_points.push_back(uv);
+                                bbox.sum_x += point.x;
+                                bbox.sum_y += point.y;
+                                bbox.sum_z += point.z;
+                                bbox.count++;
+                                bbox.object_cloud->points.push_back(point);
+                            }
+
                             break;  // Early exit: skip remaining bounding boxes for this point
                         }
                     }
+                    
+                    // apply staticstical outlier removal and DBSCAN clustering per bounding box
+                    if (bbox.object_cloud->empty()) continue;
+
+                    // Apply statistical outlier removal
+                    std::vector<pcl::PointXYZ> filtered_points = removeStatisticalOutliers(bbox.object_cloud->points, 10, 1.5f); // (points, k_neighbors, std_dev_multiplier)
+
+                    // Apply DBSCAN clustering to find coherent groups
+                    std::vector<DBSCANCluster> clusters = performDBSCAN(filtered_points, 0.2f, 3); // (points, eps, min_points)
+
+                    if (!clusters.empty()) {
+                        auto largest_cluster = std::max_element(clusters.begin(), clusters.end(),
+                            [](const DBSCANCluster& a, const DBSCANCluster& b) {
+                                return a.point_count < b.point_count;
+                            });
+                        
+                        // Use points from the largest cluster
+                        bbox.object_cloud = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>);
+                        for (const auto& pt : largest_cluster->points) {
+                            bbox.object_cloud->points.push_back(pt);
+                            bbox.sum_x += pt.x;
+                            bbox.sum_y += pt.y;
+                            bbox.sum_z += pt.z;
+                            bbox.count++;
+                            
+                            // Project back to image for visualization
+                            cv::Point3d pt_cv(pt.x, pt.y, pt.z);
+                            cv::Point2d uv = camera_model_.project3dToPixel(pt_cv);
+                            
+                            if (flip_image_ == "horizontal" || flip_image_ == "both") {
+                                uv.x = image_width_ - uv.x;
+                            }
+                            if (flip_image_ == "vertical" || flip_image_ == "both") {
+                                uv.y = image_height_ - uv.y;
+                            }
+                            
+                            projected_points.push_back(uv);
+                        }
+                    } else {
+                        // Fallback: use filtered points if no clusters found
+                        bbox.object_cloud = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>);
+                        for (const auto& pt : filtered_points) {
+                            bbox.object_cloud->points.push_back(pt);
+                            bbox.sum_x += pt.x;
+                            bbox.sum_y += pt.y;
+                            bbox.sum_z += pt.z;
+                            bbox.count++;
+                        }
+                    }
+                    
+                    // Set point cloud properties
+                    if (bbox.object_cloud && !bbox.object_cloud->points.empty()) {
+                        bbox.object_cloud->width = bbox.object_cloud->points.size();
+                        bbox.object_cloud->height = 1;
+                        bbox.object_cloud->is_dense = true;
+                    }
+
                 }
             }
         };
@@ -475,6 +777,14 @@ private:
     float ground_height_threshold_;
     std::string flip_image_;
 
+    // For filtering
+    float depth_tolerance_ = 0.2;  // meters, tolerance for depth filtering
+
+    int statistical_outlier_k_neighbors_ = 15;
+    float statistical_outlier_std_multiplier_ = 2.0f;
+    float dbscan_eps_ = 0.25f;
+    int dbscan_min_points_ = 5;
+
     // Subscribers for point cloud, image, and detections
     message_filters::Subscriber<sensor_msgs::msg::PointCloud2> point_cloud_sub_;
     message_filters::Subscriber<sensor_msgs::msg::Image> image_sub_;
@@ -483,6 +793,9 @@ private:
 
     // Synchronizer for aligning messages
     std::shared_ptr<message_filters::Synchronizer<message_filters::sync_policies::ApproximateTime<sensor_msgs::msg::PointCloud2, sensor_msgs::msg::Image, yolo_msgs::msg::DetectionArray>>> sync_;
+    
+    // Depth map for occlusion handling
+    cv::Mat min_depth_map_;  
 
     // Publishers for fused image, object poses, and object point clouds
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_publisher_;

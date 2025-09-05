@@ -18,8 +18,8 @@ class JoyControllerNode(Node):
 
         # Param
         self.max_vel = 125 # maximun speed of drive motors
-        self.throttle_fct = 150 # factor of throttle, multiple with righty
-        self.steer_fct = 33 # factor of steering, multiple with leftx
+        self.throttle_fct = 30 # factor of throttle, multiple with righty
+        self.steer_fct = 5 # factor of steering, multiple with leftx
 
         # fixed frequency timer
         timer_period = 0.1  # seconds
@@ -47,6 +47,10 @@ class JoyControllerNode(Node):
     def joy_callback(self, msg):
         self.leftx = msg.axes[0] #steering, left is positive, abs value: [0,1]
         self.righty = msg.axes[4] #throttle, up is positive, abs value: [0,1]
+        
+        if msg == []:
+            self.leftx = 0.0
+            self.righty = 0.0
         
     def timer_callback(self):
         # calculate linear and angular velocity
